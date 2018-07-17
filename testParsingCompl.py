@@ -1,15 +1,16 @@
 from lxml import etree
 import os
 from collections import defaultdict
-import csv,json
+import csv,json,requests as req
 
 def compl(filename):
         os.chdir('D:/project/pkl/ParsingXML/data')
+        api_url='http://localhost:3000/compliance'
         i=0
         report = {}
         reportHostName = []
         reportItem = []
-        data =[]
+        # data =[]
         f = open(filename, 'r')
         xml_content = f.read()
         f.close()
@@ -19,11 +20,10 @@ def compl(filename):
                 for report_host in block:
                     if report_host.tag=="ReportHost":
                         System = report_host.attrib['name']
-                        
                         reportItem = []
                         for report_item in report_host:
                             if report_item.tag=="ReportItem":
-                                i=i+1
+                                # i=i+1
                                 iStatus=report_item.attrib['severity']
                                 for param in report_item:
                                     if param.tag=="{http://www.nessus.org/cm}compliance-check-name":
@@ -39,32 +39,34 @@ def compl(filename):
                                     'status': status,
                                     'result': result,
                                     'detail': detail,
-                                    'iStatus':iStatus,
+                                    'i_status':iStatus,
                                 })
-                    reportHostName.append(
-                        reportItem
-                    )
-            
+                        reportHostName.append({
+                            'item':reportItem
+                        })
+        report.update({
+            'hostname':reportHostName
+        })
         # print json.dumps(reportHostName)
 
-        x=["System", "Title", "Status","result", "iStatus","Detail"]
-        data.append(x)
+        # x=["System", "Title", "Status","result", "iStatus","Detail"]
+        # data.append(x)
 
         #Put output to csv file
-        myFile=open('compl.csv','wb')
-        with myFile:
-            writer = csv.writer(myFile)
-            writer.writerows(data)
-            for x in range (0,len(reportHostName)):
-                for y in range (0,len(reportHostName[x])):
-                    writer.writerow([
-                                    reportHostName[x][y]["system"],
-                                    reportHostName[x][y]["title"],
-                                    reportHostName[x][y]["status"],
-                                    reportHostName[x][y]["result"],
-                                    reportHostName[x][y]["iStatus"],
-                                    reportHostName[x][y]["detail"],
-                                ])
+        # myFile=open('compl.csv','wb')
+        # with myFile:
+        #     writer = csv.writer(myFile)
+        #     writer.writerows(data)
+        #     for x in range (0,len(reportHostName)):
+        #         for y in range (0,len(reportHostName[x])):
+        #             writer.writerow([
+        #                             reportHostName[x][y]["system"],
+        #                             reportHostName[x][y]["title"],
+        #                             reportHostName[x][y]["status"],
+        #                             reportHostName[x][y]["result"],
+        #                             reportHostName[x][y]["iStatus"],
+        #                             reportHostName[x][y]["detail"],
+        #                         ])
 
 
        
@@ -82,3 +84,8 @@ def compl(filename):
         #                     reportHostName[x][y]["detail"],
         #                     ])
         # return writer
+        Jsondata=json.dumps(report)
+        headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
+        r=req.post(api_url,data=Jsondata,headers=headers)
+        print r
+        return r,Jsondata

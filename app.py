@@ -2,9 +2,12 @@ import os
 from flask import Flask, request, redirect, url_for,flash,render_template,send_from_directory
 from testParsingVuln import *
 from testParsingCompl import *
+import requests as req
 
 UPLOAD_FOLDER = 'D:/project/pkl/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
+
+api_url='http://localhost:3000/vulnerabilities'
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -18,7 +21,7 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-
+    
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -36,18 +39,21 @@ def upload_file():
             if request.form['submit'] == 'vulnerability':
                 filename = file.filename
                 file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
-                vuln(filename)
+                tes,data=vuln(filename)
+                # 
                 # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
-                return render_template('index.html',filename=filename, berhasil="1")
+                return render_template('index.html',variable=tes,a=data)
             elif request.form['submit'] == 'compliance':
                 filename = file.filename
                 file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
                 # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                 # flash('masuk ke compl')
-                compl(filename)
-                return render_template('index.html',filename=filename, berhasil="1")
-    return render_template('index.html')
+                tes,data= compl(filename)
 
+                return render_template('index.html',variable=tes,a=data)
+    return render_template('index.html')
+    
+   
 
 @app.route('/data/<filename>', methods=['GET', 'POST'])
 def show_file(filename):
