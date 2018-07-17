@@ -4,7 +4,7 @@ import json
 import csv
 import os
 def vuln(filename):
-        os.chdir('D:/project/pkl/ParsingXML/data')
+        os.chdir('D:/Project/XL/ParsingXML/data')
         i=0
         report = {}
         reportHostName = []
@@ -52,9 +52,9 @@ def vuln(filename):
                                     'detail': detail,
                                     'risk_level': risk_factor
                                 })
-                        reportHostName.append(
-                            reportItem
-                        )
+                        reportHostName.append({
+                            'reportItem':reportItem
+                        })
 
         print len(reportHostName)
         

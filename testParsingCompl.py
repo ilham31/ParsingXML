@@ -4,7 +4,7 @@ from collections import defaultdict
 import csv,json
 
 def compl(filename):
-        os.chdir('D:/project/pkl/ParsingXML/data')
+        os.chdir('D:/Project/XL/ParsingXML/data')
         i=0
         report = {}
         reportHostName = []

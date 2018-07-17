@@ -2,36 +2,40 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var CompSchema = new Schema({
-    _idFile: mongoose.Schema.Types.ObjectId,
+var ItemSchema = new Schema({
+    _id: mongoose.Schema.Types.ObjectId,
 
-    file: {
-        _id: mongoose.Schema.Types.ObjectId,
+    system: {
+        type: String
+    },
 
-        system: {
-            type: String
-        },
+    title: {
+        type: String
+    },
+    
+    status: {
+        type: String
+    },
+    
+    result: {
+        type: String
+    },
 
-        title: {
-            type: String
-        },
-        
-        status: {
-            type: String
-        },
-        
-        result: {
-            type: String
-        },
+    i_status: {
+        type: String
+    },
 
-        i_status: {
-            type: String
-        },
-
-        detail: {
-            type: String
-        }
+    detail: {
+        type: String
     }
+});
+
+var CompSchema = new Schema({
+
+    hostname: [{
+        item: [ItemSchema]
+    }]
+     
 });
 
 module.exports = mongoose.model('Comp', CompSchema);

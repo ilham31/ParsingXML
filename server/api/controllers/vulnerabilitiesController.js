@@ -8,29 +8,6 @@ Date.prototype.addHours = function(h){
     return this;
 }
 
-var hostname = [
-    {
-        "item": [
-            {
-                "system": "10l313",
-                "severity": "2"
-            },
-            {
-                "system": "2131414",
-                "severity": "3"
-            }
-        ]
-    },
-    {
-        "item": [
-            {
-                "system": "4234235",
-                "severity": "4"
-            }
-        ]
-    }
-]
-
 exports.get_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");

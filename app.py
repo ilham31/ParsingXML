@@ -3,7 +3,7 @@ from flask import Flask, request, redirect, url_for,flash,render_template,send_f
 from testParsingVuln import *
 from testParsingCompl import *
 
-UPLOAD_FOLDER = 'D:/project/pkl/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 app = Flask(__name__)
@@ -35,13 +35,14 @@ def upload_file():
         if file and allowed_file(file.filename):
             if request.form['submit'] == 'vulnerability':
                 filename = file.filename
-                file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
+                file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                 vuln(filename)
+                print 
                 # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
                 return render_template('index.html',filename=filename, berhasil="1")
             elif request.form['submit'] == 'compliance':
                 filename = file.filename
-                file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
+                file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                 # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                 # flash('masuk ke compl')
                 compl(filename)
