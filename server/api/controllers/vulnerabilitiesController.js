@@ -12,8 +12,8 @@ exports.get_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
-    var fileId = req.body.fileId
-    Vuln.find({_idFile : fileId})
+    var fileId = req.params.fileId
+    Vuln.find({_id : fileId})
         .exec()
         .then(docs => {
             res.status(200).json(docs);

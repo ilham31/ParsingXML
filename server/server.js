@@ -8,17 +8,17 @@ var express = require('express'),
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/NessusParser');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({limit: '50mb', extended: false }));
+app.use(bodyParser.json({limit: '50mb'}));
 
 app.use(cors());
 
 // var userRoutes = require('./api/routes/userRoutes');
 var vulnRoutes = require('./api/routes/vulnerabilitiesRoutes');
-// var compRoutes = require('./api/routes/complianceRoutes');
+var compRoutes = require('./api/routes/complianceRoutes');
 // userRoutes(app); 
 vulnRoutes(app);
-// compRoutes(app);
+compRoutes(app);
 
 app.listen(port);
 

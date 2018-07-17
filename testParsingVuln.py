@@ -2,9 +2,11 @@ from lxml import etree
 from io import open
 import json
 import csv
-import os
+import os,requests as req
+
 def vuln(filename):
         os.chdir('D:/Project/XL/ParsingXML/data')
+        api_url='http://localhost:3000/vulnerabilities'
         i=0
         report = {}
         reportHostName = []
@@ -43,40 +45,41 @@ def vuln(filename):
                                 detail = synopsis + desc
 
                                 reportItem.append({
-                                    'hostname': Hostname,
+                                    'system': Hostname,
                                     'name': name,
                                     'severity': severity,
-                                    'port/protocol': portProtocol,
+                                    'port_protocol': portProtocol,
                                     'solution': solution,
                                     'synopsis': synopsis,
                                     'detail': detail,
                                     'risk_level': risk_factor
                                 })
                         reportHostName.append({
-                            'reportItem':reportItem
+                            'item':reportItem
                         })
+        report.update({
+            'hostname' : reportHostName
+        })            
 
-        print len(reportHostName)
-        
-        x=["System", "Name", "Port/Protocol", "Risk Level", "Synopsis","Detail","Solution","Severity"]
-        data.append(x)
+        # x=["System", "Name", "Port/Protocol", "Risk Level", "Synopsis","Detail","Solution","Severity"]
+        # data.append(x)
 
     #Put output to csv file
-        myFile=open('vulnv.csv','wb')
-        with myFile:
-            writer = csv.writer(myFile)
-            writer.writerows(data)
-            for x in range (0,len(reportHostName)):
-                for y in range (0,len(reportHostName[x])):
-                    writer.writerow([reportHostName[x][y]["hostname"],
-                                reportHostName[x][y]["name"],
-                                reportHostName[x][y]["port/protocol"],
-                                reportHostName[x][y]["risk_level"],
-                                reportHostName[x][y]["synopsis"],
-                                reportHostName[x][y]["detail"],
-                                reportHostName[x][y]["solution"],
-                                reportHostName[x][y]["severity"],
-                                ])
+        # myFile=open('vulnv.csv','wb')
+        # with myFile:
+        #     writer = csv.writer(myFile)
+        #     writer.writerows(data)
+        #     for x in range (0,len(reportHostName)):
+        #         for y in range (0,len(reportHostName[x])):
+        #             writer.writerow([reportHostName[x][y]["hostname"],
+        #                         reportHostName[x][y]["name"],
+        #                         reportHostName[x][y]["port/protocol"],
+        #                         reportHostName[x][y]["risk_level"],
+        #                         reportHostName[x][y]["synopsis"],
+        #                         reportHostName[x][y]["detail"],
+        #                         reportHostName[x][y]["solution"],
+        #                         reportHostName[x][y]["severity"],
+        #                         ])
         # with open('vulnv.csv', 'wb') as csvfile:
         #     f = csv.writer(csvfile)
 
@@ -96,3 +99,8 @@ def vuln(filename):
         
 
         # return f
+        Jsondata=json.dumps(report)
+        headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
+        r=req.post(api_url,data=Jsondata,headers=headers)
+        print r
+        return r,Jsondata

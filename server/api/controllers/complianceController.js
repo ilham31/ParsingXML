@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var Vuln = require('../models/complianceModels');
+var Comp = require('../models/complianceModels');
 var jwt = require('jsonwebtoken');
 
 Date.prototype.addHours = function(h){
@@ -13,7 +13,7 @@ exports.get_compliance = function (req, res) {
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
     var fileId = req.body.fileId
-    Vuln.find({_idFile : fileId})
+    Comp.find({_idFile : fileId})
         .exec()
         .then(docs => {
             res.status(200).json(docs);
@@ -34,7 +34,7 @@ exports.create_compliance = function (req, res) {
     //     }
     // }
         console.log("hostname adalah",req.body.hostname);
-        var vuln = new Vuln ({
+        var comp = new Comp ({
             _idFIle: mongoose.Types.ObjectId(),
             hostname: req.body.hostname
             
@@ -50,7 +50,7 @@ exports.create_compliance = function (req, res) {
             //     severity: req.body.severity
             // }
         });         
-        vuln.save()
+        comp.save()
           .then(result => {
               res.status(201).json({
                   result
