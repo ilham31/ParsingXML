@@ -39,18 +39,20 @@ def upload_file():
             if request.form['submit'] == 'vulnerability':
                 filename = file.filename
                 file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
-                tes,data=vuln(filename)
+                data=vuln(filename)
+                variabel=data[0]
+                
                 # 
                 # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
-                return render_template('index.html',variable=tes,a=data)
+                return render_template('index.html',a=variabel)
             elif request.form['submit'] == 'compliance':
                 filename = file.filename
                 file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
                 # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                 # flash('masuk ke compl')
-                tes,data= compl(filename)
-
-                return render_template('index.html',variable=tes,a=data)
+                data= compl(filename)
+                variabel=data[0][0]["system"]
+                return render_template('index.html',a=variabel)
     return render_template('index.html')
     
    

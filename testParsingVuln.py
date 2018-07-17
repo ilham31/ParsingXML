@@ -102,4 +102,4 @@ def vuln(filename):
         headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
         r=req.post(api_url,data=Jsondata,headers=headers)
         print r
-        return r,Jsondata
+        return Jsondata
