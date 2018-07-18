@@ -3,9 +3,9 @@ from io import open
 import json
 import csv,requests
 
-api_url='http://localhost:3000/vulnerabilities'
+api_url='http://localhost:3000/vulnerabilities/'
 r = requests.get(api_url,params='5b4d881ab6543f410411ac11')
-print r.json()
+print r.url
 # from collections import defaultdict
 # i=0
 # report = {}

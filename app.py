@@ -4,7 +4,7 @@ from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
 
-UPLOAD_FOLDER = 'D:/project/pkl/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 api_url='http://localhost:3000/vulnerabilities'
@@ -12,10 +12,6 @@ api_url='http://localhost:3000/vulnerabilities'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
-
-
-
-
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -47,7 +43,7 @@ def upload_file():
                 return render_template('index.html',a=variabel)
             elif request.form['submit'] == 'compliance':
                 filename = file.filename
-                file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
+                file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                 # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                 # flash('masuk ke compl')
                 data= compl(filename)

@@ -4,7 +4,7 @@ from collections import defaultdict
 import csv,json,requests as req
 
 def compl(filename):
-        os.chdir('D:/project/pkl/ParsingXML/data')
+        os.chdir('D:/Project/XL/ParsingXML/data')
         api_url='http://localhost:3000/compliance'
         i=0
         report = {}

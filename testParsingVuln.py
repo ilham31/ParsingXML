@@ -3,6 +3,7 @@ from io import open
 import json
 import csv
 import os,requests as req
+
 def vuln(filename):
         os.chdir('D:/project/pkl/ParsingXML/data')
         api_url='http://localhost:3000/vulnerabilities'
