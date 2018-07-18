@@ -4,7 +4,7 @@
 module.exports = function(app) {
     var vulnCtrl = require('../controllers/vulnerabilitiesController');
 
-    app.route('/vulnerabilities/:fileId')
+    app.route('/vulnerabilities/')
         .get(vulnCtrl.get_vulnerabilities);
 
     app.route('/vulnerabilities')

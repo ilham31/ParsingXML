@@ -6988,5 +6988,95 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 <plugin_output>Port 111/tcp was found to be open</plugin_output>
 </ReportItem>
 </ReportHost>
+<ReportHost name="12.12.12.12"><HostProperties>
+<tag name="HOST_END">Fri Mar  2 17:31:41 2018</tag>
+<tag name="LastAuthenticatedResults">1519986701</tag>
+<tag name="policy-used">Credentialed Patch Audit</tag>
+<tag name="patch-summary-total-cves">30</tag>
+<tag name="patch-summary-cves-0456790f172d825d4b136e315abb16fe">CVE-2018-1049</tag>
+<tag name="patch-summary-cve-num-0456790f172d825d4b136e315abb16fe">1</tag>
+<tag name="patch-summary-txt-0456790f172d825d4b136e315abb16fe">RHEL 7 : systemd (RHSA-2018:0260): Update the affected packages.</tag>
+<tag name="patch-summary-cve-num-957271cfbcc0da7892dd012bb8a4753d">0</tag>
+<tag name="patch-summary-txt-957271cfbcc0da7892dd012bb8a4753d">RHEL 7 : nautilus (RHSA-2018:0223): Update the affected packages.</tag>
+<tag name="patch-summary-cves-5fbb5234fa829eb16a077b71d2ab143b">CVE-2017-5715</tag>
+<tag name="patch-summary-cve-num-5fbb5234fa829eb16a077b71d2ab143b">1</tag>
+<tag name="patch-summary-txt-5fbb5234fa829eb16a077b71d2ab143b">RHEL 7 : linux-firmware (RHSA-2018:0094) (Spectre): Update the affected packages.</tag>
+<tag name="patch-summary-cves-f07b1da4c18c4dae29d88bb9fa966444">CVE-2017-7472, CVE-2017-5754, CVE-2017-5753, CVE-2017-5715, CVE-2017-15649, CVE-2017-12193, CVE-2017-12192, CVE-2015-8539</tag>
+<tag name="patch-summary-cve-num-f07b1da4c18c4dae29d88bb9fa966444">8</tag>
+<tag name="patch-summary-txt-f07b1da4c18c4dae29d88bb9fa966444">RHEL 7 : kernel (RHSA-2018:0151) (Meltdown) (Spectre): Update the affected packages.</tag>
+<tag name="patch-summary-cves-b572580417c2efdd8c9a5a53cf9cadc1">CVE-2018-5345</tag>
+<tag name="patch-summary-cve-num-b572580417c2efdd8c9a5a53cf9cadc1">1</tag>
+<tag name="patch-summary-txt-b572580417c2efdd8c9a5a53cf9cadc1">RHEL 7 : gcab (RHSA-2018:0350): Update the affected packages.</tag>
+<tag name="patch-summary-cves-50026752ac6590f933bd7f824189b7b0">CVE-2017-3144</tag>
+<tag name="patch-summary-cve-num-50026752ac6590f933bd7f824189b7b0">1</tag>
+<tag name="patch-summary-txt-50026752ac6590f933bd7f824189b7b0">RHEL 7 : dhcp (RHSA-2018:0158): Update the affected packages.</tag>
+<tag name="patch-summary-cves-7a16f77f21bce789fbb807a462a5b7eb">CVE-2017-3145</tag>
+<tag name="patch-summary-cve-num-7a16f77f21bce789fbb807a462a5b7eb">1</tag>
+<tag name="patch-summary-txt-7a16f77f21bce789fbb807a462a5b7eb">RHEL 7 : bind (RHSA-2018:0102): Update the affected packages.</tag>
+<tag name="patch-summary-cves-8714e09ced8845a8d01f6eab46f9e0ea">CVE-2017-5715</tag>
+<tag name="patch-summary-cve-num-8714e09ced8845a8d01f6eab46f9e0ea">1</tag>
+<tag name="patch-summary-txt-8714e09ced8845a8d01f6eab46f9e0ea">RHEL 6 / 7 : microcode_ctl (RHSA-2018:0093) (Spectre): Update the affected microcode_ctl and / or microcode_ctl-debuginfo packages.</tag>
+<tag name="patch-summary-cves-6bc12be0510dbcb2aa4dd5ea50596912">CVE-2018-2678, CVE-2018-2677, CVE-2018-2663, CVE-2018-2641, CVE-2018-2637, CVE-2018-2634, CVE-2018-2633, CVE-2018-2629, CVE-2018-2618, CVE-2018-2603, CVE-2018-2602, CVE-2018-2599, CVE-2018-2588, CVE-2018-2582, CVE-2018-2579</tag>
+<tag name="patch-summary-cve-num-6bc12be0510dbcb2aa4dd5ea50596912">15</tag>
+<tag name="patch-summary-txt-6bc12be0510dbcb2aa4dd5ea50596912">RHEL 6 / 7 : java-1.8.0-openjdk (RHSA-2018:0095): Update the affected packages.</tag>
+<tag name="system-type">general-purpose</tag>
+<tag name="operating-system">Linux Kernel 3.10.0-693.2.2.el7.x86_64 on Red Hat Enterprise Linux Server release 7.4 (Maipo)</tag>
+<tag name="TAG">1404578378a94868a25c3eb92cce33bc</tag>
+<tag name="mac-address">00:50:56:97:65:f0
+02:42:cb:9d:be:f2</tag>
+<tag name="Credentialed_Scan">true</tag>
+<tag name="local-checks-proto">local</tag>
+<tag name="host-ip">10.23.67.85</tag>
+<tag name="host-fqdn">infosec.intra.excelcom.co.id</tag>
+<tag name="HOST_START">Fri Mar  2 17:27:33 2018</tag>
+</HostProperties>
+<ReportItem port="0" svc_name="general" protocol="tcp" severity="2" pluginID="107017" pluginName="RHEL 7 : gcab (RHSA-2018:0350)" pluginFamily="Red Hat Local Security Checks">
+<cpe>p-cpe:/a:redhat:enterprise_linux:gcab
+p-cpe:/a:redhat:enterprise_linux:gcab-debuginfo
+p-cpe:/a:redhat:enterprise_linux:libgcab1
+p-cpe:/a:redhat:enterprise_linux:libgcab1-devel
+cpe:/o:redhat:enterprise_linux:7
+cpe:/o:redhat:enterprise_linux:7.4</cpe>
+<cve>CVE-2018-5345</cve>
+<cvss3_base_score>7.8</cvss3_base_score>
+<cvss3_vector>CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H</cvss3_vector>
+<cvss_base_score>6.8</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:P/I:P/A:P</cvss_vector>
+<description>An update for gcab is now available for Red Hat Enterprise Linux 7.
+
+Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
+
+The gcab package contains a utility for managing the Cabinet archives.
+It can list, extract, and create Microsoft cabinet (.cab) files.
+
+Security Fix(es) :
+
+* gcab: Extracting malformed .cab files causes stack smashing potentially leading to arbitrary code execution (CVE-2018-5345)
+
+For more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.</description>
+<fname>redhat-RHSA-2018-0350.nasl</fname>
+<patch_publication_date>2018/02/26</patch_publication_date>
+<plugin_modification_date>2018/02/27</plugin_modification_date>
+<plugin_name>RHEL 7 : gcab (RHSA-2018:0350)</plugin_name>
+<plugin_publication_date>2018/02/27</plugin_publication_date>
+<plugin_type>local</plugin_type>
+<rhsa>2018:0350</rhsa>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 3.1 $</script_version>
+<see_also>http://rhn.redhat.com/errata/RHSA-2018-0350.html
+https://www.redhat.com/security/data/cve/CVE-2018-5345.html</see_also>
+<solution>Update the affected packages.</solution>
+<synopsis>The remote Red Hat host is missing one or more security updates.</synopsis>
+<xref>RHSA:2018:0350</xref>
+<plugin_output>
+Remote package installed : libgcab1-0.7-3.el7
+Should be                : libgcab1-0.7-4.el7_4
+
+NOTE: The vulnerability information above was derived by checking the
+package versions of the affected packages from this advisory. This
+scan is unable to rely on Red Hat&apos;s own security checks, which
+consider channels and products in their vulnerability determinations.</plugin_output>
+</ReportItem>
+</ReportHost>
 </Report>
 </NessusClientData_v2>

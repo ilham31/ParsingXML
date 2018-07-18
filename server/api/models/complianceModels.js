@@ -3,8 +3,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ItemSchema = new Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-
     system: {
         type: String
     },

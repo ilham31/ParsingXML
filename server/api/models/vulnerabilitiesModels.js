@@ -3,8 +3,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ItemSchema =  new Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-
     system: {
         type: String
     },
@@ -36,13 +34,13 @@ var ItemSchema =  new Schema({
     severity: {
         type: Number
     }
-})
+}, {_id: true})
 
 var VulnSchema = new Schema({
 
     hostname: [{
         item: [ItemSchema]
-    }]
+    }, {_id: false}]
      
 });
 

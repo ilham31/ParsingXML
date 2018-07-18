@@ -104,3 +104,9 @@ def vuln(filename):
         r=req.post(api_url,data=Jsondata,headers=headers)
         print r
         return Jsondata
+
+
+def readVuln():
+    get_url='http://localhost:3000/vulnerabilities'
+    readData = req.get(get_url)
+    return readData
