@@ -12,7 +12,8 @@ exports.get_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
-    var fileId = req.params.fileId
+    var fileId = req.query.id
+    console.log("param anjing", fileId)
     Vuln.find({_id : fileId})
         .exec()
         .then(docs => {
@@ -35,7 +36,6 @@ exports.create_vulnerabilities = function (req, res) {
     // }
         console.log("hostname adalah",req.body.hostname);
         var vuln = new Vuln ({
-            _idFIle: mongoose.Types.ObjectId(),
             hostname: req.body.hostname
             
             // {
