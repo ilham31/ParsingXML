@@ -22,7 +22,7 @@ def vuln(filename):
                 for report_host in block:
                     if report_host.tag=="ReportHost":
                         Hostname = report_host.attrib['name']
-                        reportItem = []
+                        # reportItem = []
                         for report_item in report_host:
                             if report_item.tag=="ReportItem":
                                 
@@ -54,11 +54,11 @@ def vuln(filename):
                                     'detail': detail,
                                     'risk_level': risk_factor
                                 })
-                        reportHostName.append({
-                            'item':reportItem
-                        })
+                        # reportHostName.append({
+                        #     'item':reportItem
+                        # })
         report.update({
-            'hostname' : reportHostName
+            'item' : reportItem
         })            
 
         # x=["System", "Name", "Port/Protocol", "Risk Level", "Synopsis","Detail","Solution","Severity"]

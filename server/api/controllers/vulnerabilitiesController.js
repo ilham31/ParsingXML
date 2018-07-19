@@ -43,7 +43,7 @@ exports.create_vulnerabilities = function (req, res) {
     //     }
     // }
         var vuln = new Vuln ({
-            hostname: req.body.hostname
+            item: req.body.item
             
             // {
             //     _id: mongoose.Types.ObjectId(),
@@ -81,7 +81,7 @@ exports.create_report_item = function (req, res) {
     // }
         console.log("hostname adalah",req.body.hostnameId);
         console.log("hostname adalah",req.body.fileId);
-        Vuln.update({_id:req.body.fileId , "hostname._id": req.body.hostnameId}, {$push: {'hostname.$.item': req.body.reportItem}})
+        Vuln.update({_id:req.body.fileId}, {$push: {'item': req.body.reportItem}})
         .exec()
         .then(result => {
             // var hostname = result.hostname.id(req.body.hostnameId);
@@ -98,7 +98,7 @@ exports.create_report_item = function (req, res) {
 };
 
 exports.delete_report_item = function (req, res) {
-    Vuln.update({_id:req.body.fileId, "hostname._id": req.body.hostnameId}, {$pull: {'hostname.$.item': {_id:req.body.reportId}}})
+    Vuln.update({_id:req.body.fileId}, {$pull: {item: {_id:req.body.reportId}}})
     .exec()
         .then(result => {
             res.status(200).json({

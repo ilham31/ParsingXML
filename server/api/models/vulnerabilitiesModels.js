@@ -3,8 +3,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ItemSchema =  new Schema({
-    _id: Schema.Types.ObjectId,
-
     system: {
         type: String
     },
@@ -38,16 +36,10 @@ var ItemSchema =  new Schema({
     }
 })
 
-var HostNameSchema = new Schema({
+var VulnSchema = new Schema({
     item: [ItemSchema],
 
     child: ItemSchema
-})
-
-var VulnSchema = new Schema({
-    hostname: [HostNameSchema],
-
-    child: HostNameSchema
 });
 
 module.exports = mongoose.model('Vuln', VulnSchema);
