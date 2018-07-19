@@ -52,8 +52,9 @@ def upload_file():
                         return render_template('index.html')
         
     elif request.method=='GET':
-        
-        return render_template('index.html')
+        dataVuln=readVuln()
+        # dataComp=readComp()
+        return render_template('index.html',a=dataVuln)
     
    
 

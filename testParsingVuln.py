@@ -22,7 +22,7 @@ def vuln(filename):
                 for report_host in block:
                     if report_host.tag=="ReportHost":
                         Hostname = report_host.attrib['name']
-                        reportItem = []
+                        # reportItem = []
                         for report_item in report_host:
                             if report_item.tag=="ReportItem":
                                 
@@ -54,11 +54,11 @@ def vuln(filename):
                                     'detail': detail,
                                     'risk_level': risk_factor
                                 })
-                        reportHostName.append({
-                            'item':reportItem
-                        })
+                        # reportHostName.append({
+                        #     'item':reportItem
+                        # })
         report.update({
-            'hostname' : reportHostName
+            'item' : reportItem
         })            
 
         # x=["System", "Name", "Port/Protocol", "Risk Level", "Synopsis","Detail","Solution","Severity"]
@@ -106,7 +106,9 @@ def vuln(filename):
         return Jsondata
 
 
-def readVuln():
+def readAllVuln():
     get_url='http://localhost:3000/vulnerabilities'
     readData = req.get(get_url)
-    return readData
+    fileVuln=readData.json()
+    file1=fileVuln[0]
+    return file1

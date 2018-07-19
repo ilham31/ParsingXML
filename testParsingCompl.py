@@ -20,7 +20,7 @@ def compl(filename):
                 for report_host in block:
                     if report_host.tag=="ReportHost":
                         System = report_host.attrib['name']
-                        reportItem = []
+                        # reportItem = []
                         for report_item in report_host:
                             if report_item.tag=="ReportItem":
                                 # i=i+1
@@ -41,11 +41,11 @@ def compl(filename):
                                     'detail': detail,
                                     'i_status':iStatus,
                                 })
-                        reportHostName.append({
-                            'item':reportItem
-                        })
+                        # reportHostName.append({
+                        #     'item':reportItem
+                        # })
         report.update({
-            'hostname':reportHostName
+            'item':reportItem
         })
         # print json.dumps(reportHostName)
 

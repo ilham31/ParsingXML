@@ -8,23 +8,30 @@ Date.prototype.addHours = function(h){
     return this;
 }
 
+exports.get_all_vulnerabilities = function (req, res) {
+    // const token = req.headers.authorization.split(" ")[1];
+    // const decode = jwt.verify(token, "rahasia");
+    // const userId = decode.userId
+    Vuln.find({}, function(err, docs){
+        if(err) res.status(500).json({
+            error: err
+        })
+        res.json(docs)
+    })
+};
+
 exports.get_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
     var fileId = req.query.id
-    console.log("param anjing", fileId)
-    Vuln.find({_id : fileId})
-        .exec()
-        .then(docs => {
-            console.log("json docs",json(docs))
-            res.status(200).json(docs);
+    console.log("file id adalah",fileId)
+    Vuln.findOne({_id:fileId}, function(err, docs){
+        if(err) res.status(500).json({
+            error: err
         })
-        .catch(err => {
-            res.status(500).json({
-                error: err
-            });
-        });
+        res.json(docs)
+    })
 };
 
 exports.create_vulnerabilities = function (req, res) {
@@ -35,7 +42,6 @@ exports.create_vulnerabilities = function (req, res) {
             
     //     }
     // }
-        console.log("hostname adalah",req.body.hostname);
         var vuln = new Vuln ({
             hostname: req.body.hostname
             
@@ -65,6 +71,47 @@ exports.create_vulnerabilities = function (req, res) {
           });
 };
 
+exports.create_report_item = function (req, res) {
+    // const token = req.headers.authorization.split(" ")[1];
+    // const decode = jwt.verify(token, "rahasia");
+    // for (var i = 0; i < req.body.hostname.length; i++) {
+    //     for (var j = 0; j < req.body.hostname[i].length; j++) {
+            
+    //     }
+    // }
+        console.log("hostname adalah",req.body.hostnameId);
+        console.log("hostname adalah",req.body.fileId);
+        Vuln.update({_id:req.body.fileId , "hostname._id": req.body.hostnameId}, {$push: {'hostname.$.item': req.body.reportItem}})
+        .exec()
+        .then(result => {
+            // var hostname = result.hostname.id(req.body.hostnameId);
+            // hostname.item.push(req.body.reportItem);
+            res.status(201).json({
+                result
+            });
+        })
+        .catch(err => {
+            res.status(500).json({
+                error: err
+            });
+        });
+};
+
+exports.delete_report_item = function (req, res) {
+    Vuln.update({_id:req.body.fileId, "hostname._id": req.body.hostnameId}, {$pull: {'hostname.$.item': {_id:req.body.reportId}}})
+    .exec()
+        .then(result => {
+            res.status(200).json({
+                message:"report deleted",
+                result
+            });
+        })
+        .catch(err => {
+            res.status(500).json({
+                error: err
+            });
+        });
+};
 
 exports.edit_vulnerabilities = function (req, res) {
     Vuln.update({ _id: req.params.vulnId }, { $set: {
@@ -93,7 +140,7 @@ exports.edit_vulnerabilities = function (req, res) {
             res.status(500).json({
                 error: err
             });
-    })
+        })
 };
 
 exports.delete_vulnerabilities = function (req, res) {
