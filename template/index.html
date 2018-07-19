@@ -162,6 +162,8 @@
         <!-- END HEADER MOBILE-->
 
         <!-- MENU SIDEBAR-->
+
+        
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
@@ -440,7 +442,62 @@
                                     </div>
                                 </div>
                             </div>
+        
                         </div> -->
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h1>tes</h1>
+                <p>tes</p>
+            </li>
+            <li class="list-group-item">Second item</li>
+            <li class="list-group-item">Third item</li>
+        </ul>
+                        <!-- modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Data sistem</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="/action_page.php">
+                        <div class="form-group">
+                          <label for="email">Email address:</label>
+                          <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                          <label for="pwd">Password:</label>
+                          <input type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" id="pwd">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                  <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
+
                         <div class="row">
                             <div class="col-lg-12">
                                 <h2 class="title-1 m-b-25">Vulnerabilities</h2>
@@ -457,7 +514,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
+                                            <tr data-toggle="modal" data-target="#myModal">
                                                 <td>2018-09-29 05:57</td>
                                                 <td>100398</td>
                                                 <td>iPhone X 64Gb Grey</td>
@@ -552,9 +609,11 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                   
                                 </div>
+                                <button  type=submit name="submit" value="vulnerability" class="btn btn-primary float-right">Download as CSV</button>
                             </div>
-                        
+
             </div>
             <div class="row">
                     <div class="col-lg-12">
@@ -668,6 +727,7 @@
                                 </tbody>
                             </table>
                         </div>
+                        <button  type=submit name="submit" value="vulnerability" class="btn btn-primary float-right">Download as CSV</button>
                     </div>
                 
     </div>

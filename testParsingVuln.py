@@ -5,7 +5,7 @@ import csv
 import os,requests as req
 
 def vuln(filename):
-        os.chdir('D:/project/pkl/ParsingXML/data')
+        os.chdir('D:/ilham/ParsingXML/data')
         api_url='http://localhost:3000/vulnerabilities'
         i=0
         report = {}

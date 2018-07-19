@@ -4257,8 +4257,9 @@ section {
 }
 
 .table-earning tbody tr:hover td {
-    color: #555;
+    background-color:black;
     cursor: pointer;
+    color : white;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -4365,7 +4366,6 @@ section {
 .table-data .table tr td:last-child {
     padding-right: 24px;
 }
-
 .table-data tbody tr:hover td .more {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
@@ -4387,7 +4387,7 @@ section {
 }
 
 .table-data__info span a:hover {
-    color: #666;
+    color: #000;
 }
 
 .more {
