@@ -17,6 +17,7 @@ exports.get_vulnerabilities = function (req, res) {
     Vuln.find({_id : fileId})
         .exec()
         .then(docs => {
+            console.log("json docs",json(docs))
             res.status(200).json(docs);
         })
         .catch(err => {

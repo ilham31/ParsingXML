@@ -5,7 +5,7 @@ import csv
 import os,requests as req
 
 def vuln(filename):
-        os.chdir('D:/Project/XL/ParsingXML/data')
+        os.chdir('D:/project/pkl/ParsingXML/data')
         api_url='http://localhost:3000/vulnerabilities'
         i=0
         report = {}
@@ -103,4 +103,10 @@ def vuln(filename):
         headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
         r=req.post(api_url,data=Jsondata,headers=headers)
         print r
-        return r,Jsondata
+        return Jsondata
+
+
+def readVuln():
+    get_url='http://localhost:3000/vulnerabilities'
+    readData = req.get(get_url)
+    return readData
