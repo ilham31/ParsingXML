@@ -12,7 +12,7 @@ ALLOWED_EXTENSIONS = set([ 'nessus'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
-app._static_folder ='D:/project/pkl/ParsingXML/template/static'
+app._static_folder ='D:/Project/XL/ParsingXML/template/static'
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -35,7 +35,7 @@ def upload_file():
                 if file and allowed_file(file.filename):
                     if request.form['submit'] == 'vulnerability':
                         filename = file.filename
-                        file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         vuln(filename)
                         # variabel=data[0]
                         
@@ -44,7 +44,7 @@ def upload_file():
                         return render_template('index.html')
                     elif request.form['submit'] == 'compliance':
                         filename = file.filename
-                        file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         compl(filename)
