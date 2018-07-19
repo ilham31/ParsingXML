@@ -34,14 +34,18 @@ var ItemSchema =  new Schema({
     severity: {
         type: Number
     }
-}, {_id: true})
+})
+
+var HostNameSchema = new Schema({
+    item: [ItemSchema],
+
+    child: ItemSchema
+})
 
 var VulnSchema = new Schema({
+    hostname: [HostNameSchema],
 
-    hostname: [{
-        item: [ItemSchema]
-    }, {_id: false}]
-     
+    child: HostNameSchema
 });
 
 module.exports = mongoose.model('Vuln', VulnSchema);

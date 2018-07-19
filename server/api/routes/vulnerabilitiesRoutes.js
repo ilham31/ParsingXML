@@ -9,6 +9,12 @@ module.exports = function(app) {
 
     app.route('/vulnerabilities')
         .post(vulnCtrl.create_vulnerabilities);
+
+    app.route('/vulnerabilities/report_item')
+        .post(vulnCtrl.create_report_item);
+
+    app.route('/vulnerabilities/item')
+        .post(vulnCtrl.delete_report_item);
         
     app.route('/vulnerabilities/:vulnId')
         .patch(vulnCtrl.edit_vulnerabilities);
