@@ -25,7 +25,6 @@ exports.get_vulnerabilities = function (req, res) {
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
     var fileId = req.query.id
-    console.log("file id adalah",fileId)
     Vuln.findOne({_id:fileId}, function(err, docs){
         if(err) res.status(500).json({
             error: err
@@ -37,25 +36,8 @@ exports.get_vulnerabilities = function (req, res) {
 exports.create_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
-    // for (var i = 0; i < req.body.hostname.length; i++) {
-    //     for (var j = 0; j < req.body.hostname[i].length; j++) {
-            
-    //     }
-    // }
         var vuln = new Vuln ({
             item: req.body.item
-            
-            // {
-            //     _id: mongoose.Types.ObjectId(),
-            //     system: req.body.system,
-            //     name: req.body.name,
-            //     port_protocol: req.body.port_protocol,
-            //     risk_level: req.body.risk_level,
-            //     synopsis: req.body.synopsis,
-            //     detail: req.body.detail,
-            //     solution: req.body.solution,
-            //     severity: req.body.severity
-            // }
         });         
         vuln.save()
           .then(result => {
@@ -71,21 +53,12 @@ exports.create_vulnerabilities = function (req, res) {
           });
 };
 
-exports.create_report_item = function (req, res) {
+exports.create_item = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
-    // for (var i = 0; i < req.body.hostname.length; i++) {
-    //     for (var j = 0; j < req.body.hostname[i].length; j++) {
-            
-    //     }
-    // }
-        console.log("hostname adalah",req.body.hostnameId);
-        console.log("hostname adalah",req.body.fileId);
-        Vuln.update({_id:req.body.fileId}, {$push: {'item': req.body.reportItem}})
+        Vuln.update({_id:req.body.fileId}, {$push: {'item': req.body.report}})
         .exec()
         .then(result => {
-            // var hostname = result.hostname.id(req.body.hostnameId);
-            // hostname.item.push(req.body.reportItem);
             res.status(201).json({
                 result
             });
@@ -97,8 +70,8 @@ exports.create_report_item = function (req, res) {
         });
 };
 
-exports.delete_report_item = function (req, res) {
-    Vuln.update({_id:req.body.fileId}, {$pull: {item: {_id:req.body.reportId}}})
+exports.delete_item = function (req, res) {
+    Vuln.update({_id:req.body.fileId}, {$pull: {item: {_id:req.body.itemId}}})
     .exec()
         .then(result => {
             res.status(200).json({
@@ -114,15 +87,15 @@ exports.delete_report_item = function (req, res) {
 };
 
 exports.edit_vulnerabilities = function (req, res) {
-    Vuln.update({ _id: req.params.vulnId }, { $set: {
-            system: req.body.system,
-            name: req.body.name,
-            port_protocol: req.body.port_protocol,
-            risk_level: req.body.risk_level,
-            synopsis: req.body.synopsis,
-            detail: req.body.detail,
-            solution: req.body.solution,
-            severity: req.body.severity
+    Vuln.update({"item._id": req.params.itemId}, { $set: {
+            "item.$.system": req.body.system,
+            "item.$.name": req.body.name,
+            "item.$.port_protocol": req.body.port_protocol,
+            "item.$.risk_level": req.body.risk_level,
+            "item.$.synopsis": req.body.synopsis,
+            "item.$.detail": req.body.detail,
+            "item.$.solution": req.body.solution,
+            "item.$.severity": req.body.severity
             } 
         })
         .exec()
@@ -144,7 +117,7 @@ exports.edit_vulnerabilities = function (req, res) {
 };
 
 exports.delete_vulnerabilities = function (req, res) {
-    Vuln.remove({ _id: req.params.vulnId })
+    Vuln.remove({ _id: req.params.fileId })
     .exec()
         .then(result => {
             res.status(200).json({
