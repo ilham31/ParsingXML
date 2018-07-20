@@ -7,21 +7,21 @@ module.exports = function(app) {
     app.route('/vulnerabilities')
         .get(vulnCtrl.get_all_vulnerabilities);
 
-    app.route('/vulnerabilities/vuln')
-        .get(vulnCtrl.get_vulnerabilities);
-
     app.route('/vulnerabilities')
         .post(vulnCtrl.create_vulnerabilities);
 
-    app.route('/vulnerabilities/report_item')
-        .post(vulnCtrl.create_report_item);
+    app.route('/vulnerabilities/vuln')
+        .get(vulnCtrl.get_vulnerabilities);
 
     app.route('/vulnerabilities/item')
-        .post(vulnCtrl.delete_report_item);
+        .post(vulnCtrl.create_item);
+
+    app.route('/vulnerabilities/item')
+        .delete(vulnCtrl.delete_item);
         
-    app.route('/vulnerabilities/:vulnId')
+    app.route('/vulnerabilities/:itemId')
         .patch(vulnCtrl.edit_vulnerabilities);
 
-    app.route('/vulnerabilities/:vulnId')
+    app.route('/vulnerabilities/:fileId')
         .delete(vulnCtrl.delete_vulnerabilities);
 };
