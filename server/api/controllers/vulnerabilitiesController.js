@@ -16,7 +16,7 @@ exports.get_all_vulnerabilities = function (req, res) {
         if(err) res.status(500).json({
             error: err
         })
-        res.json(docs)
+        res.status(200).json(docs)
     })
 };
 
@@ -36,13 +36,19 @@ exports.get_vulnerabilities = function (req, res) {
 exports.create_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
+    var data = req.body.item;
+    for (var i = 0; i < data.length; i++) {
+        data[i].open_date = new Date().addHours(7);
+        data[i].status = "open";
+    }
+    console.log("data adalah", data);
         var vuln = new Vuln ({
-            item: req.body.item
+            item: data
         });         
         vuln.save()
           .then(result => {
               res.status(201).json({
-                  result
+                 result
               });
           })
           .catch(err => {
@@ -88,14 +94,8 @@ exports.delete_item = function (req, res) {
 
 exports.edit_vulnerabilities = function (req, res) {
     Vuln.update({"item._id": req.params.itemId}, { $set: {
-            "item.$.system": req.body.system,
-            "item.$.name": req.body.name,
-            "item.$.port_protocol": req.body.port_protocol,
-            "item.$.risk_level": req.body.risk_level,
-            "item.$.synopsis": req.body.synopsis,
-            "item.$.detail": req.body.detail,
-            "item.$.solution": req.body.solution,
-            "item.$.severity": req.body.severity
+            "item.$.status": req.body.status,
+            "item.$.closed_date": new Date().addHours(7)
             } 
         })
         .exec()

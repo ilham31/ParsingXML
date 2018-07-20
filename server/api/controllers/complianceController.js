@@ -8,6 +8,23 @@ Date.prototype.addHours = function(h){
     return this;
 }
 
+exports.get_all_vulnerabilities = function (req, res) {
+    // const token = req.headers.authorization.split(" ")[1];
+    // const decode = jwt.verify(token, "rahasia");
+    // const userId = decode.userId
+    Vuln.find({}, function(err, docs){
+        if(err) res.status(500).json({
+            error: err
+        })
+        else{
+            if(docs.length < 1) res.status(200).json({
+                message: "Belum ada file yang diupload"
+            })
+            else res.json(docs)
+         }
+    })
+};
+
 exports.get_compliance = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");

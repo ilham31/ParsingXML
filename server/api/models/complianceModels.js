@@ -29,11 +29,11 @@ var ItemSchema = new Schema({
 });
 
 var CompSchema = new Schema({
+    date: Date,
 
-    hostname: [{
-        item: [ItemSchema]
-    }]
-     
+    item: [ItemSchema],
+    
+    child: ItemSchema
 });
 
 module.exports = mongoose.model('Comp', CompSchema);

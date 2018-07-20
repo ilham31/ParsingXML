@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ItemSchema =  new Schema({
+
     system: {
         type: String
     },
@@ -33,10 +34,17 @@ var ItemSchema =  new Schema({
 
     severity: {
         type: Number
-    }
+    },
+
+    open_date: Date,
+
+    closed_date: Date,
+
+    status: String
 })
 
 var VulnSchema = new Schema({
+
     item: [ItemSchema],
 
     child: ItemSchema
