@@ -43,6 +43,8 @@ exports.create_vulnerabilities = function (req, res) {
     }
     console.log("data adalah", data);
         var vuln = new Vuln ({
+            name: req.body.name,
+            upload_date: new Date().addHours(7),
             item: data
         });         
         vuln.save()

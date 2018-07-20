@@ -44,6 +44,9 @@ var ItemSchema =  new Schema({
 })
 
 var VulnSchema = new Schema({
+    name: String,
+
+    upload_date: Date,
 
     item: [ItemSchema],
 
