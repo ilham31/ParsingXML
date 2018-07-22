@@ -96,7 +96,8 @@ p {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 16px;
+    margin-left: 10px;
 }
 
 /* ----- Typography ----- */
@@ -1185,6 +1186,7 @@ section {
     height: 75px;
     z-index: 3;
 }
+
 
 .header-desktop .section__content {
     overflow: visible;
@@ -4235,7 +4237,7 @@ section {
     vertical-align: middle;
     font-weight: 400;
     text-transform: capitalize;
-    line-height: 1;
+    line-height: 0;
     padding: 22px 40px;
     white-space: nowrap;
 }
@@ -4249,6 +4251,7 @@ section {
     color: #808080;
     padding: 12px 40px;
     white-space: nowrap;
+    line-height: 0;
 }
 
 .table-earning tbody td.text-right {

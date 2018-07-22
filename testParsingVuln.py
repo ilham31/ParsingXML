@@ -106,9 +106,9 @@ def vuln(filename):
         return Jsondata
 
 
-def readAllVuln():
+def readVuln():
     get_url='http://localhost:3000/vulnerabilities'
     readData = req.get(get_url)
     fileVuln=readData.json()
-    file1=fileVuln[0]
+    file1=fileVuln[0]['item']
     return file1
