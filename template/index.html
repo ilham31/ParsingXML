@@ -81,15 +81,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+                        {% for Vuln in dataFileV  %}
                             <tr data-toggle="modal" data-target="#myModal">
-                                    <td>abcd</td>
-                                    <td>abcd</td>
+                                    <td><a href="{{url_for( 'vulnGet', id=Vuln._id ) }}">{{Vuln._id}}</a></td>
+                                    <td>{{Vuln.upload_date}}</td>
                                     <td>abcd</td>
                                     
                                 </tr>
-                                
+                        {% endfor %}
                             </tbody>
                         </table>
+                        
 
                 </div>
 
@@ -116,7 +118,7 @@
                                 <tbody>
                                 <tr data-toggle="modal" data-target="#myModal">
                                         <td>abcd</td>
-                                        <td>abcd</td>
+                                        <td>kosong</td>
                                         <td>abcd</td>
                                         
                                     </tr>

@@ -12,7 +12,7 @@ ALLOWED_EXTENSIONS = set([ 'nessus'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
-app._static_folder ='D:/ilham/ParsingXML/template/static'
+app._static_folder ='D:/project/pkl/ParsingXML/template/static'
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -35,7 +35,7 @@ def upload_file():
                 if file and allowed_file(file.filename):
                     if request.form['submit'] == 'vulnerability':
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
                         vuln(filename)
                         # variabel=data[0]
                         
@@ -44,7 +44,7 @@ def upload_file():
                         return render_template('index.html')
                     elif request.form['submit'] == 'compliance':
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/project/pkl/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         compl(filename)
@@ -53,11 +53,16 @@ def upload_file():
         
     elif request.method=='GET':
         dataVuln=readVuln()
+        data=len(dataVuln)
         # dataComp=readComp()
-        return render_template('index.html',a=dataVuln)
+        
+        return render_template('index.html',dataFileV=dataVuln)
     
    
-
+@app.route('/vulnerabilities', methods=['GET', 'POST'])
+def vulnGet():
+    selectedID = request.args.get('id')
+    return render_template('showTableVuln.html', idFile=selectedID)
 
 if __name__ == "__main__":
     app.run(debug=True)
