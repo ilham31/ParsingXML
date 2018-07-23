@@ -72,6 +72,7 @@
                         </div>
                     </div>
                     </form>
+                <div class="table-responsive table--no-card m-b-40" style="height:500px;overflow:auto;">
                     <table class="table table-borderless table-striped table-earning">
                             <thead>
                                 <tr>
@@ -83,7 +84,7 @@
                             <tbody>
                         {% for Vuln in dataFileV  %}
                             <tr data-toggle="modal" data-target="#myModal">
-                                    <td><a href="{{url_for( 'vulnGet', id=Vuln._id ) }}">{{Vuln._id}}</a></td>
+                                    <td><a href="{{url_for( 'vulnGet', id=Vuln._id ) }}">{{Vuln.name}}</a></td>
                                     <td>{{Vuln.upload_date}}</td>
                                     <td>abcd</td>
                                     
@@ -91,7 +92,7 @@
                         {% endfor %}
                             </tbody>
                         </table>
-                        
+                    </div>
 
                 </div>
 
@@ -107,6 +108,7 @@
                             </div>
                         </div>
                         </form>
+                    <div class="table-responsive table--no-card m-b-40" style="height:500px;overflow:auto;">
                         <table class="table table-borderless table-striped table-earning">
                                 <thead>
                                     <tr>
@@ -125,7 +127,7 @@
                                     
                                 </tbody>
                             </table>
-    
+                            </div>
                     </div>
             </div>
         </div>

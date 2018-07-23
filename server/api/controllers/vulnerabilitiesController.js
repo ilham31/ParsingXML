@@ -50,7 +50,7 @@ exports.create_vulnerabilities = function (req, res) {
         vuln.save()
           .then(result => {
               res.status(201).json({
-                 result
+                 fileId: result._id
               });
           })
           .catch(err => {
