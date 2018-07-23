@@ -4,7 +4,7 @@ from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
 
-UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -12,7 +12,7 @@ ALLOWED_EXTENSIONS = set([ 'nessus'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
-app._static_folder ='D:/ilham/ParsingXML/template/static'
+app._static_folder ='D:/Project/XL/ParsingXML/template/static'
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -21,6 +21,7 @@ def allowed_file(filename):
     
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
+    # return render_template ('index.html')
     if request.method == 'POST':
         # check if the post request has the file part
                 if 'file' not in request.files:
@@ -35,26 +36,27 @@ def upload_file():
                 if file and allowed_file(file.filename):
                     if request.form['submit'] == 'vulnerability':
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
-                        vuln(filename)
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        apa=vuln(filename)
                         # variabel=data[0]
                         
                         # 
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
-                        return render_template('index.html')
+                        return render_template('index.html',respon=apa)
                     elif request.form['submit'] == 'compliance':
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         compl(filename)
                         # variabel=data[0][0]["system"]
                         return render_template('index.html')
+    return render_template('index.html')
         
-    elif request.method=='GET':
-        dataVuln=readVuln()
-        # dataComp=readComp()
-        return render_template('index.html',a=dataVuln)
+    # elif request.method=='GET':
+    #     dataVuln=readAllVuln()
+    #     # dataComp=readComp()
+        # return render_template('index.html')
     
    
 

@@ -5,9 +5,10 @@ import csv
 import os,requests as req
 
 def vuln(filename):
-        os.chdir('D:/ilham/ParsingXML/data')
+        os.chdir('D:/Project/XL/ParsingXML/data')
         api_url='http://localhost:3000/vulnerabilities'
         i=0
+        namaFile = filename
         report = {}
         reportHostName = []
         reportItem = []
@@ -58,6 +59,7 @@ def vuln(filename):
                         #     'item':reportItem
                         # })
         report.update({
+            'name' : namaFile,
             'item' : reportItem
         })            
 
@@ -103,12 +105,15 @@ def vuln(filename):
         headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
         r=req.post(api_url,data=Jsondata,headers=headers)
         print r
-        return Jsondata
+        return r.json()
 
 
 def readAllVuln():
     get_url='http://localhost:3000/vulnerabilities'
     readData = req.get(get_url)
     fileVuln=readData.json()
-    file1=fileVuln[0]
-    return file1
+    if (len(fileVuln)<1):
+        return "file kosong"
+    else:
+        file1=fileVuln[0]['item']
+        return file1
