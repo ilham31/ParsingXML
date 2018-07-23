@@ -12,9 +12,12 @@ exports.get_all_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
-    Vuln.find({}, function(err, docs){
-        if(err) res.status(500).json({
-            error: err
+    Vuln.find({})
+        .sort({upload_date: -1})
+        .exec(function(err, docs)
+        {
+            if(err) res.status(500).json({
+                error: err
         })
         res.status(200).json(docs)
     })
@@ -50,7 +53,7 @@ exports.create_vulnerabilities = function (req, res) {
         vuln.save()
           .then(result => {
               res.status(201).json({
-                 result
+                fileId: result._id
               });
           })
           .catch(err => {

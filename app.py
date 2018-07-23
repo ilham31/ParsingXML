@@ -51,15 +51,19 @@ def upload_file():
                         compl(filename)
                         # variabel=data[0][0]["system"]
                         return render_template('index.html')
-    return render_template('index.html')
+    
+    elif request.method=='GET':
+        dataVuln=readVuln()
+        data=len(dataVuln)
+        # dataComp=readComp()
         
-    # elif request.method=='GET':
-    #     dataVuln=readAllVuln()
-    #     # dataComp=readComp()
-        # return render_template('index.html')
+        return render_template('index.html',dataFileV=dataVuln)
     
    
-
+@app.route('/vulnerabilities', methods=['GET', 'POST'])
+def vulnGet():
+    selectedID = request.args.get('id')
+    return render_template('showTableVuln.html', idFile=selectedID)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -108,12 +108,11 @@ def vuln(filename):
         return r.json()
 
 
-def readAllVuln():
+def readVuln():
     get_url='http://localhost:3000/vulnerabilities'
     readData = req.get(get_url)
     fileVuln=readData.json()
-    if (len(fileVuln)<1):
-        return "file kosong"
-    else:
-        file1=fileVuln[0]['item']
-        return file1
+    
+    return fileVuln
+
+# def getDataVuln():

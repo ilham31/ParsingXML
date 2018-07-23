@@ -19,11 +19,11 @@ readData = requests.post(get_url)
 fileVuln=readData.json()
 print len(fileVuln)
 print fileVuln
-    if (len(fileVuln)<1):
-        return "file kosong"
-    else:
-        file1=fileVuln[0]
-        return file1
+if (len(fileVuln)<1):
+    return "file kosong"
+else:
+    file1=fileVuln[0]
+    return file1
 
 Jsondata=json.dumps(data)
 headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
