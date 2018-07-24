@@ -60,7 +60,7 @@
 </style>
 </head>
 
-<body class="animsition">
+<body>
         <header class="headerAwal">
                 <!-- > -->
         </header>
@@ -91,7 +91,7 @@
                             {% for dataVuln in idFile.item %}
                                 <tr data-toggle="modal" data-target="#myModal">
                                         <td>{{dataVuln.system}}</td>
-                                        <td>{{dataVuln.name}}</td>
+                                        <td class="text">{{dataVuln.name}}</td>
                                         <td>{{dataVuln.port_protocol}}</td>
                                         <td>{{dataVuln.risk_level}}</td>
                                         <td>{{dataVuln.synopsis}}</td>
@@ -136,7 +136,11 @@
         </div>
       </div>        
         
-          
+    <script>
+        $(function() {
+            $('#toggle-one').bootstrapToggle();
+        })
+    </script>
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
     <!-- Jquery JS-->
     <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
