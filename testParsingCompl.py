@@ -105,7 +105,7 @@ def readComp():
     
     return fileComp
 
-def downloadCSV(idFile):
+def downloadCompCSV(idFile):
     find_data='http://localhost:3000/compliance/comp'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)
