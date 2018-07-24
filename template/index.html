@@ -118,13 +118,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                        {% for Comp in dataFileC  %}
                                 <tr data-toggle="modal" data-target="#myModal">
-                                        <td>abcd</td>
-                                        <td>kosong</td>
+                                        <td><a href="{{url_for( 'compGet', id=Comp._id ) }}">{{Comp.name}}</td></a>
+                                        <td>{{Comp.upload_date}}</td>
                                         <td>abcd</td>
                                         
                                     </tr>
-                                    
+                        {% endfor %}
                                 </tbody>
                             </table>
                             </div>

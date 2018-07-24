@@ -36,7 +36,7 @@ def compl(filename):
                             reportItem.append({
                                 'system': System,
                                 'title': title,
-                                'status': status,
+                                'stats': status,
                                 'result': result,
                                 'detail': detail,
                                 'i_status':iStatus,
@@ -45,6 +45,7 @@ def compl(filename):
                     #     'item':reportItem
                     # })
     report.update({
+        'name':filename,
         'item':reportItem
     })
     # print json.dumps(reportHostName)
@@ -88,12 +89,43 @@ def compl(filename):
     headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
     r=req.post(api_url,data=Jsondata,headers=headers)
     print r
-    return Jsondata
+    return r.json()
 
 
+def getDataComp(idComp):
+    url_data='http://localhost:3000/compliance/comp'
+    parameter={'id':idComp}
+    dataFile=req.get(url_data,params=parameter)
+    return dataFile.json()
 
 def readComp():
-    get_url='http://localhost:3000/compliances'
+    get_url='http://localhost:3000/compliance'
     readData = req.get(get_url)
-    fileCompl=readData
-    return fileCompl
+    fileComp=readData.json()
+    
+    return fileComp
+
+def downloadCSV(idFile):
+    find_data='http://localhost:3000/compliance/comp'
+    parameterDownload={'id':idFile}
+    dataFile=req.get(find_data,params=parameterDownload)
+    dataDownload = dataFile.json()
+    
+    
+    with open(idFile+'.csv', 'wb') as csvfile:
+        f = csv.writer(csvfile)
+
+        f.writerow(["System", "Title", "Status", "result", "iStatus","Detail","Open Date","Closed Date","Status"])
+
+        for x in range(0,len(dataDownload['item'])):
+             f.writerow([dataDownload['item'][x]["system"],
+                        dataDownload['item'][x]["title"],
+                        dataDownload['item'][x]["stats"],
+                        dataDownload['item'][x]["result"],
+                        dataDownload['item'][x]["i_status"],
+                        dataDownload['item'][x]["detail"],
+                        dataDownload['item'][x]["open_date"],
+                        "kosong",
+                        dataDownload['item'][x]["status"],
+                        ])
+        return f
