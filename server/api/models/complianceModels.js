@@ -11,7 +11,7 @@ var ItemSchema = new Schema({
         type: String
     },
     
-    status: {
+    stats: {
         type: String
     },
     
@@ -25,11 +25,23 @@ var ItemSchema = new Schema({
 
     detail: {
         type: String
-    }
+    },
+    open_date: Date,
+
+    closed_date: {
+        type: Date,
+        default: null
+    },
+
+    status: String
+
+
 });
 
 var CompSchema = new Schema({
-    date: Date,
+    name: String,
+
+    upload_date: Date,
 
     item: [ItemSchema],
     

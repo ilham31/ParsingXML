@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, redirect, url_for,flash,render_template,send_from_directory
+from flask import Flask, request, redirect, url_for,flash,render_template,send_from_directory,Response
 from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
@@ -50,16 +50,19 @@ def upload_file():
                         file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
-                        # compl(filename)
+                        dataUploadComp=compl(filename)
+                        idUploadComp=dataUploadComp['fileId']
+                        uploadData=getDataComp(idUploadComp)
                         # variabel=data[0][0]["system"]
-                        return render_template('index.html')
-    
+                        return render_template('showTableComp.html',idFile=uploadData)
+        
     elif request.method=='GET':
         dataVuln=readVuln()
+        dataComp=readComp()
         # data=len(dataVuln)
         # dataComp=readComp()
         
-        return render_template('index.html',dataFileV=dataVuln)
+        return render_template('index.html',dataFileV=dataVuln,dataFileC=dataComp)
     
    
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
@@ -68,6 +71,39 @@ def vulnGet():
     dataId=selectedID
     fileVuln=getDataVuln(dataId)
     return render_template('showTableVuln.html', idFile=fileVuln)
+
+@app.route('/downloadVuln', methods=['GET', 'POST'])
+def downloadVulnAsCSV():
+    idFile=request.args.get('id')
+    downloadCSV(idFile)
+    with open(idFile+'.csv') as fp:
+        fileCSV=fp.read()
+    return Response(
+        fileCSV,
+        mimetype="text/csv",
+        headers={"Content-disposition":
+                 "attachment=true; filename=idFile.csv"})
+
+@app.route('/compliance', methods=['GET', 'POST'])
+def compGet():
+    selectedID = request.args.get('id')
+    dataId=selectedID
+    fileComp=getDataComp(dataId)
+    return render_template('showTableVuln.html', idFile=fileComp)
+
+@app.route('/downloadComp', methods=['GET', 'POST'])
+def downloadCompAsCSV():
+    idFile=request.args.get('id')
+    downloadCSV(idFile)
+    with open(idFile+'.csv') as fp:
+        fileCSV=fp.read()
+    return Response(
+        fileCSV,
+        mimetype="text/csv",
+        headers={"Content-disposition":
+                 "attachment=true; filename=idFile.csv"})
+
+    
 
 if __name__ == "__main__":
     app.run(debug=True)

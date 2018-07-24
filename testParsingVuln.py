@@ -121,4 +121,31 @@ def getDataVuln(idVuln):
     dataFile=req.get(url_data,params=parameter)
     return dataFile.json()
 
+def downloadCSV(idFile):
+    find_data='http://localhost:3000/vulnerabilities/vuln'
+    parameterDownload={'id':idFile}
+    dataFile=req.get(find_data,params=parameterDownload)
+    dataDownload = dataFile.json()
+    
+    
+    with open(idFile+'.csv', 'wb') as csvfile:
+        f = csv.writer(csvfile)
+
+        f.writerow(["System", "Name", "Port/Protocol", "Risk Level", "Synopsis","Detail","Solution","Severity","Open Date","Closed Date","Status"])
+
+        for x in range(0,len(dataDownload['item'])):
+             f.writerow([dataDownload['item'][x]["system"],
+                        dataDownload['item'][x]["name"],
+                        dataDownload['item'][x]["port_protocol"],
+                        dataDownload['item'][x]["risk_level"],
+                        dataDownload['item'][x]["synopsis"],
+                        dataDownload['item'][x]["detail"],
+                        dataDownload['item'][x]["solution"],
+                        dataDownload['item'][x]["severity"],
+                        dataDownload['item'][x]["open_date"],
+                        "kosong",
+                        dataDownload['item'][x]["status"],
+                        ])
+        return f
+    
     

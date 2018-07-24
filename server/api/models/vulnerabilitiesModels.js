@@ -38,7 +38,10 @@ var ItemSchema =  new Schema({
 
     open_date: Date,
 
-    closed_date: Date,
+    closed_date: {
+        type: Date,
+        default: null
+    },
 
     status: String
 })
@@ -46,10 +49,7 @@ var ItemSchema =  new Schema({
 var VulnSchema = new Schema({
     name: String,
 
-    upload_date: {
-        type: Date,
-        default: {}
-    },
+    upload_date: Date,
 
     item: [ItemSchema],
 
