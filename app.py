@@ -4,7 +4,7 @@ from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
 
-UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -12,7 +12,7 @@ ALLOWED_EXTENSIONS = set([ 'nessus'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
-app._static_folder ='D:/Project/XL/ParsingXML/template/static'
+app._static_folder ='D:/ilham/ParsingXML/template/static'
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -36,7 +36,7 @@ def upload_file():
                 if file and allowed_file(file.filename):
                     if request.form['submit'] == 'vulnerability':
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         dataUpload=vuln(filename)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile)
@@ -47,7 +47,7 @@ def upload_file():
                         return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idUploadFile)
                     elif request.form['submit'] == 'compliance':
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename)
@@ -90,7 +90,7 @@ def compGet():
     selectedID = request.args.get('id')
     dataId=selectedID
     fileComp=getDataComp(dataId)
-    return render_template('showTable.html', idFile=fileComp)
+    return render_template('showTableComp.html', idFile=fileComp)
 
 @app.route('/downloadComp', methods=['GET', 'POST'])
 def downloadCompAsCSV():

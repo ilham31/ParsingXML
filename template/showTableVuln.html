@@ -60,7 +60,7 @@
 </style>
 </head>
 
-<body>
+<body class="animsition">
         <header class="headerAwal">
                 <!-- > -->
         </header>
@@ -112,7 +112,7 @@
                 </div>
                 <form class="downloadCSV" method=post enctype=multipart/form-data>
                     <div class="input-group-btn">
-                            <a href="{{url_for( 'downloadVulnAsCSV', id=idFile._id ) }}"><button  type=submit name="submit"  class="btn btn-primary">Download As CSV</button></a>                    </div>
+                            <a href="{{url_for( 'downloadVulnAsCSV', id=idFile._id ) }}"target="_blank"><button  type=submit name="submit"  class="btn btn-primary" >Download As CSV</button></a>                    </div>
                 
                 </form>
             

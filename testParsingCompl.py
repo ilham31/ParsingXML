@@ -4,7 +4,7 @@ from collections import defaultdict
 import csv,json,requests as req
 
 def compl(filename):
-    os.chdir('D:/Project/XL/ParsingXML/data')
+    os.chdir('D:/ilham/ParsingXML/data')
     api_url='http://localhost:3000/compliance'
     i=0
     report = {}
@@ -125,7 +125,7 @@ def downloadCompCSV(idFile):
                         dataDownload['item'][x]["i_status"],
                         dataDownload['item'][x]["detail"],
                         dataDownload['item'][x]["open_date"],
-                        "kosong",
+                        dataDownload['item'][x]["closed_date"],
                         dataDownload['item'][x]["status"],
                         ])
         return f

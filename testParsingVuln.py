@@ -5,7 +5,7 @@ import csv
 import os,requests as req
 
 def vuln(filename):
-    os.chdir('D:/Project/XL/ParsingXML/data')
+    os.chdir('D:/ilham/ParsingXML/data')
     api_url='http://localhost:3000/vulnerabilities'
     i=0
     report = {}
@@ -143,7 +143,7 @@ def downloadVulnCSV(idFile):
                         dataDownload['item'][x]["solution"],
                         dataDownload['item'][x]["severity"],
                         dataDownload['item'][x]["open_date"],
-                        "kosong",
+                        dataDownload['item'][x]["closed_date"],
                         dataDownload['item'][x]["status"],
                         ])
         return f

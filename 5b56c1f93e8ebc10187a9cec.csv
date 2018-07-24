@@ -15,7 +15,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.2.18 Ensure no duplicate user names exist,PASSED,"""6.2.18 Ensure no duplicate user names exist"" : [PASSED] If a user is assigned a duplicate user name, it will create and have access to files with the first UID for that username in /etc/passwd. For example, if 'test4' has a UID of 1000 and a subsequent 'test4' entry has a UID of 2000, logging in as 'test4' will use UID 1000. Effectively, the UID is shared, which is a security problem.
 
 See Also : 
@@ -32,7 +32,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,CCE|CCE-80208-2,HIPAA|164.312(a)(2)(i),LEVEL|1S,PCI-DSS|2.2.4,PCI-DSS|8.1.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,CCE|CCE-80208-2,HIPAA|164.312(a)(2)(i),LEVEL|1S,PCI-DSS|2.2.4,PCI-DSS|8.1.1 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.2.17 Ensure no duplicate GIDs exist,PASSED,"""6.2.17 Ensure no duplicate GIDs exist"" : [PASSED] User groups must be assigned unique GIDs for accountability and to ensure appropriate access protections.
 
 See Also : 
@@ -49,7 +49,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.2.16 Ensure no duplicate UIDs exist,PASSED,"""6.2.16 Ensure no duplicate UIDs exist"" : [PASSED] Users must be assigned unique UIDs for accountability and to ensure appropriate access protections.
 
 See Also : 
@@ -66,7 +66,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,CCE|CCE-27503-2,HIPAA|164.312(a)(2)(i),LEVEL|1S,PCI-DSS|2.2.4,PCI-DSS|8.1.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,CCE|CCE-27503-2,HIPAA|164.312(a)(2)(i),LEVEL|1S,PCI-DSS|2.2.4,PCI-DSS|8.1.1 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.2.15 Ensure all groups in /etc/passwd exist in /etc/group,PASSED,"""6.2.15 Ensure all groups in /etc/passwd exist in /etc/group"" : [PASSED] Groups defined in the /etc/passwd file but not in the /etc/group file pose a threat to system security since group permissions are not properly managed.
 
 See Also : 
@@ -83,7 +83,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-2,800-171|3.1.1,CN-L3|7.1.3.2(d),CSF|DE.CM-1,CSF|DE.CM-3,CSF|PR.AC-1,CSF|PR.AC-4,ITSG-33|AC-2,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-2,800-171|3.1.1,CN-L3|7.1.3.2(d),CSF|DE.CM-1,CSF|DE.CM-3,CSF|PR.AC-1,CSF|PR.AC-4,ITSG-33|AC-2,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.2.6 Ensure root PATH Integrity,PASSED,"""6.2.6 Ensure root PATH Integrity"" : [PASSED] Including the current working directory (.) or other writable directory in root's executable path makes it likely that an attacker can gain superuser access by forcing an administrator operating as root to execute a Trojan horse program.
 
 $PATH is set to : /usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
@@ -104,7 +104,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.7,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,SWIFT-CSCv1|2.3,CCE|CCE-80199-3,CSCv6|8.4,LEVEL|1S,PCI-DSS|2.2.4,PCI-DSS|8.5.8 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,800-171|3.4.7,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,SWIFT-CSCv1|2.3,CCE|CCE-80199-3,CSCv6|8.4,LEVEL|1S,PCI-DSS|2.2.4,PCI-DSS|8.5.8 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.2.5 Ensure root is the only UID 0 account,PASSED,"""6.2.5 Ensure root is the only UID 0 account"" : [PASSED] This access must be limited to only the default root account and only from the system console. Administrative access must be through an unprivileged account using an approved mechanism as noted in Item 5.6 Ensure access to the su command is restricted.
 
 See Also : 
@@ -121,7 +121,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,800-171|3.1.5,CSF|PR.AC-4,ISO/IEC-27001|A.9.2.3,ITSG-33|AC-6,SWIFT-CSCv1|1.2,CCE|CCE-27175-9,CSCv6|5.1,HIPAA|164.312(a)(2)(i),LEVEL|1S,PCI-DSS|2.2.4,PCI-DSS|8.1.1,PCI-DSS|8.5.8 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-6,800-171|3.1.5,CSF|PR.AC-4,ISO/IEC-27001|A.9.2.3,ITSG-33|AC-6,SWIFT-CSCv1|1.2,CCE|CCE-27175-9,CSCv6|5.1,HIPAA|164.312(a)(2)(i),LEVEL|1S,PCI-DSS|2.2.4,PCI-DSS|8.1.1,PCI-DSS|8.5.8 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.1.14 Audit SGID executables,WARNING,"""6.1.14 Audit SGID executables"" : [WARNING] The owner of a file can set the file's permissions to run with the owner's or group's permissions, even if the user running the program is not the owner or a member of the group. The most common reason for a SGID program is to enable users to perform functions (such as changing their password) that require root privileges.
 
 Rationale:
@@ -304,7 +304,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,CSF|PR.AC-4,CCE|CCE-80132-4,LEVEL|1NS,PCI-DSS|10.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-6,CSF|PR.AC-4,CCE|CCE-80132-4,LEVEL|1NS,PCI-DSS|10.4 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.1.13 Audit SUID executables,WARNING,"""6.1.13 Audit SUID executables"" : [WARNING] The owner of a file can set the file's permissions to run with the owner's or group's permissions, even if the user running the program is not the owner or a member of the group. The most common reason for a SUID program is to enable users to perform functions (such as changing their password) that require root privileges.
 
 Rationale:
@@ -487,7 +487,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,CSF|PR.AC-4,CCE|CCE-80133-2,LEVEL|1NS,PCI-DSS|10.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-6,CSF|PR.AC-4,CCE|CCE-80133-2,LEVEL|1NS,PCI-DSS|10.4 ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.1.12 Ensure no ungrouped files or directories exist,PASSED,"""6.1.12 Ensure no ungrouped files or directories exist"" : [PASSED] Sometimes when administrators delete users or groups from the system they neglect to remove all files owned by those users or groups.
 
 Rationale:
@@ -512,7 +512,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-16,CSF|PR.AC-4,ITSG-33|AC-16,CCE|CCE-80134-0,CCE|CCE-80135-7,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-16,CSF|PR.AC-4,ITSG-33|AC-16,CCE|CCE-80134-0,CCE|CCE-80135-7,LEVEL|1S ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.1.11 Ensure no unowned files or directories exist,PASSED,"""6.1.11 Ensure no unowned files or directories exist"" : [PASSED] Sometimes when administrators delete users from the password file they neglect to remove all files owned by those users from the system.
 
 Rationale:
@@ -537,7 +537,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-16,CSF|PR.AC-4,ITSG-33|AC-16,CCE|CCE-80134-0,CCE|CCE-80135-7,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-16,CSF|PR.AC-4,ITSG-33|AC-16,CCE|CCE-80134-0,CCE|CCE-80135-7,LEVEL|1S ",2018-07-24T13:06:28.956Z,,open
 10.23.67.85,6.1.10 Ensure no world writable files exist,FAILED,"""6.1.10 Ensure no world writable files exist"" : [FAILED] Unix-based systems support variable settings to control access to files. World writable files are the least secure. See the chmod(2) man page for more information.
 
 Rationale:
@@ -2882,7 +2882,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,PCI-DSSv3.1|7.1.2,PCI-DSSv3.2|7.1.2,800-171|3.1.5,CN-L3|7.1.3.2(b),CN-L3|7.1.3.2(g),CSF|PR.AC-4,CSF|PR.DS-5,ITSG-33|AC-6,SWIFT-CSCv1|5.1,CCE|CCE-80131-6,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-6,PCI-DSSv3.1|7.1.2,PCI-DSSv3.2|7.1.2,800-171|3.1.5,CN-L3|7.1.3.2(b),CN-L3|7.1.3.2(g),CSF|PR.AC-4,CSF|PR.DS-5,ITSG-33|AC-6,SWIFT-CSCv1|5.1,CCE|CCE-80131-6,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  72 - 5.4.4 Ensure default user umask is 027 or more restrictive - /etc/profile /etc/profile.d/*.sh,WARNING,"""MBSS-OS-Red Hat Linux  72 - 5.4.4 Ensure default user umask is 027 or more restrictive - /etc/profile /etc/profile.d/*.sh"" : [WARNING] The default umask determines the permissions of files created by users. The user creating the file has the discretion of making their files and directories readable by others via the chmod command. Users who wish to allow their files and directories to be readable by others by default may choose a different default umask by inserting the umask command into the standard shell configuration files ( .profile , .bashrc , etc.) in their home directories.
 
 Rationale:
@@ -2921,7 +2921,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-3,800-171|3.1.1,CSF|PR.AC-4,CSF|PR.PT-3,ITSG-33|AC-3,CCE|CCE-80204-1,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-3,800-171|3.1.1,CSF|PR.AC-4,CSF|PR.PT-3,ITSG-33|AC-3,CCE|CCE-80204-1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  72 - 5.4.4 Ensure default user umask is 027 or more restrictive - /etc/bashrc,FAILED,"""MBSS-OS-Red Hat Linux  72 - 5.4.4 Ensure default user umask is 027 or more restrictive - /etc/bashrc"" : [FAILED] The default umask determines the permissions of files created by users. The user creating the file has the discretion of making their files and directories readable by others via the chmod command. Users who wish to allow their files and directories to be readable by others by default may choose a different default umask by inserting the umask command into the standard shell configuration files ( .profile , .bashrc , etc.) in their home directories.
 
 Rationale:
@@ -2968,7 +2968,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-3,800-171|3.1.1,CSF|PR.AC-4,CSF|PR.PT-3,ITSG-33|AC-3,CCE|CCE-80202-5,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-3,800-171|3.1.1,CSF|PR.AC-4,CSF|PR.PT-3,ITSG-33|AC-3,CCE|CCE-80202-5,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  03 - 5.4.1.2 Ensure minimum days between password changes is 1 or more,PASSED,"""MBSS-OS-Red Hat Linux  03 - 5.4.1.2 Ensure minimum days between password changes is 1 or more"" : [PASSED] The PASS_MIN_DAYS parameter in /etc/login.defs allows an administrator to prevent users from changing their password until a minimum number of days have passed since the last time the user changed their password. It is recommended that PASS_MIN_DAYS parameter be set to 7 or more days.
 
 Rationale:
@@ -3005,7 +3005,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,CIP|007-6-R5,HIPAA|164.308(a)(5)(ii)(D),PCI-DSSv3.1|8.2.4,PCI-DSSv3.2|8.2.4,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.2,800-171|3.5.10,800-171|3.5.7,800-171|3.5.8,800-171|3.5.9,CCE|CCE-27002-5,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,CIP|007-6-R5,HIPAA|164.308(a)(5)(ii)(D),PCI-DSSv3.1|8.2.4,PCI-DSSv3.2|8.2.4,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.2,800-171|3.5.10,800-171|3.5.7,800-171|3.5.8,800-171|3.5.9,CCE|CCE-27002-5,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  02 - 5.4.1.1 Ensure password expiration is 45 days or less,PASSED,"""MBSS-OS-Red Hat Linux  02 - 5.4.1.1 Ensure password expiration is 45 days or less"" : [PASSED] The PASS_MAX_DAYS parameter in /etc/login.defs allows an administrator to force passwords to expire once they reach a defined age. It is recommended that the PASS_MAX_DAYS parameter be set to less than or equal to 45 days.
 
 Rationale:
@@ -3042,7 +3042,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,CIP|007-6-R5,HIPAA|164.308(a)(5)(ii)(D),PCI-DSSv3.1|8.2.4,PCI-DSSv3.2|8.2.4,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.2,CSCv6|16,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,CIP|007-6-R5,HIPAA|164.308(a)(5)(ii)(D),PCI-DSSv3.1|8.2.4,PCI-DSSv3.2|8.2.4,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.2,CSCv6|16,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 104 - 5.1.5 Ensure permissions on /etc/cron.weekly are configured,FAILED,"""MBSS-OS-Red Hat Linux 104 - 5.1.5 Ensure permissions on /etc/cron.weekly are configured"" : [FAILED] The /etc/cron.weekly directory contains system cron jobs that need to run on a weekly basis. The files in this directory cannot be manipulated by the crontab command, but are instead edited by system administrators using a text editor. The commands below restrict read/write and search access to user and group root, preventing regular users from accessing this directory.
 
 Granting write access to this directory for non-privileged users could provide them the means for gaining unauthorized elevated privileges. Granting read access to this directory could give an unprivileged user insight in how to gain elevated privileges or circumvent auditing controls.
@@ -3085,7 +3085,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 103 - 5.1.4 Ensure permissions on /etc/cron.daily are configured,FAILED,"""MBSS-OS-Red Hat Linux 103 - 5.1.4 Ensure permissions on /etc/cron.daily are configured"" : [FAILED] The /etc/cron.daily directory contains system cron jobs that need to run on a daily basis. The files in this directory cannot be manipulated by the crontab command, but are instead edited by system administrators using a text editor. The commands below restrict read/write and search access to user and group root, preventing regular users from accessing this directory.
 
 Granting write access to this directory for non-privileged users could provide them the means for gaining unauthorized elevated privileges. Granting read access to this directory could give an unprivileged user insight in how to gain elevated privileges or circumvent auditing controls.
@@ -3128,7 +3128,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 102 - 5.1.3 Ensure permissions on /etc/cron.hourly are configured,FAILED,"""MBSS-OS-Red Hat Linux 102 - 5.1.3 Ensure permissions on /etc/cron.hourly are configured"" : [FAILED] This directory contains system cron jobs that need to run on an hourly basis. The files in this directory cannot be manipulated by the crontab command, but are instead edited by system administrators using a text editor. The commands below restrict read/write and search access to user and group root, preventing regular users from accessing this directory.
 
 Granting write access to this directory for non-privileged users could provide them the means for gaining unauthorized elevated privileges. Granting read access to this directory could give an unprivileged user insight in how to gain elevated privileges or circumvent auditing controls.
@@ -3171,7 +3171,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 101 - 5.1.7 Ensure permissions on /etc/cron.d are configured,FAILED,"""MBSS-OS-Red Hat Linux 101 - 5.1.7 Ensure permissions on /etc/cron.d are configured"" : [FAILED] The /etc/crontab file is used by cron to control its own jobs. The commands in this item make here sure that root is the user and group owner of the file and is the only user that can read and write the file.
 
 This file contains information on what system jobs are run by cron. Write access to these files could provide unprivileged users with the ability to elevate their privileges. Read access to these files could provide users with the ability to gain insight on system jobs that run on the system and could provide them a way to gain unauthorized privileged access.
@@ -3214,7 +3214,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 100 Set User/Group Owner and Permission on /etc/anacrontab,PASSED,"""MBSS-OS-Red Hat Linux 100 Set User/Group Owner and Permission on /etc/anacrontab"" : [PASSED] The /etc/anacrontab file is used by anacron to control its own jobs. The commands in this item make sure that root is the user and group owner of the file and is the only user that can read and write the file.
 
 This file contains information on what system jobs are run by anacron. Write access to these files could provide unprivileged users with the ability to elevate their privileges. Read access to these files could provide users with the ability to gain insight on system jobs that run on the system and could provide them a way to gain unauthorized privileged access.
@@ -3247,7 +3247,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|AC-3,CSF|PR.AC-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 99 - 5.1.1 Ensure cron daemon is enabled,WARNING,"""MBSS-OS-Red Hat Linux 99 - 5.1.1 Ensure cron daemon is enabled"" : [WARNING] The crond daemon is used to execute batch jobs on the system.
 
 While there may not be user jobs that need to be run on the system, the system does have maintenance jobs that may include security monitoring that have to run and crond is used to execute them.
@@ -3280,7 +3280,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.6,800-171|3.4.7,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,800-171|3.4.6,800-171|3.4.7,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 98 Enable anacron Daemon,PASSED,"""MBSS-OS-Red Hat Linux 98 Enable anacron Daemon"" : [PASSED] The anacron daemon is used on systems that are not up 24x7. The anacron daemon will execute jobs that would have normally been run had the system not been down.
 
 Cron jobs may include critical security or administrative functions that need to run on a regular basis. Use this daemon on machines that are not up 24x7, or if there are jobs that need to be executed after the system has been brought back up after a maintenance window.
@@ -3305,7 +3305,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 97 - 4.1.16 Ensure system administrator actions (sudolog) are collected,FAILED,"""MBSS-OS-Red Hat Linux 97 - 4.1.16 Ensure system administrator actions (sudolog) are collected"" : [FAILED] Monitor the sudo log file. If the system has been properly configured to disable the use of the su command and force all administrators to have to log in first and then use sudo to execute privileged commands, then all administrator commands will be logged to /var/log/sudo.log. Any time a command is executed, an audit event will be triggered as the /var/log/sudo.log file will be opened for write and the executed administration command will be written to the log.
 
 Changes in /var/log/sudo.log indicate that an administrator has executed a command or the log file itself has been tampered with. Administrators will want to correlate the events written to the audit trail with the records written to /var/log/sudo.log to verify if unauthorized commands have been executed.
@@ -3348,7 +3348,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.2,SANS-CSC|12-1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.2,SANS-CSC|12-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 96 - 4.1.15 Ensure changes to system administration scope (sudoers) is collected,FAILED,"""MBSS-OS-Red Hat Linux 96 - 4.1.15 Ensure changes to system administration scope (sudoers) is collected"" : [FAILED] Monitor scope changes for system administrations. If the system has been properly configured to force system administrators to log in as themselves first and then use the sudo command to execute privileged commands, it is possible to monitor changes in scope.
 The file /etc/sudoers will be written to when the file or its attributes have changed. The audit records will be tagged with the identifier ""scope.""
 
@@ -3389,7 +3389,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.2,SANS-CSC|12-1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.2,SANS-CSC|12-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 95.2 - 4.1.11 Ensure unsuccessful unauthorized file access attempts are collected - b32 EACCES,FAILED,"""MBSS-OS-Red Hat Linux 95.2 - 4.1.11 Ensure unsuccessful unauthorized file access attempts are collected - b32 EACCES"" : [FAILED] Monitor for unsuccessful attempts to access files. The parameters below are associated with system calls that control creation (creat), opening (open, openat) and truncation (truncate, ftruncate) of files. An audit log record will only be written if the user is a non- privileged user (auid > = 1000), is not a Daemon event (auid=4294967295) and if the system call returned EACCES (permission denied to the file) or EPERM (some other permanent error associated with the specific system call). All audit records will be tagged with the identifier ""access.""
 
 Failed attempts to open, create or truncate files could be an indication that an individual or process is trying to gain unauthorized access to the system.
@@ -3428,7 +3428,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 95.1 - 4.1.11 Ensure unsuccessful unauthorized file access attempts are collected - b32 EPERM,FAILED,"""MBSS-OS-Red Hat Linux 95.1 - 4.1.11 Ensure unsuccessful unauthorized file access attempts are collected - b32 EPERM"" : [FAILED] Monitor for unsuccessful attempts to access files. The parameters below are associated with system calls that control creation (creat), opening (open, openat) and truncation (truncate, ftruncate) of files. An audit log record will only be written if the user is a non- privileged user (auid > = 1000), is not a Daemon event (auid=4294967295) and if the system call returned EACCES (permission denied to the file) or EPERM (some other permanent error associated with the specific system call). All audit records will be tagged with the identifier ""access.""
 
 Failed attempts to open, create or truncate files could be an indication that an individual or process is trying to gain unauthorized access to the system.
@@ -3467,7 +3467,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 94.3 - 4.1.10 Ensure discretionary access control permission modification events are collected - b32 chown,FAILED,"""MBSS-OS-Red Hat Linux 94.3 - 4.1.10 Ensure discretionary access control permission modification events are collected - b32 chown"" : [FAILED] Monitor changes to file permissions, attributes, ownership and group. The parameters in this section track changes for system calls that affect file permissions and attributes. The chmod, fchmod and fchmodat system calls affect the permissions associated with a file. The chown, fchown, fchownat and lchown system calls affect owner and group attributes on a file. The setxattr, lsetxattr, fsetxattr (set extended file attributes) and removexattr, lremovexattr, fremovexattr (remove extended file attributes) control extended file attributes. In all cases, an audit record will only be written for non-system userids (auid >= 1000) and will ignore Daemon events (auid = 4294967295). All audit records will be tagged with the identifier ""perm_mod.""
 
 Monitoring for changes in file attributes could alert a system administrator to activity that could indicate intruder activity or policy violation.
@@ -3506,7 +3506,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 94.2 - 4.1.10 Ensure discretionary access control permission modification events are collected - b32 setxattr,FAILED,"""MBSS-OS-Red Hat Linux 94.2 - 4.1.10 Ensure discretionary access control permission modification events are collected - b32 setxattr"" : [FAILED] Monitor changes to file permissions, attributes, ownership and group. The parameters in this section track changes for system calls that affect file permissions and attributes. The chmod, fchmod and fchmodat system calls affect the permissions associated with a file. The chown, fchown, fchownat and lchown system calls affect owner and group attributes on a file. The setxattr, lsetxattr, fsetxattr (set extended file attributes) and removexattr, lremovexattr, fremovexattr (remove extended file attributes) control extended file attributes. In all cases, an audit record will only be written for non-system userids (auid >= 1000) and will ignore Daemon events (auid = 4294967295). All audit records will be tagged with the identifier ""perm_mod.""
 
 Monitoring for changes in file attributes could alert a system administrator to activity that could indicate intruder activity or policy violation.
@@ -3545,7 +3545,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 94.1 - 4.1.10 Ensure discretionary access control permission modification events are collected - b32 chmod,FAILED,"""MBSS-OS-Red Hat Linux 94.1 - 4.1.10 Ensure discretionary access control permission modification events are collected - b32 chmod"" : [FAILED] Monitor changes to file permissions, attributes, ownership and group. The parameters in this section track changes for system calls that affect file permissions and attributes. The chmod, fchmod and fchmodat system calls affect the permissions associated with a file. The chown, fchown, fchownat and lchown system calls affect owner and group attributes on a file. The setxattr, lsetxattr, fsetxattr (set extended file attributes) and removexattr, lremovexattr, fremovexattr (remove extended file attributes) control extended file attributes. In all cases, an audit record will only be written for non-system userids (auid >= 1000) and will ignore Daemon events (auid = 4294967295). All audit records will be tagged with the identifier ""perm_mod.""
 
 Monitoring for changes in file attributes could alert a system administrator to activity that could indicate intruder activity or policy violation.
@@ -3584,7 +3584,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 93 - 4.1.9 Ensure session initiation information is collected  - /var/run/utmp,FAILED,"""MBSS-OS-Red Hat Linux 93 - 4.1.9 Ensure session initiation information is collected  - /var/run/utmp"" : [FAILED] Monitor session initiation events. The parameters in this section track changes to the files associated with session events. The file /var/run/utmp file tracks all currently logged in users. The /var/log/wtmp file tracks logins, logouts, shutdown and reboot events. All audit records will be tagged with the identifier ""session.""
 
 Monitoring these files for changes could alert a system administrator to logins occurring at unusual hours, which could indicate intruder activity (i.e. a user logging in at a time when they do not normally log in).
@@ -3627,7 +3627,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.308(a)(5)(ii)(C),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.1,SANS-CSC|12-11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.308(a)(5)(ii)(C),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.1,SANS-CSC|12-11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 92.3 - 4.1.8 Ensure login and logout events are collected - /var/log/tallylog,FAILED,"""MBSS-OS-Red Hat Linux 92.3 - 4.1.8 Ensure login and logout events are collected - /var/log/tallylog"" : [FAILED] Monitor login and logout events. The parameters below track changes to files associated with login/logout events. The file /var/log/faillog tracks failed events from login. The file /var/log/lastlog maintain records of the last time a user successfully logged in. The file /var/log/btmp keeps track of failed login attempts and can be read by entering the command /usr/bin/last -f /var/log/btmp. All audit records will be tagged with the identifier ""logins.""
 
 Monitoring login/logout events could provide a system administrator with information associated with brute force attacks against user logins.
@@ -3666,7 +3666,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.308(a)(5)(ii)(C),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.1,SANS-CSC|12-11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.308(a)(5)(ii)(C),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.1,SANS-CSC|12-11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 92.2 - 4.1.8 Ensure login and logout events are collected - /var/log/lastlog,FAILED,"""MBSS-OS-Red Hat Linux 92.2 - 4.1.8 Ensure login and logout events are collected - /var/log/lastlog"" : [FAILED] Monitor login and logout events. The parameters below track changes to files associated with login/logout events. The file /var/log/faillog tracks failed events from login. The file /var/log/lastlog maintain records of the last time a user successfully logged in. The file /var/log/btmp keeps track of failed login attempts and can be read by entering the command /usr/bin/last -f /var/log/btmp. All audit records will be tagged with the identifier ""logins.""
 
 Monitoring login/logout events could provide a system administrator with information associated with brute force attacks against user logins.
@@ -3705,7 +3705,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.308(a)(5)(ii)(C),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.1,SANS-CSC|12-11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.308(a)(5)(ii)(C),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.1,SANS-CSC|12-11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 92.1 - 4.1.8 Ensure login and logout events are collected  - /var/log/faillog,FAILED,"""MBSS-OS-Red Hat Linux 92.1 - 4.1.8 Ensure login and logout events are collected  - /var/log/faillog"" : [FAILED] Monitor login and logout events. The parameters below track changes to files associated with login/logout events. The file /var/log/faillog tracks failed events from login. The file /var/log/lastlog maintain records of the last time a user successfully logged in. The file /var/log/btmp keeps track of failed login attempts and can be read by entering the command /usr/bin/last -f /var/log/btmp. All audit records will be tagged with the identifier ""logins.""
 
 Monitoring login/logout events could provide a system administrator with information associated with brute force attacks against user logins.
@@ -3744,7 +3744,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.308(a)(5)(ii)(C),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.1,SANS-CSC|12-11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.308(a)(5)(ii)(C),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.1,SANS-CSC|12-11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 91.1 - 4.1.7 Ensure events that modify the system's Mandatory Access Controls are collected,FAILED,"""MBSS-OS-Red Hat Linux 91.1 - 4.1.7 Ensure events that modify the system's Mandatory Access Controls are collected"" : [FAILED] Monitor SELinux mandatory access controls. The parameters below monitor any write access (potential additional, deletion or modification of files in the directory) or attribute changes to the /etc/selinux directory.
 
 Changes to files in this directory could indicate that an unauthorized user is attempting to modify access controls and change security contexts, leading to a compromise of the system.
@@ -3783,7 +3783,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 90.5 - 4.1.6 Ensure events that modify the system's network environment are collected - b32 sethostname,FAILED,"""MBSS-OS-Red Hat Linux 90.5 - 4.1.6 Ensure events that modify the system's network environment are collected - b32 sethostname"" : [FAILED] Record changes to network environment files or system calls. The below parameters monitor the sethostname (set the system's host name) or setdomainname (set the system's domainname) system calls, and write an audit event on system call exit. The other parameters monitor the /etc/issue and /etc/issue files (messages displayed pre- login), /etc/hosts (file containing host names and associated IP addresses) and /etc/sysconfig/network (directory containing network interface scripts and configurations) files.
 
 Monitoring sethostname and setdomainname will identify potential unauthorized changes to host and domainname of a system. The changing of these names could potentially break security parameters that are set based on those names. The /etc/hosts file is monitored for changes in the file that can indicate an unauthorized intruder is trying to change machine associations with IP addresses and trick users and processes into connecting to unintended machines. Monitoring /etc/issue and /etc/issue is important, as intruders could put disinformation into those files and trick users into providing information to the intruder. Monitoring /etc/sysconfig/network is important as it can show if network interfaces or scripts are being modified in a way that can lead to the  machine becoming unavailable or compromised. All audit records will be tagged with the identifier ""system-locale.""
@@ -3826,7 +3826,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 90.4 - 4.1.6 Ensure events that modify the system's network environment are collected - /etc/sysconfig/network,FAILED,"""MBSS-OS-Red Hat Linux 90.4 - 4.1.6 Ensure events that modify the system's network environment are collected - /etc/sysconfig/network"" : [FAILED] Record changes to network environment files or system calls. The below parameters monitor the sethostname (set the system's host name) or setdomainname (set the system's domainname) system calls, and write an audit event on system call exit. The other parameters monitor the /etc/issue and /etc/issue files (messages displayed pre- login), /etc/hosts (file containing host names and associated IP addresses) and /etc/sysconfig/network (directory containing network interface scripts and configurations) files.
 
 Monitoring sethostname and setdomainname will identify potential unauthorized changes to host and domainname of a system. The changing of these names could potentially break security parameters that are set based on those names. The /etc/hosts file is monitored for changes in the file that can indicate an unauthorized intruder is trying to change machine associations with IP addresses and trick users and processes into connecting to unintended machines. Monitoring /etc/issue and /etc/issue is important, as intruders could put disinformation into those files and trick users into providing information to the intruder. Monitoring /etc/sysconfig/network is important as it can show if network interfaces or scripts are being modified in a way that can lead to the  machine becoming unavailable or compromised. All audit records will be tagged with the identifier ""system-locale.""
@@ -3865,7 +3865,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 90.3 - 4.1.6 Ensure events that modify the system's network environment are collected - /etc/issue,FAILED,"""MBSS-OS-Red Hat Linux 90.3 - 4.1.6 Ensure events that modify the system's network environment are collected - /etc/issue"" : [FAILED] Record changes to network environment files or system calls. The below parameters monitor the sethostname (set the system's host name) or setdomainname (set the system's domainname) system calls, and write an audit event on system call exit. The other parameters monitor the /etc/issue and /etc/issue files (messages displayed pre- login), /etc/hosts (file containing host names and associated IP addresses) and /etc/sysconfig/network (directory containing network interface scripts and configurations) files.
 
 Monitoring sethostname and setdomainname will identify potential unauthorized changes to host and domainname of a system. The changing of these names could potentially break security parameters that are set based on those names. The /etc/hosts file is monitored for changes in the file that can indicate an unauthorized intruder is trying to change machine associations with IP addresses and trick users and processes into connecting to unintended machines. Monitoring /etc/issue and /etc/issue is important, as intruders could put disinformation into those files and trick users into providing information to the intruder. Monitoring /etc/sysconfig/network is important as it can show if network interfaces or scripts are being modified in a way that can lead to the  machine becoming unavailable or compromised. All audit records will be tagged with the identifier ""system-locale.""
@@ -3904,7 +3904,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 90.2 - 4.1.6 Ensure events that modify the system's network environment are collected - /etc/issue,FAILED,"""MBSS-OS-Red Hat Linux 90.2 - 4.1.6 Ensure events that modify the system's network environment are collected - /etc/issue"" : [FAILED] Record changes to network environment files or system calls. The below parameters monitor the sethostname (set the system's host name) or setdomainname (set the system's domainname) system calls, and write an audit event on system call exit. The other parameters monitor the /etc/issue and /etc/issue files (messages displayed pre- login), /etc/hosts (file containing host names and associated IP addresses) and /etc/sysconfig/network (directory containing network interface scripts and configurations) files.
 
 Monitoring sethostname and setdomainname will identify potential unauthorized changes to host and domainname of a system. The changing of these names could potentially break security parameters that are set based on those names. The /etc/hosts file is monitored for changes in the file that can indicate an unauthorized intruder is trying to change machine associations with IP addresses and trick users and processes into connecting to unintended machines. Monitoring /etc/issue and /etc/issue is important, as intruders could put disinformation into those files and trick users into providing information to the intruder. Monitoring /etc/sysconfig/network is important as it can show if network interfaces or scripts are being modified in a way that can lead to the  machine becoming unavailable or compromised. All audit records will be tagged with the identifier ""system-locale.""
@@ -3943,7 +3943,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 90.1 - 4.1.6 Ensure events that modify the system's network environment are collected - /etc/hosts,FAILED,"""MBSS-OS-Red Hat Linux 90.1 - 4.1.6 Ensure events that modify the system's network environment are collected - /etc/hosts"" : [FAILED] Record changes to network environment files or system calls. The below parameters monitor the sethostname (set the system's host name) or setdomainname (set the system's domainname) system calls, and write an audit event on system call exit. The other parameters monitor the /etc/issue and /etc/issue files (messages displayed pre- login), /etc/hosts (file containing host names and associated IP addresses) and /etc/sysconfig/network (directory containing network interface scripts and configurations) files.
 
 Monitoring sethostname and setdomainname will identify potential unauthorized changes to host and domainname of a system. The changing of these names could potentially break security parameters that are set based on those names. The /etc/hosts file is monitored for changes in the file that can indicate an unauthorized intruder is trying to change machine associations with IP addresses and trick users and processes into connecting to unintended machines. Monitoring /etc/issue and /etc/issue is important, as intruders could put disinformation into those files and trick users into providing information to the intruder. Monitoring /etc/sysconfig/network is important as it can show if network interfaces or scripts are being modified in a way that can lead to the  machine becoming unavailable or compromised. All audit records will be tagged with the identifier ""system-locale.""
@@ -3982,7 +3982,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 89.5 - 4.1.5 Ensure events that modify user/group information are collected - /etc/group,FAILED,"""MBSS-OS-Red Hat Linux 89.5 - 4.1.5 Ensure events that modify user/group information are collected - /etc/group"" : [FAILED] Record events affecting the group, passwd (user IDs), shadow and gshadow (passwords) or /etc/security/opasswd (old passwords, based on remember parameter in the PAM configuration) files. The parameters in this section will watch the files to see if they have been opened for write or have had attribute changes (e.g. permissions) and tag them with the identifier ""identity"" in the audit log file.
 
 Unexpected changes to these files could be an indication that the system has been compromised and that an unauthorized user is attempting to hide their activities or compromise additional accounts.
@@ -4021,7 +4021,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 89.4 - 4.1.5 Ensure events that modify user/group information are collected - /etc/passwd,FAILED,"""MBSS-OS-Red Hat Linux 89.4 - 4.1.5 Ensure events that modify user/group information are collected - /etc/passwd"" : [FAILED] Record events affecting the group, passwd (user IDs), shadow and gshadow (passwords) or /etc/security/opasswd (old passwords, based on remember parameter in the PAM configuration) files. The parameters in this section will watch the files to see if they have been opened for write or have had attribute changes (e.g. permissions) and tag them with the identifier ""identity"" in the audit log file.
 
 Unexpected changes to these files could be an indication that the system has been compromised and that an unauthorized user is attempting to hide their activities or compromise additional accounts.
@@ -4060,7 +4060,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 89.3 - 4.1.5 Ensure events that modify user/group information are collected - /etc/gshadow,FAILED,"""MBSS-OS-Red Hat Linux 89.3 - 4.1.5 Ensure events that modify user/group information are collected - /etc/gshadow"" : [FAILED] Record events affecting the group, passwd (user IDs), shadow and gshadow (passwords) or /etc/security/opasswd (old passwords, based on remember parameter in the PAM configuration) files. The parameters in this section will watch the files to see if they have been opened for write or have had attribute changes (e.g. permissions) and tag them with the identifier ""identity"" in the audit log file.
 
 Unexpected changes to these files could be an indication that the system has been compromised and that an unauthorized user is attempting to hide their activities or compromise additional accounts.
@@ -4099,7 +4099,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 89.2 - 4.1.5 Ensure events that modify user/group information are collected - /etc/securit/opasswd,FAILED,"""MBSS-OS-Red Hat Linux 89.2 - 4.1.5 Ensure events that modify user/group information are collected - /etc/securit/opasswd"" : [FAILED] Record events affecting the group, passwd (user IDs), shadow and gshadow (passwords) or /etc/security/opasswd (old passwords, based on remember parameter in the PAM configuration) files. The parameters in this section will watch the files to see if they have been opened for write or have had attribute changes (e.g. permissions) and tag them with the identifier ""identity"" in the audit log file.
 
 Unexpected changes to these files could be an indication that the system has been compromised and that an unauthorized user is attempting to hide their activities or compromise additional accounts.
@@ -4138,7 +4138,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 89.1 - 4.1.5 Ensure events that modify user/group information are collected - /etc/shadow,FAILED,"""MBSS-OS-Red Hat Linux 89.1 - 4.1.5 Ensure events that modify user/group information are collected - /etc/shadow"" : [FAILED] Record events affecting the group, passwd (user IDs), shadow and gshadow (passwords) or /etc/security/opasswd (old passwords, based on remember parameter in the PAM configuration) files. The parameters in this section will watch the files to see if they have been opened for write or have had attribute changes (e.g. permissions) and tag them with the identifier ""identity"" in the audit log file.
 
 Unexpected changes to these files could be an indication that the system has been compromised and that an unauthorized user is attempting to hide their activities or compromise additional accounts.
@@ -4177,7 +4177,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,PCI-DSS|10.2.5,SANS-CSC|12-10 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  01 - 5.3.3 Ensure password reuse is limited - password-auth,PASSED,"""MBSS-OS-Red Hat Linux  01 - 5.3.3 Ensure password reuse is limited - password-auth"" : [PASSED] The /etc/security/opasswd file stores the users' old passwords and can be checked to ensure that users are not recycling recent passwords.
 
 Rationale:
@@ -4218,7 +4218,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,HIPAA|164.308(a)(5)(ii)(D),PCI-DSSv3.1|8.2.5,PCI-DSSv3.2|8.2.5,800-171|3.5.8,CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.3,CCE|CCE-26923-3,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,HIPAA|164.308(a)(5)(ii)(D),PCI-DSSv3.1|8.2.5,PCI-DSSv3.2|8.2.5,800-171|3.5.8,CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.3,CCE|CCE-26923-3,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  01 - 5.3.3 Ensure password reuse is limited - system-auth,PASSED,"""MBSS-OS-Red Hat Linux  01 - 5.3.3 Ensure password reuse is limited - system-auth"" : [PASSED] The /etc/security/opasswd file stores the users' old passwords and can be checked to ensure that users are not recycling recent passwords.
 
 Rationale:
@@ -4259,7 +4259,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,HIPAA|164.308(a)(5)(ii)(D),PCI-DSSv3.1|8.2.5,PCI-DSSv3.2|8.2.5,800-171|3.5.8,CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.3,CCE|CCE-26923-3,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,HIPAA|164.308(a)(5)(ii)(D),PCI-DSSv3.1|8.2.5,PCI-DSSv3.2|8.2.5,800-171|3.5.8,CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.3,CCE|CCE-26923-3,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - password-auth 'auth sufficient pam_faillock.so authsucc audit deny=10 unlock_time=90' ,PASSED,"""MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - password-auth 'auth sufficient pam_faillock.so authsucc audit deny=10 unlock_time=90' "" : [PASSED] Lock out users after _n_ unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work with PAM.
 
 Set the lockout number to the policy in effect at your site.
@@ -4300,7 +4300,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - password-auth 'auth [default=die] pam_faillock.so',PASSED,"""MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - password-auth 'auth [default=die] pam_faillock.so'"" : [PASSED] Lock out users after _n_ unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work with PAM.
 
 Set the lockout number to the policy in effect at your site.
@@ -4341,7 +4341,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - password-auth 'auth [success=1 default=bad] pam_unix.so',PASSED,"""MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - password-auth 'auth [success=1 default=bad] pam_unix.so'"" : [PASSED] Lock out users after _n_ unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work with PAM.
 
 Set the lockout number to the policy in effect at your site.
@@ -4382,7 +4382,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - password-auth 'auth required pam_faillock.so preauth audit silent deny=10 unlock_time=90',PASSED,"""MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - password-auth 'auth required pam_faillock.so preauth audit silent deny=10 unlock_time=90'"" : [PASSED] Lock out users after _n_ unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work with PAM.
 
 Set the lockout number to the policy in effect at your site.
@@ -4423,7 +4423,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - system-auth 'auth sufficient pam_faillock.so authsucc audit deny=10 unlock_time=90',PASSED,"""MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - system-auth 'auth sufficient pam_faillock.so authsucc audit deny=10 unlock_time=90'"" : [PASSED] Lock out users after _n_ unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work with PAM.
 
 Set the lockout number to the policy in effect at your site.
@@ -4464,7 +4464,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - system-auth 'auth [default=die] pam_faillock.so authfail audit deny=10 unlock_time=90',PASSED,"""MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - system-auth 'auth [default=die] pam_faillock.so authfail audit deny=10 unlock_time=90'"" : [PASSED] Lock out users after _n_ unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work with PAM.
 
 Set the lockout number to the policy in effect at your site.
@@ -4505,7 +4505,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - system-auth 'auth [success=1 default=bad] pam_unix.so',PASSED,"""MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - system-auth 'auth [success=1 default=bad] pam_unix.so'"" : [PASSED] Lock out users after _n_ unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work with PAM.
 
 Set the lockout number to the policy in effect at your site.
@@ -4546,7 +4546,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - system-auth 'auth required pam_faillock.so preauth audit silent deny=10 unlock_time=90',PASSED,"""MBSS-OS-Red Hat Linux  07 - 5.3.2 Lockout for failed password attempts - system-auth 'auth required pam_faillock.so preauth audit silent deny=10 unlock_time=90'"" : [PASSED] Lock out users after _n_ unsuccessful consecutive login attempts. The first sets of changes are made to the PAM configuration files. The second set of changes are applied to the program specific PAM configuration file. The second set of changes must be applied to each program that will lock out users. Check the documentation for each secondary program for instructions on how to configure them to work with PAM.
 
 Set the lockout number to the policy in effect at your site.
@@ -4587,7 +4587,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-26884-7,CCE|CCE-27297-1,CCE|CCE-27350-8,CSCv6|16.7,LEVEL|1S,PCI-DSS|8.5.11 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  05.8 - 5.3.1 Ensure password creation requirements are configured - lcredit,PASSED,"""MBSS-OS-Red Hat Linux  05.8 - 5.3.1 Ensure password creation requirements are configured - lcredit"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -4650,7 +4650,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27345-8,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27345-8,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  05.7 - 5.3.1 Ensure password creation requirements are configured - ocredit,PASSED,"""MBSS-OS-Red Hat Linux  05.7 - 5.3.1 Ensure password creation requirements are configured - ocredit"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -4713,7 +4713,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27360-7,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27360-7,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  05.6 - 5.3.1 Ensure password creation requirements are configured - ucredit,PASSED,"""MBSS-OS-Red Hat Linux  05.6 - 5.3.1 Ensure password creation requirements are configured - ucredit"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -4776,7 +4776,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27200-5,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27200-5,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  05.5 - 5.3.1 Ensure password creation requirements are configured - dcredit,PASSED,"""MBSS-OS-Red Hat Linux  05.5 - 5.3.1 Ensure password creation requirements are configured - dcredit"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -4839,7 +4839,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27214-6,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27214-6,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  4 - 5.3.1 Ensure password creation requirements are configured - minlen,PASSED,"""MBSS-OS-Red Hat Linux  4 - 5.3.1 Ensure password creation requirements are configured - minlen"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -4902,7 +4902,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27293-0,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,800-171|3.5.7,CN-L3|7.1.2.7(e),CN-L3|7.1.3.1(b),CSF|PR.AC-1,ISO/IEC-27001|A.9.4.3,ITSG-33|IA-5,SWIFT-CSCv1|4.1,TBA-FIISB|26.2.1,TBA-FIISB|26.2.4,CCE|CCE-27293-0,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  05.4 - 5.3.1 Ensure password creation requirements are configured - system-auth retry=3,PASSED,"""MBSS-OS-Red Hat Linux  05.4 - 5.3.1 Ensure password creation requirements are configured - system-auth retry=3"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -4965,7 +4965,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-27160-1,CSCv6|16.7,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-27160-1,CSCv6|16.7,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  05.3 - 5.3.1 Ensure password creation requirements are configured - password-auth retry=3,PASSED,"""MBSS-OS-Red Hat Linux  05.3 - 5.3.1 Ensure password creation requirements are configured - password-auth retry=3"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -5028,7 +5028,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-27160-1,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,CCE|CCE-27160-1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  05.2 - 5.3.1 Ensure password creation requirements are configured - system-auth try_first_pass,PASSED,"""MBSS-OS-Red Hat Linux  05.2 - 5.3.1 Ensure password creation requirements are configured - system-auth try_first_pass"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -5091,7 +5091,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-5,CSF|PR.AC-1,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|IA-5,CSF|PR.AC-1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  05.1 - 5.3.1 Ensure password creation requirements are configured - password-auth try_first_pass,PASSED,"""MBSS-OS-Red Hat Linux  05.1 - 5.3.1 Ensure password creation requirements are configured - password-auth try_first_pass"" : [PASSED] The pam_pwquality.so module checks the strength of passwords. It performs checks such as making sure a password is not a dictionary word, it is a certain length, contains a mix of characters (e.g. alphabet, numeric, other) and more. The following are definitions of the pam_pwquality .so options.
 
 - try_first_pass - retrieve the password from a previous stacked PAM module. If not available, then prompt the user for a password.
@@ -5154,7 +5154,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-7,800-171|3.1.8,ITSG-33|AC-7,TBA-FIISB|45.1.2,TBA-FIISB|45.2.1,TBA-FIISB|45.2.2,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  42 - 5.2.15 Ensure SSH warning banner is configured,FAILED,"""MBSS-OS-Red Hat Linux  42 - 5.2.15 Ensure SSH warning banner is configured"" : [FAILED] Banners are used to warn connecting users of the particular site's policy regarding connection. Presenting a warning message prior to the normal user login may assist the prosecution of trespassers on the computer system.
 
 Remote value: 
@@ -5191,7 +5191,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-8,800-171|3.1.9,ITSG-33|AC-8,CCE|CCE-27314-4,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AC-8,800-171|3.1.9,ITSG-33|AC-8,CCE|CCE-27314-4,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,4.3 Ensure logrotate is configured,WARNING,"""4.3 Ensure logrotate is configured"" : [WARNING] The system includes the capability of rotating log files regularly to avoid filling up the system with logs or making the logs unmanageable large. The file /etc/logrotate.d/syslog is the configuration file used to rotate log files created by syslog or rsyslog.
 
 Rationale:
@@ -5224,7 +5224,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-CCE|CCE-80195-1,LEVEL|1NS ",2018-07-24T10:07:24.314Z,kosong,open
+CCE|CCE-80195-1,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,4.2.3 Ensure rsyslog or syslog-ng is installed,PASSED,"""4.2.3 Ensure rsyslog or syslog-ng is installed"" : [PASSED] The security enhancements of rsyslog and syslog-ng such as connection-oriented (i.e. TCP) transmission of logs, the option to log to database formats, and the encryption of log data en route to a central logging server) justify installing and configuring the package.
 
 See Also : 
@@ -5241,7 +5241,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,4.2.2.5 Ensure remote syslog-ng messages are only accepted on designated log hosts,WARNING,"""4.2.2.5 Ensure remote syslog-ng messages are only accepted on designated log hosts"" : [WARNING] By default, syslog-ng does not listen for log messages coming in from remote systems.
 
 Rationale:
@@ -5294,7 +5294,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-171|3.4.2,800-53|CM-6,CSF|PR.IP-1,ITSG-33|CM-6,LEVEL|1NS ",2018-07-24T10:07:24.314Z,kosong,open
+800-171|3.4.2,800-53|CM-6,CSF|PR.IP-1,ITSG-33|CM-6,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,4.2.2.4 Ensure syslog-ng is configured to send logs to a remote log host - log src,WARNING,"""4.2.2.4 Ensure syslog-ng is configured to send logs to a remote log host - log src"" : [WARNING] The syslog-ng utility supports the ability to send logs it gathers to a remote log host or to receive messages from remote hosts, reducing administrative overhead.
 
 Rationale:
@@ -5339,7 +5339,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-171|3.3.1,800-171|3.3.2,800-53|AU-12,CN-L3|7.1.3.3(a),CN-L3|7.1.3.3(b),CN-L3|7.1.3.3(c),CSCv6|6.6,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,ISO/IEC-27001|A.12.4.1,ITSG-33|AU-12,LEVEL|1NS,TBA-FIISB|45.1.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-171|3.3.1,800-171|3.3.2,800-53|AU-12,CN-L3|7.1.3.3(a),CN-L3|7.1.3.3(b),CN-L3|7.1.3.3(c),CSCv6|6.6,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,ISO/IEC-27001|A.12.4.1,ITSG-33|AU-12,LEVEL|1NS,TBA-FIISB|45.1.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,4.2.2.4 Ensure syslog-ng is configured to send logs to a remote log host - destination logserver,WARNING,"""4.2.2.4 Ensure syslog-ng is configured to send logs to a remote log host - destination logserver"" : [WARNING] The syslog-ng utility supports the ability to send logs it gathers to a remote log host or to receive messages from remote hosts, reducing administrative overhead.
 
 Rationale:
@@ -5384,7 +5384,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-171|3.3.1,800-171|3.3.2,800-53|AU-12,CN-L3|7.1.3.3(a),CN-L3|7.1.3.3(b),CN-L3|7.1.3.3(c),CSCv6|6.6,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,ISO/IEC-27001|A.12.4.1,ITSG-33|AU-12,LEVEL|1NS,TBA-FIISB|45.1.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-171|3.3.1,800-171|3.3.2,800-53|AU-12,CN-L3|7.1.3.3(a),CN-L3|7.1.3.3(b),CN-L3|7.1.3.3(c),CSCv6|6.6,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,ISO/IEC-27001|A.12.4.1,ITSG-33|AU-12,LEVEL|1NS,TBA-FIISB|45.1.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,4.2.2.3 Ensure syslog-ng default file permissions configured,WARNING,"""4.2.2.3 Ensure syslog-ng default file permissions configured"" : [WARNING] It is important to ensure that log files exist and have the correct permissions to ensure that sensitive syslog-ng data is archived and protected.
 
 Solution : 
@@ -5411,7 +5411,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-171|3.3.1,800-171|3.3.2,800-53|AU-12,CN-L3|7.1.3.3(a),CN-L3|7.1.3.3(b),CN-L3|7.1.3.3(c),CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,ISO/IEC-27001|A.12.4.1,ITSG-33|AU-12,LEVEL|1S,TBA-FIISB|45.1.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-171|3.3.1,800-171|3.3.2,800-53|AU-12,CN-L3|7.1.3.3(a),CN-L3|7.1.3.3(b),CN-L3|7.1.3.3(c),CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,ISO/IEC-27001|A.12.4.1,ITSG-33|AU-12,LEVEL|1S,TBA-FIISB|45.1.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,4.2.2.2 Ensure logging is configured,WARNING,"""4.2.2.2 Ensure logging is configured"" : [WARNING] The /etc/syslog-ng/syslog-ng.conf file specifies rules for logging and which files are to be used to log certain classes of messages.
 
 Rationale:
@@ -5484,7 +5484,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-LEVEL|1NS ",2018-07-24T10:07:24.314Z,kosong,open
+LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,4.2.2.1 Ensure syslog-ng service is enabled,WARNING,"""4.2.2.1 Ensure syslog-ng service is enabled"" : [WARNING] If the syslog-ng service is not activated the system may default to the syslogd service or lack logging instead.
 
 Solution : 
@@ -5509,7 +5509,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CIP|007-6-R1,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3 ",2018-07-24T10:07:24.314Z,kosong,open
+800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CIP|007-6-R1,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  77-82 - 4.2.1.5 Ensure remote rsyslog messages are only accepted on designated log hosts. - InputTCPServerRun 514,PASSED,"""MBSS-OS-Red Hat Linux  77-82 - 4.2.1.5 Ensure remote rsyslog messages are only accepted on designated log hosts. - InputTCPServerRun 514"" : [PASSED] By default, rsyslog does not listen for log messages coming in from remote systems. The ModLoad tells rsyslog to load the imtcp.so module so it can listen over a network via TCP. The InputTCPServerRun option instructs rsyslogd to listen on the specified TCP port.
 
 Rationale:
@@ -5538,7 +5538,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CCE|CCE-80193-6,LEVEL|1NS ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CCE|CCE-80193-6,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  77-82 - 4.2.1.5 Ensure remote rsyslog messages are only accepted on designated log hosts. - imtcp,PASSED,"""MBSS-OS-Red Hat Linux  77-82 - 4.2.1.5 Ensure remote rsyslog messages are only accepted on designated log hosts. - imtcp"" : [PASSED] By default, rsyslog does not listen for log messages coming in from remote systems. The ModLoad tells rsyslog to load the imtcp.so module so it can listen over a network via TCP. The InputTCPServerRun option instructs rsyslogd to listen on the specified TCP port.
 
 Rationale:
@@ -5567,7 +5567,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CCE|CCE-80192-8,HIPAA|164.312(b),LEVEL|1NS,PCI-DSS|10.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CCE|CCE-80192-8,HIPAA|164.312(b),LEVEL|1NS,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  77-82 - 4.2.1.4 Ensure rsyslog is configured to send logs to a remote log host,WARNING,"""MBSS-OS-Red Hat Linux  77-82 - 4.2.1.4 Ensure rsyslog is configured to send logs to a remote log host"" : [WARNING] The rsyslog utility supports the ability to send logs it gathers to a remote log host running syslogd(8) or to receive messages from remote hosts, reducing administrative overhead.
 
 Rationale:
@@ -5616,7 +5616,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AU-9,800-171|3.3.8,CSF|PR.PT-1,ITSG-33|AU-9,CCE|CCE-27343-3,HIPAA|164.312(b),LEVEL|1S,PCI-DSSv3.1|10.5.3,PCI-DSSv3.1|10.5.4,PCI-DSSv3.2|10.5.3,PCI-DSSv3.2|10.5.4,PCI-DSS|10.5.3 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-9,800-171|3.3.8,CSF|PR.PT-1,ITSG-33|AU-9,CCE|CCE-27343-3,HIPAA|164.312(b),LEVEL|1S,PCI-DSSv3.1|10.5.3,PCI-DSSv3.1|10.5.4,PCI-DSSv3.2|10.5.3,PCI-DSSv3.2|10.5.4,PCI-DSS|10.5.3 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  77-82 - 4.2.1.3 Ensure rsyslog default file permissions configured,WARNING,"""MBSS-OS-Red Hat Linux  77-82 - 4.2.1.3 Ensure rsyslog default file permissions configured"" : [WARNING] rsyslog will create logfiles that do not already exist on the system. This setting controls what permissions will be applied to these newly created files.
 
 Rationale:
@@ -5657,7 +5657,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AU-9,800-171|3.3.8,CN-L3|7.1.2.3(d),CN-L3|7.1.3.3(f),CSF|PR.PT-1,ITSG-33|AU-9,CCE|CCE-80191-0,ISO/IEC-27001|A.12.4.1,LEVEL|1S,TBA-FIISB|45.1.1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|AU-9,800-171|3.3.8,CN-L3|7.1.2.3(d),CN-L3|7.1.3.3(f),CSF|PR.PT-1,ITSG-33|AU-9,CCE|CCE-80191-0,ISO/IEC-27001|A.12.4.1,LEVEL|1S,TBA-FIISB|45.1.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  77-82 - 4.2.1.2 Ensure logging is configured,WARNING,"""MBSS-OS-Red Hat Linux  77-82 - 4.2.1.2 Ensure logging is configured"" : [WARNING] The /etc/rsyslog.conf and /etc/rsyslog.d/*.conf files specifies rules for logging and which files are to be used to log certain classes of messages.
 
 Rationale:
@@ -5704,7 +5704,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-CCE|CCE-80336-1,LEVEL|1NS ",2018-07-24T10:07:24.314Z,kosong,open
+CCE|CCE-80336-1,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  77-82 - 4.2.1.1 Ensure rsyslog Service is enabled,WARNING,"""MBSS-OS-Red Hat Linux  77-82 - 4.2.1.1 Ensure rsyslog Service is enabled"" : [WARNING] If the rsyslog service is not activated the system may default to the syslogd service or lack logging instead.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -5733,7 +5733,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CCE|CCE-80188-6,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CCE|CCE-80188-6,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  55 - 2.3.4 Ensure telnet client is not installed,PASSED,"""MBSS-OS-Red Hat Linux  55 - 2.3.4 Ensure telnet client is not installed"" : [PASSED] The telnet protocol is insecure and unencrypted. The use of an unencrypted transmission medium could allow an unauthorized user to steal credentials. The ssh package provides an encrypted session and stronger security and is included in most Linux distributions.
 
 The package 'telnet-0.0.0-0' is not installed
@@ -5754,7 +5754,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 64 Remove xinetd - 2.1.7 Ensure xinetd is not enabled,PASSED,"""MBSS-OS-Red Hat Linux 64 Remove xinetd - 2.1.7 Ensure xinetd is not enabled"" : [PASSED] The eXtended InterNET Daemon (xinetd) is an open source super daemon that replaced the original inetd daemon. The xinetd daemon listens for well known services and dispatches the appropriate daemon to properly respond to service requests.
 
 If there are no xinetd services required, it is recommended that the daemon be deleted from the system.
@@ -5779,7 +5779,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Be
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|2S,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|2S,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 63 Remove talk-server - 2.2.18 Ensure talk server is not enabled,PASSED,"""MBSS-OS-Red Hat Linux 63 Remove talk-server - 2.2.18 Ensure talk server is not enabled"" : [PASSED] The talk software makes it possible for users to send and receive messages across systems through a terminal session. The talk client (allows initiate of talk sessions) is installed by default.
 
 The software presents a security risk as it uses unencrypted protocols for communication.
@@ -5804,7 +5804,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Be
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  57 - 2.3.2 Ensure rsh client is not installed,PASSED,"""MBSS-OS-Red Hat Linux  57 - 2.3.2 Ensure rsh client is not installed"" : [PASSED] These legacy clients contain numerous security exposures and have been replaced with the more secure SSH package. Even if the server is removed, it is best to ensure the clients are also removed to prevent users from inadvertently attempting to use these commands and therefore exposing their credentials. Note that removing the rsh package removes the clients for rsh, rcp and rlogin.
 
 The package 'rsh-0.0.0-0' is not installed
@@ -5825,7 +5825,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  58 - 2.3.1 Ensure NIS Client is not installed,PASSED,"""MBSS-OS-Red Hat Linux  58 - 2.3.1 Ensure NIS Client is not installed"" : [PASSED] The NIS service is inherently an insecure system that has been vulnerable to DOS attacks, buffer overflows and has poor authentication for querying NIS maps. NIS generally has been replaced by such protocols as Lightweight Directory Access Protocol (LDAP). It is recommended that the service be removed.
 
 The package 'ypbind-0.0.0-0' is not installed
@@ -5846,7 +5846,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,CCE|CCE-27385-4,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,CCE|CCE-27385-4,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  59 - 2.2.16 Ensure NIS Server is not enabled,WARNING,"""MBSS-OS-Red Hat Linux  59 - 2.2.16 Ensure NIS Server is not enabled"" : [WARNING] The NIS service is inherently an insecure system that has been vulnerable to DOS attacks, buffer overflows and has poor authentication for querying NIS maps. NIS generally been replaced by such protocols as Lightweight Directory Access Protocol (LDAP). It is recommended that the service be disabled and other, more secure services be used
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -5875,7 +5875,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  76 - 2.2.5 Ensure DHCP Server is not enabled,WARNING,"""MBSS-OS-Red Hat Linux  76 - 2.2.5 Ensure DHCP Server is not enabled"" : [WARNING] Unless a system is specifically set up to act as a DHCP server, it is recommended that this service be disabled to reduce the potential attack surface.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -5904,7 +5904,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CCE|CCE-80330-4,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CCE|CCE-80330-4,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  75 - 2.2.4 Ensure CUPS is not enabled,WARNING,"""MBSS-OS-Red Hat Linux  75 - 2.2.4 Ensure CUPS is not enabled"" : [WARNING] If the system does not need to print jobs or accept print jobs from other systems, it is recommended that CUPS be disabled to reduce the potential attack surface.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -5933,7 +5933,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CCE|CCE-80282-7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.314Z,kosong,open
+CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CCE|CCE-80282-7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  74 - 2.2.3 Ensure Avahi Server is not enabled,WARNING,"""MBSS-OS-Red Hat Linux  74 - 2.2.3 Ensure Avahi Server is not enabled"" : [WARNING] Automatic discovery of network services is not normally required for system functionality. It is recommended to disable the service to reduce the potential attack surface.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -5962,7 +5962,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CCE|CCE-80338-7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.314Z,kosong,open
+CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,800-53|CM-7,CCE|CCE-80338-7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSCv6|9.1,CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  73 - 2.2.2 Ensure X Window System is not installed,PASSED,"""MBSS-OS-Red Hat Linux  73 - 2.2.2 Ensure X Window System is not installed"" : [PASSED] Unless your organization specifically requires graphical login access via X Windows, remove it to reduce the potential attack surface.
 
 The package 'xorg-x11-server-common-0.0.0-0' is not installed
@@ -5983,7 +5983,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,CCE|CCE-27218-7,LEVEL|1S ",2018-07-24T10:07:24.314Z,kosong,open
+800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,CCE|CCE-27218-7,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  06 - 2.2.1.2 Ensure ntp is configured - NTP Server,WARNING,"""MBSS-OS-Red Hat Linux  06 - 2.2.1.2 Ensure ntp is configured - NTP Server"" : [WARNING] ntp is a daemon which implements the Network Time Protocol (NTP). It is designed to synchronize system clocks across a variety of systems and use a source that is highly accurate. More information on NTP can be found at [http://www.ntp.org](http://www.ntp.org/). ntp can be configured to be a client and/or a server.
 
 This recommendation only applies if ntp is in use on the system.
@@ -6040,7 +6040,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-171|3.3.7,800-53|AU-8,CCE|CCE-27278-1,CSCv6|6.1,CSF|PR.PT-1,ISO/IEC-27001|A.12.4.4,ITSG-33|AU-8,LEVEL|1S,PCI-DSSv3.1|10.4,PCI-DSSv3.2|10.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-171|3.3.7,800-53|AU-8,CCE|CCE-27278-1,CSCv6|6.1,CSF|PR.PT-1,ISO/IEC-27001|A.12.4.4,ITSG-33|AU-8,LEVEL|1S,PCI-DSSv3.1|10.4,PCI-DSSv3.2|10.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  06 - 2.2.1.2 Ensure ntp is configured - restrict -6,WARNING,"""MBSS-OS-Red Hat Linux  06 - 2.2.1.2 Ensure ntp is configured - restrict -6"" : [WARNING] ntp is a daemon which implements the Network Time Protocol (NTP). It is designed to synchronize system clocks across a variety of systems and use a source that is highly accurate. More information on NTP can be found at [http://www.ntp.org](http://www.ntp.org/). ntp can be configured to be a client and/or a server.
 
 This recommendation only applies if ntp is in use on the system.
@@ -6097,7 +6097,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-171|3.4.2,800-53|CM-6,CSCv6|3.1,CSF|PR.IP-1,ITSG-33|CM-6,LEVEL|1S,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,PCI-DSS|10.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-171|3.4.2,800-53|CM-6,CSCv6|3.1,CSF|PR.IP-1,ITSG-33|CM-6,LEVEL|1S,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,PCI-DSS|10.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  06 - 2.2.1.2 Ensure ntp is configured - restrict -4,WARNING,"""MBSS-OS-Red Hat Linux  06 - 2.2.1.2 Ensure ntp is configured - restrict -4"" : [WARNING] ntp is a daemon which implements the Network Time Protocol (NTP). It is designed to synchronize system clocks across a variety of systems and use a source that is highly accurate. More information on NTP can be found at [http://www.ntp.org](http://www.ntp.org/). ntp can be configured to be a client and/or a server.
 
 This recommendation only applies if ntp is in use on the system.
@@ -6154,7 +6154,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-171|3.4.2,800-53|CM-6,CSCv6|3.1,CSF|PR.IP-1,ITSG-33|CM-6,LEVEL|1S,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4 ",2018-07-24T10:07:24.314Z,kosong,open
+800-171|3.4.2,800-53|CM-6,CSCv6|3.1,CSF|PR.IP-1,ITSG-33|CM-6,LEVEL|1S,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,2.2.1.1 Ensure time synchronization is in use,PASSED,"""2.2.1.1 Ensure time synchronization is in use"" : [PASSED] Time synchronization is important to support time sensitive security mechanisms like Kerberos and also ensures log files have consistent time records across the enterprise, which aids in forensic investigations.
 
 See Also : 
@@ -6171,7 +6171,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-CCE|CCE-27444-9,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+CCE|CCE-27444-9,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 63 Remove talk-server,PASSED,"""MBSS-OS-Red Hat Linux 63 Remove talk-server"" : [PASSED] The talk software makes it possible for users to send and receive messages across systems through a terminal session. The talk client (allows initiate of talk sessions) is installed by default.
 
 The software presents a security risk as it uses unencrypted protocols for communication.
@@ -6196,7 +6196,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Be
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 60 Remove tftp,PASSED,"""MBSS-OS-Red Hat Linux 60 Remove tftp"" : [PASSED] Trivial File Transfer Protocol (TFTP) is a simple file transfer protocol, typically used to automatically transfer configuration or boot files between machines. TFTP does not support authentication and can be easily hacked. The package tftp is a client program that allows for connections to a tftp server.
 
 It is recommended that TFTP be removed, unless there is a specific need for TFTP (such as a boot server). In that case, use extreme caution when configuring the services.
@@ -6221,7 +6221,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Be
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S,PCI-DSS|2.2.2,SANS-CSC|11-1,SANS-CSC|3-7 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S,PCI-DSS|2.2.2,SANS-CSC|11-1,SANS-CSC|3-7 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 61 Ensure tftp server is not enabled,PASSED,"""MBSS-OS-Red Hat Linux 61 Ensure tftp server is not enabled"" : [PASSED] TFTP does not support authentication nor does it ensure the confidentiality or integrity of data. It is recommended that TFTP be removed, unless there is a specific need for TFTP. In that case, extreme caution must be used when configuring the services.
 
 Remote value: 
@@ -6246,7 +6246,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,CSCv6|9.1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,CSCv6|9.1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,"MBSS-OS-Red Hat Linux  56, MBSS-OS-Red Hat Linux  57 - 2.1.6 Ensure tftp server is not enabled",PASSED,"""MBSS-OS-Red Hat Linux  56, MBSS-OS-Red Hat Linux  57 - 2.1.6 Ensure tftp server is not enabled"" : [PASSED] Trivial File Transfer Protocol (TFTP) is a simple file transfer protocol, typically used to automatically transfer configuration or boot machines from a boot server. The package tftp-server is used to define and support a TFTP server.
 
 Rationale:
@@ -6273,7 +6273,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 71 Disable tcpmux-server,PASSED,"""MBSS-OS-Red Hat Linux 71 Disable tcpmux-server"" : [PASSED] tcpmux-server is a network service that allows a client to access other network services running on the server. It is recommended that this service be disabled.
 
 tcpmux-server can be abused to circumvent the server's host based firewall. Additionally, tcpmux-server can be leveraged by an attacker to effectively port scan the server.
@@ -6298,7 +6298,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Be
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.6,800-171|3.4.7,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,800-171|3.4.6,800-171|3.4.7,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|1S,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  70 - 2.1.4 Ensure echo services are not enabled - echo-dgram,PASSED,"""MBSS-OS-Red Hat Linux  70 - 2.1.4 Ensure echo services are not enabled - echo-dgram"" : [PASSED] Disabling this service will reduce the remote attack surface of the system.
 
 The service does not exist
@@ -6319,7 +6319,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  69 - 2.1.4 Ensure echo services are not enabled - echo-stream,PASSED,"""MBSS-OS-Red Hat Linux  69 - 2.1.4 Ensure echo services are not enabled - echo-stream"" : [PASSED] Disabling this service will reduce the remote attack surface of the system.
 
 The service does not exist
@@ -6340,7 +6340,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  68 - 2.1.2 Ensure daytime services are not enabled - daytime-dgram,PASSED,"""MBSS-OS-Red Hat Linux  68 - 2.1.2 Ensure daytime services are not enabled - daytime-dgram"" : [PASSED] Disabling this service will reduce the remote attack surface of the system.
 
 The service does not exist
@@ -6361,7 +6361,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  67 - 2.1.2 Ensure daytime services are not enabled - daytime-stream,PASSED,"""MBSS-OS-Red Hat Linux  67 - 2.1.2 Ensure daytime services are not enabled - daytime-stream"" : [PASSED] Disabling this service will reduce the remote attack surface of the system.
 
 The service does not exist
@@ -6382,7 +6382,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  66 - 2.1.1 Ensure chargen services are not enabled - chargen-dgram,PASSED,"""MBSS-OS-Red Hat Linux  66 - 2.1.1 Ensure chargen services are not enabled - chargen-dgram"" : [PASSED] Disabling this service will reduce the remote attack surface of the system.
 
 The service does not exist
@@ -6403,7 +6403,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  65 - 2.1.1 Ensure chargen services are not enabled - chargen-stream,PASSED,"""MBSS-OS-Red Hat Linux  65 - 2.1.1 Ensure chargen services are not enabled - chargen-stream"" : [PASSED] Disabling this service will reduce the remote attack surface of the system.
 
 The service does not exist
@@ -6424,7 +6424,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,CSCv6|9.1,LEVEL|1S,PCI-DSS|2.2.2 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  54 - 2.1.8 Ensure telnet server is not enabled,PASSED,"""MBSS-OS-Red Hat Linux  54 - 2.1.8 Ensure telnet server is not enabled"" : [PASSED] The telnet protocol is insecure and unencrypted. The use of an unencrypted transmission medium could allow a user with access to sniff network traffic the ability to steal credentials. The ssh package provides an encrypted session and stronger security.
 
 Remote value: 
@@ -6449,7 +6449,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-800-53|CM-7,CIP|007-6-R1,CSCv6|9.1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,CIP|007-6-R1,CSCv6|9.1,PCI-DSSv3.1|2.2.2,PCI-DSSv3.1|2.2.3,PCI-DSSv3.2|2.2.2,PCI-DSSv3.2|2.2.3,800-171|3.4.6,800-171|3.4.7,CN-L3|7.1.3.5(c),CN-L3|7.1.3.7(d),CSF|PR.IP-1,CSF|PR.PT-3,ITSG-33|CM-7,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,"MBSS-OS-Red Hat Linux  35, MBSS-OS-Red Hat Linux  53 - 1.8 Ensure updates, patches, and additional security software are installed",WARNING,"""MBSS-OS-Red Hat Linux  35, MBSS-OS-Red Hat Linux  53 - 1.8 Ensure updates, patches, and additional security software are installed"" : [WARNING] Periodically patches are released for included software either due to security flaws or to include additional functionality.
 
 Rationale:
@@ -6488,7 +6488,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,ITSG-33|SI-2,CCE|CCE-26895-3,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,ITSG-33|SI-2,CCE|CCE-26895-3,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,1.7.2 Ensure GDM login banner is configured - banner message text,PASSED,"""1.7.2 Ensure GDM login banner is configured - banner message text"" : [PASSED] GDM is the GNOME Display Manager which handles graphical login for GNOME based systems.
 
 Rationale:
@@ -6517,7 +6517,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,1.7.2 Ensure GDM login banner is configured - banner message enabled,PASSED,"""1.7.2 Ensure GDM login banner is configured - banner message enabled"" : [PASSED] GDM is the GNOME Display Manager which handles graphical login for GNOME based systems.
 
 Rationale:
@@ -6546,7 +6546,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,1.7.2 Ensure GDM login banner is configured - file-db,PASSED,"""1.7.2 Ensure GDM login banner is configured - file-db"" : [PASSED] GDM is the GNOME Display Manager which handles graphical login for GNOME based systems.
 
 Rationale:
@@ -6575,7 +6575,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,1.7.2 Ensure GDM login banner is configured - system-db,PASSED,"""1.7.2 Ensure GDM login banner is configured - system-db"" : [PASSED] GDM is the GNOME Display Manager which handles graphical login for GNOME based systems.
 
 Rationale:
@@ -6604,7 +6604,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,1.7.2 Ensure GDM login banner is configured - user-db,PASSED,"""1.7.2 Ensure GDM login banner is configured - user-db"" : [PASSED] GDM is the GNOME Display Manager which handles graphical login for GNOME based systems.
 
 Rationale:
@@ -6633,7 +6633,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  42 - 1.7.1.3 Ensure remote login warning banner is configured properly,PASSED,"""MBSS-OS-Red Hat Linux  42 - 1.7.1.3 Ensure remote login warning banner is configured properly"" : [PASSED] The contents of the /etc/issuefile are displayed to users prior to login for remote connections from configured services.
 
 Unix-based systems have typically displayed information about the OS release and patch level upon logging in to the system. This information can be useful to developers who are developing software for a particular OS platform. If mingetty(8) supports the following options, they display operating system information: m - machine architecture r - operating system release s - operating system name v - operating system version
@@ -6666,7 +6666,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-27303-7,CSCv6|3.1,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-27303-7,CSCv6|3.1,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  42 - 1.7.1.2 Ensure local login warning banner is configured properly,PASSED,"""MBSS-OS-Red Hat Linux  42 - 1.7.1.2 Ensure local login warning banner is configured properly"" : [PASSED] The contents of the /etc/issue file are displayed to users prior to login for local terminals.
 
 Unix-based systems have typically displayed information about the OS release and patch level upon logging in to the system. This information can be useful to developers who are developing software for a particular OS platform. If mingetty(8) supports the following options, they display operating system information: m - machine architecture r - operating system release s - operating system name v - operating system version
@@ -6699,7 +6699,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CSCv6|3.1,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CSCv6|3.1,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  52 - 1.5.3 Ensure address space layout randomization (ASLR) is enabled - sysctl,WARNING,"""MBSS-OS-Red Hat Linux  52 - 1.5.3 Ensure address space layout randomization (ASLR) is enabled - sysctl"" : [WARNING] Address space layout randomization (ASLR) is an exploit mitigation technique which randomly arranges the address space of key data areas of a process.
 
 Rationale:
@@ -6744,7 +6744,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-27099-1,CSCv6|3.1,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-27099-1,CSCv6|3.1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  51 - 1.5.1 Ensure core dumps are restricted - limits.conf limits.d,WARNING,"""MBSS-OS-Red Hat Linux  51 - 1.5.1 Ensure core dumps are restricted - limits.conf limits.d"" : [WARNING] A core dump is the memory of an executable program. It is generally used to determine why a program aborted. It can also be used to glean confidential information from a core file. The system provides the ability to set a soft limit for core dumps, but this can be overridden by the user.
 
 Rationale:
@@ -6795,7 +6795,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80169-6,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80169-6,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  49 - 1.4.3 Ensure authentication required for single user mode - emergency.service,PASSED,"""MBSS-OS-Red Hat Linux  49 - 1.4.3 Ensure authentication required for single user mode - emergency.service"" : [PASSED] Single user mode (rescue mode) is used for recovery when the system detects an issue during boot or by manual selection from the bootloader.
 
 Rationale:
@@ -6832,7 +6832,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-7,CSF|PR.DS-6,CCE|CCE-27287-2,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,CSF|PR.DS-6,CCE|CCE-27287-2,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  49 - 1.4.3 Ensure authentication required for single user mode - rescue.service,PASSED,"""MBSS-OS-Red Hat Linux  49 - 1.4.3 Ensure authentication required for single user mode - rescue.service"" : [PASSED] Single user mode (rescue mode) is used for recovery when the system detects an issue during boot or by manual selection from the bootloader.
 
 Rationale:
@@ -6869,7 +6869,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-7,CSF|PR.DS-6,CCE|CCE-27287-2,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,CSF|PR.DS-6,CCE|CCE-27287-2,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  48 - 1.4.2 Ensure bootloader password is set,FAILED,"""MBSS-OS-Red Hat Linux  48 - 1.4.2 Ensure bootloader password is set"" : [FAILED] Setting the boot loader password will require that anyone rebooting the system must enter a password before being able to set command line boot parameters
 
 Rationale:
@@ -6910,7 +6910,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-7,CSF|PR.DS-6,CCE|CCE-27309-4,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,CSF|PR.DS-6,CCE|CCE-27309-4,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  46-47 - 1.4.1 Ensure permissions on bootloader config are configured - user.cfg,FAILED,"""MBSS-OS-Red Hat Linux  46-47 - 1.4.1 Ensure permissions on bootloader config are configured - user.cfg"" : [FAILED] The grub configuration file contains information on boot settings and passwords for unlocking boot options. The grub configuration is usually located at /boot/grub2/grub.cfg and linked as /etc/grub2.cfg. Additional settings can be found in the /boot/grub2/user.cfg file.
 
 Rationale:
@@ -6959,7 +6959,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-7,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,CSF|PR.DS-6,CCE|CCE-26812-8,CCE|CCE-26860-7,CCE|CCE-27054-6,CSCv6|3.1,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,CSF|PR.DS-6,CCE|CCE-26812-8,CCE|CCE-26860-7,CCE|CCE-27054-6,CSCv6|3.1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  46-47 - 1.4.1 Ensure permissions on bootloader config are configured - grub.cfg,FAILED,"""MBSS-OS-Red Hat Linux  46-47 - 1.4.1 Ensure permissions on bootloader config are configured - grub.cfg"" : [FAILED] The grub configuration file contains information on boot settings and passwords for unlocking boot options. The grub configuration is usually located at /boot/grub2/grub.cfg and linked as /etc/grub2.cfg. Additional settings can be found in the /boot/grub2/user.cfg file.
 
 Rationale:
@@ -7008,7 +7008,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-7,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,CSF|PR.DS-6,CCE|CCE-26812-8,CCE|CCE-26860-7,CCE|CCE-27054-6,CSCv6|3.1,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,CSF|PR.DS-6,CCE|CCE-26812-8,CCE|CCE-26860-7,CCE|CCE-27054-6,CSCv6|3.1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  38 - 1.3.2 Ensure filesystem integrity is regularly checked,FAILED,"""MBSS-OS-Red Hat Linux  38 - 1.3.2 Ensure filesystem integrity is regularly checked"" : [FAILED] Periodic file checking allows the system administrator to determine on a regular basis if critical files have been changed in an unauthorized fashion.
 
 The file ""/var/spool/cron/root"" could not be found
@@ -7037,7 +7037,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-7,CN-L3|7.1.3.5(b),CSF|PR.DS-6,ITSG-33|SI-7,SWIFT-CSCv1|6.2,CCE|CCE-26952-2,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,CN-L3|7.1.3.5(b),CSF|PR.DS-6,ITSG-33|SI-7,SWIFT-CSCv1|6.2,CCE|CCE-26952-2,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  37 - 1.3.1 Ensure AIDE is installed,FAILED,"""MBSS-OS-Red Hat Linux  37 - 1.3.1 Ensure AIDE is installed"" : [FAILED] By monitoring the filesystem state compromised files can be detected to prevent or limit the exposure of accidental or malicious misconfigurations or modified binaries.
 
 The package 'aide-0.0.0-0' is not installed
@@ -7066,7 +7066,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-7,PCI-DSSv3.1|12.3.7,PCI-DSSv3.2|12.3.7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.5.1,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,CCE|CCE-27096-7,CSCv6|2.2,HIPAA|164.308(a)(5)(ii)(B),ITSG-33|SI-2,LEVEL|1S,PCI-DSS|10.5.5,PCI-DSS|11.4,PCI-DSS|5.1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,PCI-DSSv3.1|12.3.7,PCI-DSSv3.2|12.3.7,800-171|3.4.8,CSF|PR.IP-1,CSF|PR.PT-3,ISO/IEC-27001|A.12.5.1,ISO/IEC-27001|A.12.6.2,SWIFT-CSCv1|2.3,CCE|CCE-27096-7,CSCv6|2.2,HIPAA|164.308(a)(5)(ii)(B),ITSG-33|SI-2,LEVEL|1S,PCI-DSS|10.5.5,PCI-DSS|11.4,PCI-DSS|5.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 36.2 Verify Package Integrity Using RPM,WARNING,"""MBSS-OS-Red Hat Linux 36.2 Verify Package Integrity Using RPM"" : [WARNING] RPM has the capability of verifying installed packages by comparing the installed files against the file information stored in the package.
 
 Verifying packages gives a system administrator the ability to detect if package files were changed, which could indicate that a valid binary was overwritten with a trojaned binary.
@@ -7099,7 +7099,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|SI-7,CSF|PR.DS-6,HIPAA|164.308(a)(5)(ii)(B),LEVEL|1NS,PCI-DSS|11.5 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,CSF|PR.DS-6,HIPAA|164.308(a)(5)(ii)(B),LEVEL|1NS,PCI-DSS|11.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  36.1 - 1.2.3 Ensure GPG keys are configured,WARNING,"""MBSS-OS-Red Hat Linux  36.1 - 1.2.3 Ensure GPG keys are configured"" : [WARNING] It is important to ensure that updates are obtained from a valid source to protect against spoofing that could lead to the inadvertent installation of malware on the system.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -7128,7 +7128,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-7,CSF|PR.DS-6,SWIFT-CSCv1|6.2,CCE|CCE-26957-1,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,CSF|PR.DS-6,SWIFT-CSCv1|6.2,CCE|CCE-26957-1,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 34 - 1.2.5 Disable the rhnsd Daemon,FAILED,"""MBSS-OS-Red Hat Linux 34 - 1.2.5 Disable the rhnsd Daemon"" : [FAILED] The rhnsd daemon polls the Red Hat Network web site for scheduled actions and, if there are, executes those actions.
 
 Patch management policies may require that organizations test the impact of a patch before it is deployed in a production environment. Having patches automatically deployed could have a negative impact on the environment. It is best to not allow an action by default but only after appropriate consideration has been made. It is recommended that the service be disabled unless the risk is understood and accepted or you are running your own satellite . This item is not scored because organizations may have addressed the risk.
@@ -7167,7 +7167,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|CM-7,800-171|3.4.6,800-171|3.4.7,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|2NS,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-7,800-171|3.4.6,800-171|3.4.7,CSF|PR.IP-1,CSF|PR.PT-3,LEVEL|2NS,PCI-DSS|2.2.2,SANS-CSC|11-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  33 - 1.2.2 Ensure gpgcheck is globally activated,PASSED,"""MBSS-OS-Red Hat Linux  33 - 1.2.2 Ensure gpgcheck is globally activated"" : [PASSED] It is important to ensure that an RPM's package signature is always checked prior to installation to ensure that the software is obtained from a trusted source.
 
 Remote value: 
@@ -7196,7 +7196,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|SI-7,CSF|PR.DS-6,SWIFT-CSCv1|6.2,CCE|CCE-26989-4,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,CSF|PR.DS-6,SWIFT-CSCv1|6.2,CCE|CCE-26989-4,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  25 - 1.1.21 Ensure sticky bit is set on all world-writable directories,WARNING,"""MBSS-OS-Red Hat Linux  25 - 1.1.21 Ensure sticky bit is set on all world-writable directories"" : [WARNING] Setting the sticky bit on world writable directories prevents users from deleting or renaming files in that directory that are not owned by them.
 
 Rationale:
@@ -7235,7 +7235,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-3,800-171|3.1.1,800-171|3.1.2,CSF|PR.AC-4,CSF|PR.PT-3,ITSG-33|AC-3,CCE|CCE-80130-8,CN-L3|7.1.3.2(b),CN-L3|7.1.3.2(g),LEVEL|1S,PCI-DSSv3.1|7.1.2,PCI-DSSv3.2|7.1.2,SWIFT-CSCv1|5.1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-3,800-171|3.1.1,800-171|3.1.2,CSF|PR.AC-4,CSF|PR.PT-3,ITSG-33|AC-3,CCE|CCE-80130-8,CN-L3|7.1.3.2(b),CN-L3|7.1.3.2(g),LEVEL|1S,PCI-DSSv3.1|7.1.2,PCI-DSSv3.2|7.1.2,SWIFT-CSCv1|5.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  20 - 1.1.20 Ensure noexec option set on removable media partitions,FAILED,"""MBSS-OS-Red Hat Linux  20 - 1.1.20 Ensure noexec option set on removable media partitions"" : [FAILED] Setting this option on a file system prevents users from executing programs from the removable media. This deters users from being able to introduce potentially malicious software on the system.
 
 The file ""/etc/fstab"" does not contain ""^[\s]*.*[\s]+/m.*/(floppy|cdrom|corder)[\s]""
@@ -7264,7 +7264,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,CSCv6|8,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,CSCv6|8,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  21 - 1.1.19 Ensure nosuid option set on removable media partitions,FAILED,"""MBSS-OS-Red Hat Linux  21 - 1.1.19 Ensure nosuid option set on removable media partitions"" : [FAILED] Setting this option on a file system prevents users from introducing privileged programs onto the system and allowing non-root users to execute them.
 
 The file ""/etc/fstab"" does not contain ""^[\s]*.*[\s]+/m.*/(floppy|cdrom|corder)[\s]""
@@ -7293,7 +7293,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  19 - 1.1.18 Ensure nodev option set on removable media partitions,FAILED,"""MBSS-OS-Red Hat Linux  19 - 1.1.18 Ensure nodev option set on removable media partitions"" : [FAILED] Removable media containing character and block special devices could be used to circumvent security controls by allowing non-root users to access sensitive device files such as /dev/kmem or the raw disk partitions.
 
 The file ""/etc/fstab"" does not contain ""^[\s]*.*[\s]+/m.*/(floppy|cdrom|corder)[\s]""
@@ -7322,7 +7322,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,LEVEL|1NS ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,LEVEL|1NS ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  24 - 1.1.17 Ensure noexec option set on /dev/shm partition,FAILED,"""MBSS-OS-Red Hat Linux  24 - 1.1.17 Ensure noexec option set on /dev/shm partition"" : [FAILED] Setting this option on a file system prevents users from executing programs from shared memory. This deters users from introducing potentially malicious software on the system.
 
 The file ""/etc/fstab"" does not contain ""^[\s]*[^#]*[\s]+\/dev\/shm[\s]""
@@ -7351,7 +7351,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80153-0,CSCv6|3.1,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80153-0,CSCv6|3.1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 40-41 - 1.6.1.2 Ensure the SELinux state is enforcing,FAILED,"""MBSS-OS-Red Hat Linux 40-41 - 1.6.1.2 Ensure the SELinux state is enforcing"" : [FAILED] Set SELinux to enable when the system is booted.
 
 SELinux must be enabled at boot time in to ensure that the controls it provides are in effect at all times.
@@ -7394,7 +7394,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AC-3,800-171|3.1.1,800-171|3.1.2,CSF|PR.AC-4,CSF|PR.PT-3,800-53|CM-7,HIPAA|164.308(a)(5)(ii)(B),LEVEL|2S,PCI-DSS|2.2.4,SANS-CSC|5-6 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-3,800-171|3.1.1,800-171|3.1.2,CSF|PR.AC-4,CSF|PR.PT-3,800-53|CM-7,HIPAA|164.308(a)(5)(ii)(B),LEVEL|2S,PCI-DSS|2.2.4,SANS-CSC|5-6 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  39 - 1.6.1.1 Ensure SELinux is not disabled in bootloader configuration,WARNING,"""MBSS-OS-Red Hat Linux  39 - 1.6.1.1 Ensure SELinux is not disabled in bootloader configuration"" : [WARNING] Configure SELINUX to be enabled at boot time and verify that it has not been overwritten by the grub boot parameters.SELinux must be enabled at boot time in your grub configuration to ensure that the controls it provides are not overridden.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -7423,7 +7423,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,ITSG-33|SI-2,HIPAA|164.308(a)(5)(ii)(A),LEVEL|1NS,SANS-CSC|3-2,SANS-CSC|4-5,SANS-CSC|6-1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,ITSG-33|SI-2,HIPAA|164.308(a)(5)(ii)(A),LEVEL|1NS,SANS-CSC|3-2,SANS-CSC|4-5,SANS-CSC|6-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  23 - 1.1.16 Ensure nosuid option set on /dev/shm partition,FAILED,"""MBSS-OS-Red Hat Linux  23 - 1.1.16 Ensure nosuid option set on /dev/shm partition"" : [FAILED] Setting this option on a file system prevents users from introducing privileged programs onto the system and allowing non-root users to execute them.
 
 The file ""/etc/fstab"" does not contain ""^[\s]*[^#]*[\s]+\/dev\/shm[\s]""
@@ -7452,7 +7452,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80154-8,CSCv6|3.1,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80154-8,CSCv6|3.1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  22 - 1.1.15 Ensure nodev option set on /dev/shm partition,FAILED,"""MBSS-OS-Red Hat Linux  22 - 1.1.15 Ensure nodev option set on /dev/shm partition"" : [FAILED] Since the /dev/shm filesystem is not intended to support devices, set this option to ensure that users cannot attempt to create special devices in /dev/shm partitions.
 
 The file ""/etc/fstab"" does not contain ""^[\s]*[^#]*[\s]+\/dev\/shm[\s]""
@@ -7481,7 +7481,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80152-2,CSCv6|3.1,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80152-2,CSCv6|3.1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 85 - 4.1.1.3 Ensure audit logs are not automatically deleted,FAILED,"""MBSS-OS-Red Hat Linux 85 - 4.1.1.3 Ensure audit logs are not automatically deleted"" : [FAILED] Normally, auditd will hold 4 logs of maximum log file size before deleting older log files.
 
 In high security contexts, the benefits of maintaining a long audit history exceed the cost of storing the audit history.
@@ -7524,7 +7524,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-5,800-171|3.3.4,CSF|PR.PT-1,800-53|AU-11,LEVEL|2S,PCI-DSS|10.7,SANS-CSC|14-4 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-5,800-171|3.3.4,CSF|PR.PT-1,800-53|AU-11,LEVEL|2S,PCI-DSS|10.7,SANS-CSC|14-4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 84.3 - 4.1.1.2 Ensure system is disabled when audit logs are full,FAILED,"""MBSS-OS-Red Hat Linux 84.3 - 4.1.1.2 Ensure system is disabled when audit logs are full"" : [FAILED] The auditd daemon can be configured to halt the system when the audit logs are full.
 
 In high security contexts, the risk of detecting unauthorized access or nonrepudiation exceeds the benefit of the system's availability.
@@ -7567,7 +7567,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-5,CSF|PR.PT-1,800-53|AU-4,CSF|PR.DS-4,LEVEL|2NS,PCI-DSS|10.7,SANS-CSC|14-3 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-5,CSF|PR.PT-1,800-53|AU-4,CSF|PR.DS-4,LEVEL|2NS,PCI-DSS|10.7,SANS-CSC|14-3 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 84.2 - 4.1.1.2 Ensure system is disabled when audit logs are full,PASSED,"""MBSS-OS-Red Hat Linux 84.2 - 4.1.1.2 Ensure system is disabled when audit logs are full"" : [PASSED] The auditd daemon can be configured to halt the system when the audit logs are full.
 
 In high security contexts, the risk of detecting unauthorized access or nonrepudiation exceeds the benefit of the system's availability.
@@ -7600,7 +7600,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-5,800-171|3.3.4,CSF|PR.PT-1,800-53|AU-4,CSF|PR.DS-4,LEVEL|2NS,PCI-DSS|10.7,SANS-CSC|14-3 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-5,800-171|3.3.4,CSF|PR.PT-1,800-53|AU-4,CSF|PR.DS-4,LEVEL|2NS,PCI-DSS|10.7,SANS-CSC|14-3 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 88.3 - 4.1.4 Ensure events that modify date and time information are collected,FAILED,"""MBSS-OS-Red Hat Linux 88.3 - 4.1.4 Ensure events that modify date and time information are collected"" : [FAILED] Capture events where the system date and/or time has been modified. The parameters in this section are set to determine if the adjtimex (tune kernel clock), settimeofday (Set time, using timeval and timezone structures) stime (using seconds since 1/1/1970) or clock_settime (allows for the setting of several internal clocks and timers) system calls have been executed and always write an audit record to the /var/log/audit.log file upon exit, tagging the records with the identifier ""time-change""
 
 Unexpected changes in system date and/or time could be a sign of malicious activity on the system.
@@ -7639,7 +7639,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 88.2 - 4.1.4 Ensure events that modify date and time information are collected,FAILED,"""MBSS-OS-Red Hat Linux 88.2 - 4.1.4 Ensure events that modify date and time information are collected"" : [FAILED] Capture events where the system date and/or time has been modified. The parameters in this section are set to determine if the adjtimex (tune kernel clock), settimeofday (Set time, using timeval and timezone structures) stime (using seconds since 1/1/1970) or clock_settime (allows for the setting of several internal clocks and timers) system calls have been executed and always write an audit record to the /var/log/audit.log file upon exit, tagging the records with the identifier ""time-change""
 
 Unexpected changes in system date and/or time could be a sign of malicious activity on the system.
@@ -7678,7 +7678,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 88.1 - 4.1.4 Ensure events that modify date and time information are collected,FAILED,"""MBSS-OS-Red Hat Linux 88.1 - 4.1.4 Ensure events that modify date and time information are collected"" : [FAILED] Capture events where the system date and/or time has been modified. The parameters in this section are set to determine if the adjtimex (tune kernel clock), settimeofday (Set time, using timeval and timezone structures) stime (using seconds since 1/1/1970) or clock_settime (allows for the setting of several internal clocks and timers) system calls have been executed and always write an audit record to the /var/log/audit.log file upon exit, tagging the records with the identifier ""time-change""
 
 Unexpected changes in system date and/or time could be a sign of malicious activity on the system.
@@ -7717,7 +7717,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 84.1 - 4.1.1.2 Ensure system is disabled when audit logs are full,FAILED,"""MBSS-OS-Red Hat Linux 84.1 - 4.1.1.2 Ensure system is disabled when audit logs are full"" : [FAILED] The auditd daemon can be configured to halt the system when the audit logs are full.
 
 In high security contexts, the risk of detecting unauthorized access or nonrepudiation exceeds the benefit of the system's availability.
@@ -7760,7 +7760,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-5,CSF|PR.PT-1,800-53|AU-4,CSF|PR.DS-4,LEVEL|2NS,PCI-DSS|10.7,SANS-CSC|14-3 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-5,CSF|PR.PT-1,800-53|AU-4,CSF|PR.DS-4,LEVEL|2NS,PCI-DSS|10.7,SANS-CSC|14-3 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 83 - 4.1.1.1 Ensure audit log storage size is configured,PASSED,"""MBSS-OS-Red Hat Linux 83 - 4.1.1.1 Ensure audit log storage size is configured"" : [PASSED] Configure the maximum size of the audit log file. Once the log reaches the maximum size, it will be rotated and a new log file will be started.
 
 It is important that an appropriate size is determined for log files so that they do not impact the system and audit data is not lost.
@@ -7795,7 +7795,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AU-4,CSF|PR.DS-4,CSF|PR.PT-1,LEVEL|2NS,PCI-DSS|10.7,SANS-CSC|14-3 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-4,CSF|PR.DS-4,CSF|PR.PT-1,LEVEL|2NS,PCI-DSS|10.7,SANS-CSC|14-3 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  44 - 1.6.1.5 Ensure the MCS Translation Service (mcstrans) is not installed,WARNING,"""MBSS-OS-Red Hat Linux  44 - 1.6.1.5 Ensure the MCS Translation Service (mcstrans) is not installed"" : [WARNING] The mcstransd daemon provides category label information to client processes requesting information. The label translations are defined in /etc/selinux/targeted/setrans.conf. Since this service is not used very often, remove it to reduce the amount of potentially vulnerable code running on the system.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -7824,7 +7824,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,ITSG-33|SI-2,HIPAA|164.308(a)(5)(ii)(A),LEVEL|1NS,SANS-CSC|3-2,SANS-CSC|4-5,SANS-CSC|6-1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,ITSG-33|SI-2,HIPAA|164.308(a)(5)(ii)(A),LEVEL|1NS,SANS-CSC|3-2,SANS-CSC|4-5,SANS-CSC|6-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  43 - 1.6.1.4 Ensure SETroubleshoot is not installed,WARNING,"""MBSS-OS-Red Hat Linux  43 - 1.6.1.4 Ensure SETroubleshoot is not installed"" : [WARNING] The SETroubleshoot service notifies desktop users of SELinux denials through a user-friendly interface. The service provides important information around configuration errors, unauthorized intrusions, and other potential errors. The SETroubleshoot service is an unnecessary daemon to have running on a server, especially if X Windows is disabled.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -7853,7 +7853,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,ITSG-33|SI-2,HIPAA|164.308(a)(5)(ii)(A),LEVEL|1NS,SANS-CSC|3-2,SANS-CSC|4-5,SANS-CSC|6-1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-2,800-171|3.14.1,CSF|ID.RA-1,CSF|PR.IP-12,ITSG-33|SI-2,HIPAA|164.308(a)(5)(ii)(A),LEVEL|1NS,SANS-CSC|3-2,SANS-CSC|4-5,SANS-CSC|6-1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 50 Ensure interactive boot is not enabled,FAILED,"""MBSS-OS-Red Hat Linux 50 Ensure interactive boot is not enabled"" : [FAILED] Turn off the PROMPT option on the console to prevent console users from potentially overriding established security settings.
 
 The file ""/etc/sysconfig/init"" does not contain ""^[\s]*PROMPT[\s]*=""
@@ -7882,7 +7882,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-800-53|SI-7,CSF|PR.DS-6,CSCv6|5.1,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|SI-7,CSF|PR.DS-6,CSCv6|5.1,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  12 - 1.1.5 Ensure noexec option set on /tmp partition,WARNING,"""MBSS-OS-Red Hat Linux  12 - 1.1.5 Ensure noexec option set on /tmp partition"" : [WARNING] Since the /tmp filesystem is only intended for temporary file storage, set this option to ensure that users cannot run executable binaries from /tmp.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -7911,7 +7911,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80150-6,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80150-6,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 86 - 4.1.2 Ensure auditd service is enabled,WARNING,"""MBSS-OS-Red Hat Linux 86 - 4.1.2 Ensure auditd service is enabled"" : [WARNING] Turn on the auditd daemon to record system events.
 
 The capturing of system events provides system administrators with information to allow them to determine if unauthorized access to their system is occurring.
@@ -7944,7 +7944,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Be
 
 Reference(s) : 
 
-800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,SANS-CSC|12 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-12,800-171|3.3.1,800-171|3.3.2,CSF|DE.CM-1,CSF|DE.CM-3,CSF|DE.CM-7,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1,SANS-CSC|12 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  11 - 1.1.4 Ensure nosuid option set on /tmp partition,WARNING,"""MBSS-OS-Red Hat Linux  11 - 1.1.4 Ensure nosuid option set on /tmp partition"" : [WARNING] Since the /tmp filesystem is only intended for temporary file storage, set this option to ensure that users cannot create setuid files in /tmp.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -7973,7 +7973,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80151-4,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80151-4,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 87 - 4.1.3 Ensure auditing for processes that start prior to auditd is enabled,FAILED,"""MBSS-OS-Red Hat Linux 87 - 4.1.3 Ensure auditing for processes that start prior to auditd is enabled"" : [FAILED] Configure grub so that processes that are capable of being audited can be audited even if they start up prior to auditd startup.
 
 Audit events need to be captured on processes that start up prior to auditd , so that potential malicious activity cannot go undetected.
@@ -8022,7 +8022,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Be
 
 Reference(s) : 
 
-800-53|AU-14,800-53|SI-7,CSF|PR.DS-6,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AU-14,800-53|SI-7,CSF|PR.DS-6,CSF|PR.PT-1,800-53|AU-2,HIPAA|164.312(b),LEVEL|2S,PCI-DSS|10.1 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  10 - 1.1.3 Ensure nodev option set on /tmp partition,WARNING,"""MBSS-OS-Red Hat Linux  10 - 1.1.3 Ensure nodev option set on /tmp partition"" : [WARNING] Since the /tmp filesystem is not intended to support devices, set this option to ensure that users cannot attempt to create block or character special devices in /tmp.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -8051,7 +8051,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80149-8,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CCE|CCE-80149-8,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  32 - 1.1.1.7 Ensure mounting of udf filesystems is disabled,FAILED,"""MBSS-OS-Red Hat Linux  32 - 1.1.1.7 Ensure mounting of udf filesystems is disabled"" : [FAILED] Removing support for unneeded filesystem types reduces the local attack surface of the system. If this filesystem type is not needed, disable it.
 
 The file ""/etc/modprobe.d/CIS.conf"" could not be found
@@ -8086,7 +8086,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80143-1,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80143-1,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  18 - 1.1.14 Ensure nodev option set on /home partition,WARNING,"""MBSS-OS-Red Hat Linux  18 - 1.1.14 Ensure nodev option set on /home partition"" : [WARNING] Since the user partitions are not intended to support devices, set this option to ensure that users cannot attempt to create block or character special devices.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -8115,7 +8115,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CSCv6|3.1,LEVEL|1S,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-6,800-171|3.1.7,CSF|PR.AC-4,CSCv6|3.1,LEVEL|1S,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  17 - 1.1.13 Ensure separate partition exists for /home,WARNING,"""MBSS-OS-Red Hat Linux  17 - 1.1.13 Ensure separate partition exists for /home"" : [WARNING] The /home directory is used to support disk storage needs of local users.If the system is intended to support local users, create a separate partition for the /home directory to protect against resource exhaustion and restrict the type of files that can be stored under /home .
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -8144,7 +8144,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T10:07:24.315Z,kosong,open
+AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  16 - 1.1.12 Ensure separate partition exists for /var/log/audit,WARNING,"""MBSS-OS-Red Hat Linux  16 - 1.1.12 Ensure separate partition exists for /var/log/audit"" : [WARNING] The auditing daemon, auditd , stores log data in the /var/log/audit directory. There are two important reasons to ensure that data gathered by auditd is stored on a separate partition: protection against resource exhaustion (since the audit.log file can grow quite large) and protection of audit data. The audit daemon calculates how much free space is left and performs actions based on the results. If other processes (such as syslog ) consume space in the same partition as auditd , it may not perform as desired.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -8173,7 +8173,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T10:07:24.315Z,kosong,open
+AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  15 - 1.1.11 Ensure separate partition exists for /var/log,WARNING,"""MBSS-OS-Red Hat Linux  15 - 1.1.11 Ensure separate partition exists for /var/log"" : [WARNING] The /var/log directory is used by system services to store log data .There are two important reasons to ensure that system logs are stored on a separate partition: protection against resource exhaustion (since logs can grow quite large) and protection of audit data.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -8202,7 +8202,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T10:07:24.315Z,kosong,open
+AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 14 Bind Mount the /var/tmp directory to /tmp,FAILED,"""MBSS-OS-Red Hat Linux 14 Bind Mount the /var/tmp directory to /tmp"" : [FAILED] The /var/tmp directory is normally a standalone directory in the /var file system. Binding /var/tmp to /tmp establishes an unbreakable link to /tmp that cannot be removed (even by the root user). It also allows /var/tmp to inherit the same mount options that /tmp owns, allowing /var/tmp to be protected in the same /tmp is protected. It will also prevent /var from filling up with temporary files as the contents of /var/tmp will actually reside in the file system containing /tmp.
 
 All programs that use /var/tmp and /tmp to read/write temporary files will always be written to the /tmp file system, preventing a user from running the /var file system out of space or trying to perform operations that have been blocked in the /tmp filesystem.
@@ -8241,7 +8241,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_7_Be
 
 Reference(s) : 
 
-800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|MP-2,CSF|PR.DS-4,LEVEL|1S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,800-171|3.4.2,CSF|PR.IP-1,800-53|MP-2,CSF|PR.DS-4,LEVEL|1S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  13 - 1.1.6 Ensure separate partition exists for /var,WARNING,"""MBSS-OS-Red Hat Linux  13 - 1.1.6 Ensure separate partition exists for /var"" : [WARNING] The /var directory is used by daemons and other system services to temporarily store dynamic data. Some directories created by these processes may be world-writable.Since the /var directory may contain world-writable files and directories, there is a risk of resource exhaustion if it is not bound to a separate partition.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -8270,7 +8270,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T10:07:24.315Z,kosong,open
+AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux 45 - 1.6.1.6 Ensure no unconfined daemons exist,WARNING,"""MBSS-OS-Red Hat Linux 45 - 1.6.1.6 Ensure no unconfined daemons exist"" : [WARNING] Daemons that are not defined in SELinux policy will inherit the security context of their parent process.
 
 Since daemons are launched and descend from the init process, they will inherit the security context label initrc_t. This could cause the unintended consequence of giving the process more permission than it requires.
@@ -8303,7 +8303,7 @@ https://benchmarks.cisecurity.org/tools2/linux/CIS_Red_Hat_Enterprise_Linux_6_Be
 
 Reference(s) : 
 
-800-53|AC-3,800-171|3.1.1,800-171|3.1.2,CSF|PR.AC-4,CSF|PR.PT-3,800-53|SC-39,CSF|PR.DS-6,LEVEL|2S ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|AC-3,800-171|3.1.1,800-171|3.1.2,CSF|PR.AC-4,CSF|PR.PT-3,800-53|SC-39,CSF|PR.DS-6,LEVEL|2S ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  31 - 1.1.1.6 Ensure mounting of squashfs filesystems is disabled,FAILED,"""MBSS-OS-Red Hat Linux  31 - 1.1.1.6 Ensure mounting of squashfs filesystems is disabled"" : [FAILED] Removing support for unneeded filesystem types reduces the local attack surface of the system. If this filesystem type is not needed, disable it.
 
 The file ""/etc/modprobe.d/CIS.conf"" could not be found
@@ -8338,7 +8338,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80142-3,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80142-3,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  30 - 1.1.1.5 Ensure mounting of hfsplus filesystems is disabled,FAILED,"""MBSS-OS-Red Hat Linux  30 - 1.1.1.5 Ensure mounting of hfsplus filesystems is disabled"" : [FAILED] Removing support for unneeded filesystem types reduces the local attack surface of the system. If this filesystem type is not needed, disable it.
 
 The file ""/etc/modprobe.d/CIS.conf"" could not be found
@@ -8373,7 +8373,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80141-5,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80141-5,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  29 - 1.1.1.4 Ensure mounting of hfs filesystems is disabled,FAILED,"""MBSS-OS-Red Hat Linux  29 - 1.1.1.4 Ensure mounting of hfs filesystems is disabled"" : [FAILED] Removing support for unneeded filesystem types reduces the local attack surface of the system. If this filesystem type is not needed, disable it.
 
 The file ""/etc/modprobe.d/CIS.conf"" could not be found
@@ -8408,7 +8408,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80140-7,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80140-7,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  09 - 1.1.2 Ensure separate partition exists for /tmp,WARNING,"""MBSS-OS-Red Hat Linux  09 - 1.1.2 Ensure separate partition exists for /tmp"" : [WARNING] The /tmp directory is a world-writable directory used for temporary storage by all users and some applications. Since the /tmp directory is intended to be world-writable, there is a risk of resource exhaustion if it is not bound to a separate partition. In addition, making /tmp its own file system allows an administrator to set the noexec option on the mount, making /tmp useless for an attacker to install executable code. It would also prevent an attacker from establishing a hardlink to a system setuid program and wait for it to be updated. Once the program was updated, the hardlink would be broken and the attacker would have his own copy of the program. If the program happened to have a security vulnerability, the attacker could continue to exploit the known flaw.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -8437,7 +8437,7 @@ https://workbench.cisecurity.org/files/1859
 
 Reference(s) : 
 
-AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T10:07:24.315Z,kosong,open
+AJ Lewis, ""LVM HOWTO"", http://tldp.org/HOWTO/LVM-HOWTO/ ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  28 - 1.1.1.3 Ensure mounting of jffs2 filesystems is disabled,FAILED,"""MBSS-OS-Red Hat Linux  28 - 1.1.1.3 Ensure mounting of jffs2 filesystems is disabled"" : [FAILED] Removing support for unneeded filesystem types reduces the local attack surface of the system. If this filesystem type is not needed, disable it.
 
 The file ""/etc/modprobe.d/CIS.conf"" could not be found
@@ -8472,7 +8472,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80139-9,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80139-9,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  27 - 1.1.1.2 Ensure mounting of freevxfs filesystems is disabled,FAILED,"""MBSS-OS-Red Hat Linux  27 - 1.1.1.2 Ensure mounting of freevxfs filesystems is disabled"" : [FAILED] Removing support for unneeded filesystem types reduces the local attack surface of the system. If this filesystem type is not needed, disable it.
 
 The file ""/etc/modprobe.d/CIS.conf"" could not be found
@@ -8507,7 +8507,7 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80138-1,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80138-1,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,MBSS-OS-Red Hat Linux  26 - 1.1.1.1 Ensure mounting of cramfs filesystems is disabled - modprobe,WARNING,"""MBSS-OS-Red Hat Linux  26 - 1.1.1.1 Ensure mounting of cramfs filesystems is disabled - modprobe"" : [WARNING] Removing support for unneeded filesystem types reduces the local attack surface of the server. If this filesystem type is not needed, disable it.
 
 CMD_EXEC_CHECKS do not work against the localhost - try from a different host or in command-line
@@ -8542,8 +8542,8 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80137-3,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T10:07:24.315Z,kosong,open
-10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"""CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0"" : [PASSED] ",0,"""CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0"" : [PASSED] ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|CM-6,PCI-DSSv3.1|2.2.4,PCI-DSSv3.2|2.2.4,800-171|3.4.2,CSF|PR.IP-1,ITSG-33|CM-6,CCE|CCE-80137-3,CSCv6|3.1,LEVEL|1S,PCI-DSS|2.2.5 ",2018-07-24T13:06:28.957Z,,open
+10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"""CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0"" : [PASSED] ",0,"""CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0"" : [PASSED] ",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8552,7 +8552,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8561,7 +8561,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8570,7 +8570,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8579,7 +8579,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8588,7 +8588,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8597,7 +8597,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8606,7 +8606,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8615,7 +8615,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8624,7 +8624,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 10.23.67.85,CIS_Red_Hat_EL7_Server_L1_v2.2.0.audit from CIS Red Hat Enterprise Linux 7 Benchmark v2.2.0,PASSED,"Nessus was able to run 'netstat' on the remote host to enumerate the open ports.
 
 See the section 'plugins options' about configuring this plugin.
@@ -8633,7 +8633,7 @@ Note: This plugin will run on Windows (using netstat.exe) in the event that the 
 
 See the section 'plugins options' about configuring this plugin.
 
-Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T10:07:24.315Z,kosong,open
+Note: This plugin will run on Windows (using netstat.exe) in the event that the target being scanned is localhost.",2018-07-24T13:06:28.957Z,,open
 1.1.1.1,6.2.19 Ensure no duplicate group names exist,PASSED,"""6.2.19 Ensure no duplicate group names exist"" : [PASSED] If a group is assigned a duplicate group name, it will create and have access to files with the first GID for that group in /etc/group. Effectively, the GID is shared, which is a security problem.
 
 See Also : 
@@ -8650,4 +8650,4 @@ https://workbench.cisecurity.org/files/1860
 
 Reference(s) : 
 
-800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T10:07:24.315Z,kosong,open
+800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-24T13:06:28.957Z,,open
