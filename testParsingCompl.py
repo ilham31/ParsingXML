@@ -69,7 +69,7 @@ def compl(filename):
     #                         ])
 
 
-    
+
     # f = csv.writer(open("compl.csv", "wb+"))
 
     # f.writerow(["System", "Title", "Status","result", "iStatus","Detail"])
@@ -88,7 +88,7 @@ def compl(filename):
     headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
     r=req.post(api_url,data=Jsondata,headers=headers)
     print r
-    return Jsondata
+    return r.json()
 
 
 

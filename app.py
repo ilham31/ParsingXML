@@ -37,24 +37,26 @@ def upload_file():
                     if request.form['submit'] == 'vulnerability':
                         filename = file.filename
                         file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
-                        apa=vuln(filename)
+                        dataUpload=vuln(filename)
+                        idUploadFile=dataUpload['fileId']
+                        uploadData=getDataVuln(idUploadFile)
                         # variabel=data[0]
                         
                         # 
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
-                        return render_template('index.html',respon=apa)
+                        return render_template('showTableVuln.html',idFile=uploadData)
                     elif request.form['submit'] == 'compliance':
                         filename = file.filename
                         file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
-                        compl(filename)
+                        # compl(filename)
                         # variabel=data[0][0]["system"]
                         return render_template('index.html')
     
     elif request.method=='GET':
         dataVuln=readVuln()
-        data=len(dataVuln)
+        # data=len(dataVuln)
         # dataComp=readComp()
         
         return render_template('index.html',dataFileV=dataVuln)
@@ -63,7 +65,9 @@ def upload_file():
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
 def vulnGet():
     selectedID = request.args.get('id')
-    return render_template('showTableVuln.html', idFile=selectedID)
+    dataId=selectedID
+    fileVuln=getDataVuln(dataId)
+    return render_template('showTableVuln.html', idFile=fileVuln)
 
 if __name__ == "__main__":
     app.run(debug=True)
