@@ -143,7 +143,7 @@ def downloadVulnCSV(idFile):
                         dataDownload['item'][x]["solution"],
                         dataDownload['item'][x]["severity"],
                         dataDownload['item'][x]["open_date"],
-                        "kosong",
+                        dataDownload['item'][x]["closed_date"],
                         dataDownload['item'][x]["status"],
                         ])
         return f

@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, redirect, url_for,flash,render_template,send_from_directory,Response
+from flask import Flask, request, send_file, redirect, url_for,flash,render_template,send_from_directory,Response
 from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
@@ -75,13 +75,10 @@ def vulnGet():
 def downloadVulnAsCSV():
     idFile=request.args.get('id')
     downloadVulnCSV(idFile)
-    with open(idFile+'.csv') as fp:
-        fileCSV=fp.read()
-    return Response(
-        fileCSV,
-        mimetype="text/csv",
-        headers={"Content-disposition":
-                 "attachment=true; filename=idFile.csv"})
+    return send_file(idFile+'.csv',
+                     mimetype='text/csv',
+                     attachment_filename='vulnerabilities_'+idFile+'.csv',
+                     as_attachment=True)
 
 @app.route('/compliance', methods=['GET', 'POST'])
 def compGet():
@@ -94,13 +91,11 @@ def compGet():
 def downloadCompAsCSV():
     idFile=request.args.get('id')
     downloadCompCSV(idFile)
-    with open(idFile+'.csv') as fp:
-        fileCSV=fp.read()
-    return Response(
-        fileCSV,
-        mimetype="text/csv",
-        headers={"Content-disposition":
-                 "attachment=true; filename=idFile.csv"})
+    return send_file(idFile+'.csv',
+                     mimetype='text/csv',
+                     attachment_filename='compliance_'+idFile+'.csv',
+                     as_attachment=True)
+
 
     
 

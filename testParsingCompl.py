@@ -125,7 +125,7 @@ def downloadCompCSV(idFile):
                         dataDownload['item'][x]["i_status"],
                         dataDownload['item'][x]["detail"],
                         dataDownload['item'][x]["open_date"],
-                        "kosong",
+                        dataDownload['item'][x]["closed_date"],
                         dataDownload['item'][x]["status"],
                         ])
         return f
