@@ -43,7 +43,7 @@ def upload_file():
                         
                         # 
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
-                        return render_template('showTableVuln.html',idFile=uploadData)
+                        return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idUploadFile)
                     elif request.form['submit'] == 'compliance':
                         filename = file.filename
                         file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
@@ -53,7 +53,8 @@ def upload_file():
                         idUploadComp=dataUploadComp['fileId']
                         uploadData=getDataComp(idUploadComp)
                         # variabel=data[0][0]["system"]
-                        return render_template('showTableComp.html',idFile=uploadData)
+                        return redirect('http://127.0.0.1:5000/compliance?id=' + idUploadComp)
+                        
         
     elif request.method=='GET':
         dataVuln=readVuln()
@@ -74,7 +75,7 @@ def vulnGet():
 @app.route('/downloadVuln', methods=['GET', 'POST'])
 def downloadVulnAsCSV():
     idFile=request.args.get('id')
-    downloadCSV(idFile)
+    downloadVulnCSV(idFile)
     with open(idFile+'.csv') as fp:
         fileCSV=fp.read()
     return Response(
@@ -88,12 +89,12 @@ def compGet():
     selectedID = request.args.get('id')
     dataId=selectedID
     fileComp=getDataComp(dataId)
-    return render_template('showTableVuln.html', idFile=fileComp)
+    return render_template('showTable.html', idFile=fileComp)
 
 @app.route('/downloadComp', methods=['GET', 'POST'])
 def downloadCompAsCSV():
     idFile=request.args.get('id')
-    downloadCSV(idFile)
+    downloadCompCSV(idFile)
     with open(idFile+'.csv') as fp:
         fileCSV=fp.read()
     return Response(

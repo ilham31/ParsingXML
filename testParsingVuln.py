@@ -121,7 +121,7 @@ def getDataVuln(idVuln):
     dataFile=req.get(url_data,params=parameter)
     return dataFile.json()
 
-def downloadCSV(idFile):
+def downloadVulnCSV(idFile):
     find_data='http://localhost:3000/vulnerabilities/vuln'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)
