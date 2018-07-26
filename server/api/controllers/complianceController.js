@@ -12,12 +12,14 @@ exports.get_all_compliance = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
-    Comp.find({}, function(err, docs){
-        if(err) res.status(500).json({
-            error: err
+    Comp.find({}, 'name upload_date uploader')
+        .sort({upload_date: -1})
+        .exec(function(err, docs){
+            if(err) res.status(500).json({
+                error: err
+            })
+            res.status(200).json(docs)
         })
-        res.status(200).json(docs)
-    })
 };
 
 exports.get_compliance = function (req, res) {
@@ -44,6 +46,7 @@ exports.create_compliance = function (req, res) {
     console.log("data adalah", data);
         var comp = new Comp ({
             name: req.body.name,
+            uploader: req.userData.username,
             upload_date: new Date().addHours(7),
             item: data
         });         
