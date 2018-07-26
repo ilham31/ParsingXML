@@ -12,7 +12,7 @@ exports.get_all_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
-    Vuln.find({})
+    Vuln.find({}, 'name upload_date uploader')
         .sort({upload_date: -1})
         .exec(function(err, docs)
         {
@@ -47,6 +47,7 @@ exports.create_vulnerabilities = function (req, res) {
     console.log("data adalah", data);
         var vuln = new Vuln ({
             name: req.body.name,
+            uploader: req.userData.username,
             upload_date: new Date().addHours(7),
             item: data
         });         
