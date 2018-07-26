@@ -99,7 +99,7 @@ exports.delete_item = function (req, res) {
 
 exports.edit_vulnerabilities = function (req, res) {
     Vuln.update({"item._id": req.params.itemId}, { $set: {
-            "item.$.status": req.body.status,
+            "item.$.status": "closed",
             "item.$.closed_date": new Date().addHours(7)
             } 
         })

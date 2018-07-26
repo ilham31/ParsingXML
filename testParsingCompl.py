@@ -106,6 +106,7 @@ def readComp():
     return fileComp
 
 def downloadCompCSV(idFile):
+    os.chdir('D:/ilham/ParsingXML/data/csv')
     find_data='http://localhost:3000/compliance/comp'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)

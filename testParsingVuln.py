@@ -122,6 +122,7 @@ def getDataVuln(idVuln):
     return dataFile.json()
 
 def downloadVulnCSV(idFile):
+    os.chdir('D:/ilham/ParsingXML/data/csv')
     find_data='http://localhost:3000/vulnerabilities/vuln'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)
@@ -147,5 +148,4 @@ def downloadVulnCSV(idFile):
                         dataDownload['item'][x]["status"],
                         ])
         return f
-    
     

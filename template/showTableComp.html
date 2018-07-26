@@ -107,11 +107,11 @@
                         </div>
                     </div>
                 </div>
-                <form class="downloadCSV" method=post enctype=multipart/form-data>
+                <!-- <form class="downloadCSV" method=post enctype=multipart/form-data> -->
                     <div class="input-group-btn">
-                            <a href="{{url_for( 'downloadCompAsCSV', id=idFile._id ) }}"><button  type=submit name="submit"  class="btn btn-primary">Download As CSV</button></a>                    </div>
-                
-                </form>
+                        <a href="{{url_for( 'downloadCompAsCSV', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-primary">Download As CSV</button></a>                    
+                    </div>
+                <!-- </form> -->
             
     <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">

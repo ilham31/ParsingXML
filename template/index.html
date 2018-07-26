@@ -56,6 +56,14 @@
 <body>
         <header class="headerAwal">
                 <!-- > -->
+        {% if statusUser == 1 %}
+            {{namee}}
+            <b><a href = '/logout'>click here to log out</a></b>
+            
+        {% else %}
+            belom login
+           
+        {% endif %}
         </header>
         <div class="main-content">
             
