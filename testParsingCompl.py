@@ -4,7 +4,7 @@ from collections import defaultdict
 import csv,json,requests as req
 
 def compl(filename):
-    os.chdir('D:/ilham/ParsingXML/data')
+    os.chdir('D:/Project/XL/ParsingXML/data')
     api_url='http://localhost:3000/compliance'
     i=0
     report = {}
@@ -106,7 +106,7 @@ def readComp():
     return fileComp
 
 def downloadCompCSV(idFile):
-    os.chdir('D:/ilham/ParsingXML/data/csv')
+    os.chdir('D:/Project/XL/ParsingXML/data/csv')
     find_data='http://localhost:3000/compliance/comp'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)

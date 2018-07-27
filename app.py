@@ -5,7 +5,7 @@ from testParsingCompl import *
 import requests as req
 
 
-UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -27,12 +27,14 @@ def allowed_file(filename):
 @app.route('/', methods=['GET', 'POST'])
 def proses_user():
     if request.method =='POST':
-        username=request.form['username']
-        password =request.form['password']
+        user=request.form['username']
+        session['username'] = user
+        return redirect(url_for('upload_file'))
         
-        url='http://localhost:3000/users/login'
-        r=req.post(url)
-        return render_template('index.html',data=r)
+    if session.get('username') is not None:
+        username=session['username']
+        status=1
+        return redirect(url_for('upload_file'))
     else:
         return render_template('login.html')
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
@@ -93,7 +95,7 @@ def upload_file():
                 if file and allowed_file(file.filename):
                     if request.form['submit'] == 'vulnerability':
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         dataUpload=vuln(filename)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile)
@@ -102,7 +104,7 @@ def upload_file():
                         return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idUploadFile)
                     elif request.form['submit'] == 'compliance':
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename)

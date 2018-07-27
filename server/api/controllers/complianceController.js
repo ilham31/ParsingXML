@@ -46,7 +46,7 @@ exports.create_compliance = function (req, res) {
     console.log("data adalah", data);
         var comp = new Comp ({
             name: req.body.name,
-            uploader: req.userData.username,
+            // uploader: req.userData.username,
             upload_date: new Date().addHours(7),
             item: data
         });         
