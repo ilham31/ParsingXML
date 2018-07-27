@@ -46,7 +46,7 @@ exports.create_compliance = function (req, res) {
     console.log("data adalah", data);
         var comp = new Comp ({
             name: req.body.name,
-            uploader: req.userData.username,
+            // uploader: req.userData.username,
             upload_date: new Date().addHours(7),
             item: data
         });         
@@ -99,7 +99,7 @@ exports.delete_item = function (req, res) {
 
 exports.edit_compliance = function (req, res) {
     Comp.update({"item._id": req.params.itemId}, { $set: {
-            "item.$.status": req.body.status,
+            "item.$.status": "closed",
             "item.$.closed_date": new Date().addHours(7)
             } 
         })

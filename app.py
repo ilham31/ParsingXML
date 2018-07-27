@@ -34,9 +34,9 @@ def proses_user():
    
 
     if session.get('username') is not None:
-            username=session['username']
-            status=1
-            return redirect(url_for('upload_file'))
+        username=session['username']
+        status=1
+        return redirect(url_for('upload_file'))
     else:
         return render_template('login.html')
     
@@ -71,8 +71,16 @@ def compGet():
     selectedID = request.args.get('id')
     dataId=selectedID
     fileComp=getDataComp(dataId)
-    return render_template('showTableComp.html', idFile=fileComp)
-
+    if session.get('username') is not None:
+        username=session['username']
+        if username=="admin": 
+            status=1
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status)
+        else:
+            status=0
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status)
+    else:
+        return render_template('login.html')
 @app.route('/downloadComp', methods=['GET', 'POST'])
 def downloadCompAsCSV():
     idFile=request.args.get('id')
@@ -138,7 +146,14 @@ def close_vuln():
     patch_Vuln='http://localhost:3000/vulnerabilities/'+ selectedID
     r = req.patch(patch_Vuln)
     return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idFile)
-             
+
+@app.route('/editComp')
+def close_comp():
+    selectedID = request.args.get('idItem')
+    idFile=request.args.get('idFile')
+    patch_Vuln='http://localhost:3000/compliance/'+ selectedID
+    r = req.patch(patch_Vuln)
+    return redirect('http://127.0.0.1:5000/compliance?id=' + idFile)           
 
 @app.route('/logout')
 def logout():

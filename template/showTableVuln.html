@@ -56,12 +56,13 @@
 }
 .text {
         display: block;
-        width: 300px;
+        width:200px ;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
         }
-        .switch-yes-no {
+    
+.switch-yes-no {
 	padding: 0;
 	margin: 15px 0 0;
 	background: #FFF;
@@ -146,6 +147,99 @@
 	border-radius: 100%;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
+
+/* switch closed */
+.switchClosed {
+	position: absolute;
+	top: 4px;
+	left: 74px;
+	width: 28px;
+	height: 28px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+	border-radius: 100%;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch1-yes-no {
+	padding: 0;
+	margin: 15px 0 0;
+	background: #FFF;
+	border-radius: 0;
+	background-image: none;
+}
+.switch1 {
+	position: relative;
+	display: block;
+	vertical-align: top;
+	width: 100px;
+	height: 30px;
+	padding: 3px;
+	margin: 0 10px 10px 0;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+	border-radius: 18px;
+	box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+	box-sizing:content-box;
+}
+.switch1-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	box-sizing:content-box;
+}
+.switch1-label {
+	position: relative;
+	display: block;
+	height: inherit;
+	font-size: 10px;
+	text-transform: uppercase;
+	background: #aaaaaa;
+	border-radius: inherit;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+	box-sizing:content-box;
+}
+.switch1-label:before, .switch1-label:after {
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	line-height: 1;
+	-webkit-transition: inherit;
+	-moz-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+	box-sizing:content-box;
+}
+.switch1-label:before {
+	content: attr(data-off);
+	right: 50px;
+	color: #FFFFFF;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.switch1-label:after {
+	content: attr(data-on);
+	left: 11px;
+	color: #FFFFFF;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+}
+.switch1-input:checked ~ .switch-label {
+	background: #aaaaaa;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch1-input:checked ~ .switch-label:before {
+	opacity: 0;
+}
+.switch1-input:checked ~ .switch-label:after {
+	opacity: 1;
+}
+
+
+
+/* end of closedswitch */
+
 .switch-handle:before {
 	content: "";
 	position: absolute;
@@ -163,7 +257,7 @@
 	left: 74px;
 	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
 }
- 
+
 /* Transition
 ========================== */
 .switch-label, .switch-handle {
@@ -205,21 +299,28 @@
                              
                             {% for dataVuln in idFile.item %}
                                 <tr >
-                                        <td>{{dataVuln.system}}</td>
+                                        <td >{{dataVuln.system}}</td>
                                         <td class="text">{{dataVuln.name}}</td>
                                         <td>{{dataVuln.port_protocol}}</td>
                                         <td>{{dataVuln.risk_level}}</td>
                                         <td>{{dataVuln.synopsis}}</td>
-                                        <td class="text">{{dataVuln.detail}}</td>
+                                        <td class="text" >{{dataVuln.detail}}</td>
                                         <td>{{dataVuln.solution}}</td>
                                         <td>{{dataVuln.severity}}</td>
                                         <td>{{dataVuln.open_date}}</td>
                                         <td>{{dataVuln.closed_date}}</td>
                                         {% if statusUser == 1  %}
                                              {% if dataVuln.status == "closed" %}
-                                                <td>{{dataVuln.status}}</td>
+                                                <td><label class="switch switch-left-right">
+                                                        
+                                                        <span class="switch1-label" data-off="{{dataVuln.status}}" ></span> 
+                                                        <span class="switchClosed"></span> 
+                                                    </label></td>
                                             {% else %}
-                                                <td data-toggle="modal" data-target="#myModal{{dataVuln._id}}">{{dataVuln.status}}</td>
+                                                <td data-toggle="modal" data-target="#myModal{{dataVuln._id}}"><label class="switch switch-left-right">
+                                                        <span class="switch-label" data-on="closed" data-off="{{dataVuln.status}}"></span> 
+                                                        <span class="switch-handle"></span> 
+                                                    </label></td>
                                             {% endif %}
                                         {% else %}
                                             <td>{{dataVuln.status}}</td>
@@ -240,7 +341,7 @@
                     </div>
                 <!-- </form> -->
             
-    <!-- Modal -->
+    <!-- Modal Status -->
 {% for dataVuln in idFile.item %}
 <div id="myModal{{dataVuln._id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -260,7 +361,35 @@
       
         </div>
       </div>        
+{% endfor %} 
+
+
+<!-- modal detail -->
+{% for dataVuln in idFile.item %}
+<div id="modalDetail{{dataVuln._id}}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              
+              <p>Detail : {{dataVuln.detail}}</p>
+              <p>Detail : {{dataVuln.detail}}</p>
+              <p>Detail : {{dataVuln.detail}}</p>
+              <p>Detail : {{dataVuln.detail}}</p>
+            </div>
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+            </div>
+          </div>
+      
+        </div>
+      </div>        
 {% endfor %}      
+
     <script>
         $(function() {
             $('#toggle-one').bootstrapToggle();
