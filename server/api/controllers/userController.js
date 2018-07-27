@@ -1,6 +1,5 @@
 // Load required packages
 var User = require('../models/userModels');
-var authController = require('../controllers/authController');
 var jwt = require('jsonwebtoken');
 
 // Create endpoint /api/users for POST
@@ -20,16 +19,34 @@ exports.create_user = function(req, res) {
 };
 
 exports.login_user = function(req, res) {
-  token = jwt.sign({
-    username: req.user.username,
-    privilege: req.user.privilege
-  }, 
-  'secretkey',
+  User.findOne({ username: req.body.username })
+  .exec()
+  .then(user =>
   {
-    expiresIn: "1h"
-  });
-  res.json(token)
+    if (!user) 
+    {
+      return res.status(401).json('user tidak ada');
+    }
+    user.verifyPassword(req.body.password, function(err, isMatch) {
+      if (err) { return res.json(err) }
+
+      // Password did not match
+      if (!isMatch) { return res.json('password tidak cocok') }
+
+      // Success
+      token = jwt.sign({
+        username: user.username,
+        privilege: user.privilege
+      }, 
+      'secretkey',
+      {
+        expiresIn: "12h"
+      });
+      res.json(token);
+    });
+  })
 }
+
 // Create endpoint /api/users for GET
 exports.get_user = function(req, res) {
     res.json(req.userData);

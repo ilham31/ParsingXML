@@ -9,10 +9,10 @@ module.exports = function(app) {
         .get( vulnCtrl.get_all_vulnerabilities);
 
     app.route('/vulnerabilities')
-        .post(vulnCtrl.create_vulnerabilities);
+        .post( vulnCtrl.create_vulnerabilities);
 
     app.route('/vulnerabilities/vuln')
-        .get(vulnCtrl.get_vulnerabilities);
+        .get( vulnCtrl.get_vulnerabilities);
 
     app.route('/vulnerabilities/item')
         .post( vulnCtrl.create_item);
