@@ -26,21 +26,15 @@ def allowed_file(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def proses_user():
-    if request.method == 'POST':
-        user = request.form['username']
-        session['username'] = user
-        return redirect(url_for('upload_file'))
-    
-   
-
-    if session.get('username') is not None:
-            username=session['username']
-            status=1
-            return redirect(url_for('upload_file'))
+    if request.method =='POST':
+        username=request.form['username']
+        password =request.form['password']
+        
+        url='http://localhost:3000/users/login'
+        r=req.post(url)
+        return render_template('index.html',data=r)
     else:
         return render_template('login.html')
-    
-   
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
 def vulnGet():
     selectedID = request.args.get('id')
