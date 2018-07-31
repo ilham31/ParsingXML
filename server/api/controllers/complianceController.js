@@ -98,6 +98,7 @@ exports.delete_item = function (req, res) {
 };
 
 exports.edit_compliance = function (req, res) {
+    if(req.userData.privilege=='user') res.status(401).json("user tidak bisa edit"); 
     Comp.update({"item._id": req.params.itemId}, { $set: {
             "item.$.status": req.body.status,
             "item.$.closed_date": new Date().addHours(7)
