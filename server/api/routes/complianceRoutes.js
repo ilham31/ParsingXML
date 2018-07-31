@@ -1,6 +1,6 @@
 'use strict';
 // var checkAuth = require('../middleware/checkAuth');
-// var tokenController = require('../controllers/tokenController');
+var tokenController = require('../controllers/tokenController');
 
 module.exports = function(app) {
     var compCtrl = require('../controllers/complianceController');
@@ -9,7 +9,7 @@ module.exports = function(app) {
         .get( compCtrl.get_all_compliance);
 
     app.route('/compliance')
-        .post( compCtrl.create_compliance);
+        .post( tokenController, compCtrl.create_compliance);
         
     app.route('/compliance/comp')
         .get( compCtrl.get_compliance);    

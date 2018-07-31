@@ -129,11 +129,12 @@ def upload_file():
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
                         return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idUploadFile)
                     elif request.form['submit'] == 'compliance':
+                        token = session['token']
                         filename = file.filename
                         file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
-                        dataUploadComp=compl(filename)
+                        dataUploadComp=compl(filename,token)
                         idUploadComp=dataUploadComp['fileId']
                         uploadData=getDataComp(idUploadComp)
                         # variabel=data[0][0]["system"]
@@ -199,5 +200,15 @@ def deleteVuln():
    url='http://localhost:3000/vulnerabilities/'+selectedID
    r=req.delete(url)
    return redirect(url_for('upload_file'))
+
+
+@app.route('/deletecomp', methods=['GET', 'POST'])
+def deleteComp():
+   selectedID = request.args.get('id')
+   url='http://localhost:3000/compliance/'+selectedID
+   r=req.delete(url)
+   return redirect(url_for('upload_file'))
+
+
 if __name__ == "__main__":
     app.run(debug=True)

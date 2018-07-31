@@ -3,7 +3,7 @@ import os
 from collections import defaultdict
 import csv,json,requests as req
 
-def compl(filename):
+def compl(filename,token):
     os.chdir('D:/ilham/ParsingXML/data')
     api_url='http://localhost:3000/compliance'
     i=0
@@ -86,7 +86,7 @@ def compl(filename):
     #                     ])
     # return writer
     Jsondata=json.dumps(report)
-    headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
+    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     r=req.post(api_url,data=Jsondata,headers=headers)
     print r
     return r.json()

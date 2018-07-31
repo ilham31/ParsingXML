@@ -197,8 +197,8 @@
                                 <tr data-toggle="modal" data-target="#myModal">
                                         <td><a href="{{url_for( 'compGet', id=Comp._id ) }}">{{Comp.name}}</td></a>
                                         <td>{{Comp.upload_date}}</td>
-                                        <td>abcd</td>
-                                        
+                                        <td>{{Comp.uploader}}</td>
+                                        <td data-toggle="modal" data-target="#modalComp{{Comp._id}}">Delete</td>
                                     </tr>
                         {% endfor %}
                                 </tbody>
@@ -207,6 +207,43 @@
                     </div>
             </div>
         </div>
+
+
+         <!-- modal comp -->
+         {% for Comp in dataFileC  %}
+         <div id="modalComp{{Comp._id}}" class="modal fade" role="dialog">
+             <div class="modal-dialog">
+           
+               <!-- Modal content-->
+               <div class="modal-content">
+                 <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                 </div>
+                 <div class="modal-body">
+                   <p>Apakah anda yakin menghapus {{Comp.name}} ini ?</p>
+                 </div>
+                 <div class="modal-footer">
+                         <a href="{{url_for( 'deleteComp', id=Comp._id ) }}" class="deleteComp"><button  type="button" class="btn btn-danger" data-dismiss="modal">YAY</button></a> 
+                 </div>
+               </div>
+           
+             </div>
+           </div> 
+           {% endfor %}
+
+           <script>
+             $(function() {
+                 $('#toggle-one').bootstrapToggle();
+             })
+     
+             addEventListener('click', function (ev) {
+                 if (ev.target.classList.contains('deleteComp')) {
+                     ev.preventDefault();
+                     loadWithAjax(ev.target.href);
+         }   
+     });
+         </script>
+           <!-- end     -->
           
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
     <!-- Jquery JS-->
