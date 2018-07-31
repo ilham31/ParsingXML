@@ -1,6 +1,6 @@
 'use strict';
 // var checkAuth = require('../middleware/checkAuth');
-// var tokenController = require('../controllers/tokenController');
+var tokenController = require('../controllers/tokenController');
 
 module.exports = function(app) {
     var vulnCtrl = require('../controllers/vulnerabilitiesController');
@@ -9,7 +9,7 @@ module.exports = function(app) {
         .get( vulnCtrl.get_all_vulnerabilities);
 
     app.route('/vulnerabilities')
-        .post( vulnCtrl.create_vulnerabilities);
+        .post( tokenController,vulnCtrl.create_vulnerabilities);
 
     app.route('/vulnerabilities/vuln')
         .get( vulnCtrl.get_vulnerabilities);

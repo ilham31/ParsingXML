@@ -47,7 +47,7 @@ exports.create_vulnerabilities = function (req, res) {
     console.log("data adalah", data);
         var vuln = new Vuln ({
             name: req.body.name,
-            // uploader: req.userData.username,
+            uploader: req.userData.username,
             upload_date: new Date().addHours(7),
             item: data
         });         
@@ -66,8 +66,6 @@ exports.create_vulnerabilities = function (req, res) {
 };
 
 exports.create_item = function (req, res) {
-    // const token = req.headers.authorization.split(" ")[1];
-    // const decode = jwt.verify(token, "rahasia");
         Vuln.update({_id:req.body.fileId}, {$push: {'item': req.body.report}})
         .exec()
         .then(result => {

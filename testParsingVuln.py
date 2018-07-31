@@ -4,8 +4,8 @@ import json
 import csv
 import os,requests as req
 
-def vuln(filename):
-    os.chdir('D:/Project/XL/ParsingXML/data')
+def vuln(filename,token):
+    os.chdir('D:/ilham/ParsingXML/data')
     api_url='http://localhost:3000/vulnerabilities'
     i=0
     report = {}
@@ -101,9 +101,8 @@ def vuln(filename):
 
     # return f
     Jsondata=json.dumps(report)
-    headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
+    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     r=req.post(api_url,data=Jsondata,headers=headers)
-    print r
     return r.json()
 
 
@@ -122,7 +121,7 @@ def getDataVuln(idVuln):
     return dataFile.json()
 
 def downloadVulnCSV(idFile):
-    os.chdir('D:/Project/XL/ParsingXML/data/csv')
+    os.chdir('D:/ilham/ParsingXML/data/csv')
     find_data='http://localhost:3000/vulnerabilities/vuln'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)

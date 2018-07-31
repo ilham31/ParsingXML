@@ -12,9 +12,9 @@ exports.create_user = function(req, res) {
 
   user.save(function(err) {
     if (err)
-      res.send(err);
+      return res.status(409).send(err);
 
-    res.json({ message: 'User created!' });
+      return res.status(201).json({ message: 'User created!' });
   });
 };
 

@@ -5,7 +5,7 @@ from testParsingCompl import *
 import requests as req
 
 
-UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -28,23 +28,37 @@ def allowed_file(filename):
 def proses_user():
     if request.method =='POST':
         user=request.form['username']
-        session['username'] = user
-        return redirect(url_for('upload_file'))
+        passwd=request.form['pass']
+        userLogin={
+            'username':user,
+            'password':passwd
+        }
+        r=req.post('http://localhost:3000/users/login',data=userLogin)
+        if r.json()== 'user tidak ada' or r.json() =='password tidak cocok':
+            return redirect(url_for('proses_user'))
+        else:
+            session['token'] = r.json()
+            return redirect(url_for('upload_file'))
         
-    if session.get('username') is not None:
-        username=session['username']
-        status=1
-        return redirect(url_for('upload_file'))
+    
     else:
-        return render_template('login.html')
+        if session.get('token') is not None:
+            return redirect(url_for('upload_file'))
+        else:
+            return render_template('login.html')
+
+
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
 def vulnGet():
     selectedID = request.args.get('id')
     dataId=selectedID
     fileVuln=getDataVuln(dataId)
-    if session.get('username') is not None:
-        username=session['username']
-        if username=="admin": 
+    if session.get('token') is not None:
+        token=session['token']
+        header = {'Authorization': 'Bearer ' +token}
+        r = req.get('http://localhost:3000/users',headers=header)
+        dataUser=r.json()
+        if dataUser["privilege"]=="admin": 
             status=1
             return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status)
         else:
@@ -67,9 +81,12 @@ def compGet():
     selectedID = request.args.get('id')
     dataId=selectedID
     fileComp=getDataComp(dataId)
-    if session.get('username') is not None:
-        username=session['username']
-        if username=="admin": 
+    if session.get('token') is not None:
+        token=session['token']
+        header = {'Authorization': 'Bearer ' +token}
+        r = req.get('http://localhost:3000/users',headers=header)
+        dataUser=r.json()
+        if dataUser["privilege"]=="admin": 
             status=1
             return render_template('showTableComp.html', idFile=fileComp,statusUser=status)
         else:
@@ -102,9 +119,10 @@ def upload_file():
                     return redirect(request.url)
                 if file and allowed_file(file.filename):
                     if request.form['submit'] == 'vulnerability':
+                        token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
-                        dataUpload=vuln(filename)
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile)
                         # variabel=data[0]
@@ -112,7 +130,7 @@ def upload_file():
                         return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idUploadFile)
                     elif request.form['submit'] == 'compliance':
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename)
@@ -125,17 +143,17 @@ def upload_file():
     elif request.method=='GET':
         dataVuln=readVuln()
         dataComp=readComp()
-        if session.get('username') is not None:
-            username=session['username']
-            status=1
-            return render_template('index.html',dataFileV=dataVuln,dataFileC=dataComp,namee=username,statusUser=status)
-        else:
-            status=0
-            return render_template('index.html',dataFileV=dataVuln,dataFileC=dataComp,statusUser=status)
-        # data=len(dataVuln)
-        # dataComp=readComp()
-        
-@app.route('/editVuln')
+        if 'token' in session :
+            token = session['token']
+            header = {'Authorization': '"Bearer ' +token}
+            r = req.get('http://localhost:3000/users',headers=header)
+            dataUser=r.json()
+            return render_template('index.html',dataFileV=dataVuln,dataFileC=dataComp,data=dataUser)
+            
+        else :
+            return redirect (url_for('proses_user'))
+
+@app.route('/editVuln', methods=['GET', 'POST'])
 def close_vuln():
     selectedID = request.args.get('idItem')
     idFile=request.args.get('idFile')
@@ -143,7 +161,7 @@ def close_vuln():
     r = req.patch(patch_Vuln)
     return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idFile)
 
-@app.route('/editComp')
+@app.route('/editComp', methods=['GET', 'POST'])
 def close_comp():
     selectedID = request.args.get('idItem')
     idFile=request.args.get('idFile')
@@ -151,15 +169,35 @@ def close_comp():
     r = req.patch(patch_Vuln)
     return redirect('http://127.0.0.1:5000/compliance?id=' + idFile)           
 
-@app.route('/logout')
+@app.route('/logout', methods=['GET', 'POST'])
 def logout():
    # remove the username from the session if it is there
-   session.pop('username', None)
+   session.pop('token', None)
    return redirect(url_for('proses_user'))
 # @app.errorhandler(Exception)
 # def all_exception_handler(error):
 #    return 'Error', 500
-    
 
+@app.route('/register', methods=['GET', 'POST'])
+def regist_user():
+    if request.method == 'POST':
+        user=request.form['username']
+        passwd=request.form['pass']
+        userData={
+                'username':user,
+                'password':passwd,
+                'privilege':"user"
+            }
+        r=req.post('http://localhost:3000/users',data=userData)
+        return redirect(url_for('proses_user'))
+    else:
+        return render_template('register.html')
+
+@app.route('/deletevuln', methods=['GET', 'POST'])
+def deleteVuln():
+   selectedID = request.args.get('id')
+   url='http://localhost:3000/vulnerabilities/'+selectedID
+   r=req.delete(url)
+   return redirect(url_for('upload_file'))
 if __name__ == "__main__":
     app.run(debug=True)
