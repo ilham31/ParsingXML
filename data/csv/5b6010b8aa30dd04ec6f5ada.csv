@@ -1,0 +1,184 @@
+System,Title,Status,result,iStatus,Detail,Open Date,Closed Date,Status
+10.23.67.85,6.1.14 Audit SGID executables,WARNING,"""6.1.14 Audit SGID executables"" : [WARNING] The owner of a file can set the file's permissions to run with the owner's or group's permissions, even if the user running the program is not the owner or a member of the group. The most common reason for a SGID program is to enable users to perform functions (such as changing their password) that require root privileges.
+
+Rationale:
+
+There are valid reasons for SGID programs, but it is important to identify and review such programs to ensure they are legitimate. Review the files returned by the action in the audit section and check to see if system binaries have a different md5 checksum than what from the package. This is an indication that the binary may have been replaced.
+NOTE: Any files noted by this check should be manually reviewed to determine if SGID is appropriate for your environment.
+
+The following 36 files are SUID or SGID:
+
+  /usr/sbin/netreport      owner: root, group: root, permissions: 2755
+
+  /usr/sbin/unix_chkpwd      owner: root, group: root, permissions: 4755
+
+  /usr/sbin/mount.nfs      owner: root, group: root, permissions: 4755
+
+  /usr/sbin/pam_timestamp_check      owner: root, group: root, permissions: 4755
+
+  /usr/sbin/usernetctl      owner: root, group: root, permissions: 4755
+
+  /usr/libexec/spice-gtk-x86_64/spice-client-glib-usb-acl-helper      owner: root, group: root, permissions: 4755
+
+  /usr/libexec/abrt-action-install-debuginfo-to-abrt-cache      owner: abrt, group: abrt, permissions: 6755
+
+  /usr/libexec/qemu-bridge-helper      owner: root, group: root, permissions: 4755
+
+  /usr/libexec/flatpak-bwrap      owner: root, group: root, permissions: 4755
+
+  /usr/libexec/openssh/ssh-keysign      owner: root, group: ssh_keys, permissions: 2111
+
+  /usr/lib64/vte-2.91/gnome-pty-helper      owner: root, group: utmp, permissions: 2711
+
+  /usr/lib64/dbus-1/dbus-daemon-launch-helper      owner: root, group: dbus, permissions: 4750
+
+  /usr/lib/polkit-1/polkit-agent-helper-1      owner: root, group: root, permissions: 4755
+
+  /usr/bin/pkexec      owner: root, group: root, permissions: 4755
+
+  /usr/bin/cgexec      owner: root, group: cgred, permissions: 2755
+
+  /usr/bin/locate      owner: root, group: slocate, permissions: 2711
+
+  /usr/bin/su      owner: root, group: root, permissions: 4755
+
+  /usr/bin/staprun      owner: root, group: stapusr, permissions: 4110
+
+  /usr/bin/newgrp      owner: root, group: root, permissions: 4755
+
+  /usr/bin/umount      owner: root, group: root, permissions: 4755
+
+  /usr/bin/write      owner: root, group: tty, permissions: 2755
+
+  /usr/bin/at      owner: root, group: root, permissions: 4755
+
+  /usr/bin/chage      owner: root, group: root, permissions: 4755
+
+  /usr/bin/fusermount      owner: root, group: root, permissions: 4755
+
+  /usr/bin/mount      owner: root, group: root, permissions: 4755
+
+  /usr/bin/chfn      owner: root, group: root, permissions: 4711
+
+  /usr/bin/crontab      owner: root, group: root, permissions: 4755
+
+  /usr/bin/gpasswd      owner: root, group: root, permissions: 4755
+
+  /usr/bin/ssh-agent      owner: root, group: nobody, permissions: 2111
+
+  /usr/bin/sudo      owner: root, group: root, permissions: 4111
+
+  /usr/bin/cgclassify      owner: root, group: cgred, permissions: 2755
+
+  /usr/bin/screen      owner: root, group: screen, permissions: 2755
+
+  /usr/bin/chsh      owner: root, group: root, permissions: 4711
+
+  /opt/bmc/bladelogic/RSCD/nativetool/bin/.mcsiwrapper      owner: root, group: bin, permissions: 4555
+
+  /opt/bmc/bladelogic/RSCD/bin/lsof      owner: root, group: root, permissions: 4555
+
+
+
+Solution : 
+
+Ensure that no rogue SGID programs have been introduced into the system. Review the files returned by the action in the Audit section and confirm the integrity of these binaries.
+
+See Also : 
+
+https://workbench.cisecurity.org/files/1860
+
+Reference(s) : 
+
+800-53|AC-6,CSF|PR.AC-4,CCE|CCE-80132-4,LEVEL|1NS,PCI-DSS|10.4 ",2,"""6.1.14 Audit SGID executables"" : [WARNING] The owner of a file can set the file's permissions to run with the owner's or group's permissions, even if the user running the program is not the owner or a member of the group. The most common reason for a SGID program is to enable users to perform functions (such as changing their password) that require root privileges.
+
+Rationale:
+
+There are valid reasons for SGID programs, but it is important to identify and review such programs to ensure they are legitimate. Review the files returned by the action in the audit section and check to see if system binaries have a different md5 checksum than what from the package. This is an indication that the binary may have been replaced.
+NOTE: Any files noted by this check should be manually reviewed to determine if SGID is appropriate for your environment.
+
+The following 36 files are SUID or SGID:
+
+  /usr/sbin/netreport      owner: root, group: root, permissions: 2755
+
+  /usr/sbin/unix_chkpwd      owner: root, group: root, permissions: 4755
+
+  /usr/sbin/mount.nfs      owner: root, group: root, permissions: 4755
+
+  /usr/sbin/pam_timestamp_check      owner: root, group: root, permissions: 4755
+
+  /usr/sbin/usernetctl      owner: root, group: root, permissions: 4755
+
+  /usr/libexec/spice-gtk-x86_64/spice-client-glib-usb-acl-helper      owner: root, group: root, permissions: 4755
+
+  /usr/libexec/abrt-action-install-debuginfo-to-abrt-cache      owner: abrt, group: abrt, permissions: 6755
+
+  /usr/libexec/qemu-bridge-helper      owner: root, group: root, permissions: 4755
+
+  /usr/libexec/flatpak-bwrap      owner: root, group: root, permissions: 4755
+
+  /usr/libexec/openssh/ssh-keysign      owner: root, group: ssh_keys, permissions: 2111
+
+  /usr/lib64/vte-2.91/gnome-pty-helper      owner: root, group: utmp, permissions: 2711
+
+  /usr/lib64/dbus-1/dbus-daemon-launch-helper      owner: root, group: dbus, permissions: 4750
+
+  /usr/lib/polkit-1/polkit-agent-helper-1      owner: root, group: root, permissions: 4755
+
+  /usr/bin/pkexec      owner: root, group: root, permissions: 4755
+
+  /usr/bin/cgexec      owner: root, group: cgred, permissions: 2755
+
+  /usr/bin/locate      owner: root, group: slocate, permissions: 2711
+
+  /usr/bin/su      owner: root, group: root, permissions: 4755
+
+  /usr/bin/staprun      owner: root, group: stapusr, permissions: 4110
+
+  /usr/bin/newgrp      owner: root, group: root, permissions: 4755
+
+  /usr/bin/umount      owner: root, group: root, permissions: 4755
+
+  /usr/bin/write      owner: root, group: tty, permissions: 2755
+
+  /usr/bin/at      owner: root, group: root, permissions: 4755
+
+  /usr/bin/chage      owner: root, group: root, permissions: 4755
+
+  /usr/bin/fusermount      owner: root, group: root, permissions: 4755
+
+  /usr/bin/mount      owner: root, group: root, permissions: 4755
+
+  /usr/bin/chfn      owner: root, group: root, permissions: 4711
+
+  /usr/bin/crontab      owner: root, group: root, permissions: 4755
+
+  /usr/bin/gpasswd      owner: root, group: root, permissions: 4755
+
+  /usr/bin/ssh-agent      owner: root, group: nobody, permissions: 2111
+
+  /usr/bin/sudo      owner: root, group: root, permissions: 4111
+
+  /usr/bin/cgclassify      owner: root, group: cgred, permissions: 2755
+
+  /usr/bin/screen      owner: root, group: screen, permissions: 2755
+
+  /usr/bin/chsh      owner: root, group: root, permissions: 4711
+
+  /opt/bmc/bladelogic/RSCD/nativetool/bin/.mcsiwrapper      owner: root, group: bin, permissions: 4555
+
+  /opt/bmc/bladelogic/RSCD/bin/lsof      owner: root, group: root, permissions: 4555
+
+
+
+Solution : 
+
+Ensure that no rogue SGID programs have been introduced into the system. Review the files returned by the action in the Audit section and confirm the integrity of these binaries.
+
+See Also : 
+
+https://workbench.cisecurity.org/files/1860
+
+Reference(s) : 
+
+800-53|AC-6,CSF|PR.AC-4,CCE|CCE-80132-4,LEVEL|1NS,PCI-DSS|10.4 ",2018-07-31T14:33:12.133Z,,open

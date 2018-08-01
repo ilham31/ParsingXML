@@ -9,7 +9,7 @@ module.exports = function(app) {
         .get( vulnCtrl.get_all_vulnerabilities);
 
     app.route('/vulnerabilities')
-        .post( vulnCtrl.create_vulnerabilities);
+        .post( tokenController,vulnCtrl.create_vulnerabilities);
 
     app.route('/vulnerabilities/vuln')
         .get( vulnCtrl.get_vulnerabilities);
@@ -21,7 +21,7 @@ module.exports = function(app) {
         .delete( vulnCtrl.delete_item);
         
     app.route('/vulnerabilities/:itemId')
-        .patch( tokenController, vulnCtrl.edit_vulnerabilities);
+        .patch( vulnCtrl.edit_vulnerabilities);
 
     app.route('/vulnerabilities/:fileId')
         .delete( vulnCtrl.delete_vulnerabilities);

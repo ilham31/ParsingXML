@@ -2,8 +2,9 @@ from lxml import etree
 import os
 from collections import defaultdict
 import csv,json,requests as req
+import xlsxwriter
 
-def compl(filename):
+def compl(filename,token):
     os.chdir('D:/Project/XL/ParsingXML/data')
     api_url='http://localhost:3000/compliance'
     i=0
@@ -86,7 +87,7 @@ def compl(filename):
     #                     ])
     # return writer
     Jsondata=json.dumps(report)
-    headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
+    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     r=req.post(api_url,data=Jsondata,headers=headers)
     print r
     return r.json()
@@ -113,20 +114,37 @@ def downloadCompCSV(idFile):
     dataDownload = dataFile.json()
     
     
-    with open(idFile+'.csv', 'wb') as csvfile:
-        f = csv.writer(csvfile)
+    workbook = xlsxwriter.Workbook('COMPLIANCE.xlsx')
+    worksheet = workbook.add_worksheet()
 
-        f.writerow(["System", "Title", "Status", "result", "iStatus","Detail","Open Date","Closed Date","Status"])
+    row=1
+    col=0
 
-        for x in range(0,len(dataDownload['item'])):
-             f.writerow([dataDownload['item'][x]["system"],
-                        dataDownload['item'][x]["title"],
-                        dataDownload['item'][x]["stats"],
-                        dataDownload['item'][x]["result"],
-                        dataDownload['item'][x]["i_status"],
-                        dataDownload['item'][x]["detail"],
-                        dataDownload['item'][x]["open_date"],
-                        dataDownload['item'][x]["closed_date"],
-                        dataDownload['item'][x]["status"],
-                        ])
-        return f
+    head = ['System', 'Title', 'Status', 'Result', 'i Status', 'Detail', 'Open Date', 'Closed Date', 'Status']
+    for i in range (0,len(head)):
+        worksheet.write(0, i, head[i])
+        
+    for x in range(0,len(dataDownload['item'])):
+        worksheet.write(row, col, dataDownload['item'][x]["result"])
+        worksheet.write(row, col + 1, dataDownload['item'][x]["i_status"])
+        row += 1
+
+    workbook.close()
+
+    # with open(idFile+'.csv', 'wb') as csvfile:
+    #     f = csv.writer(csvfile)
+
+    #     f.writerow(["System", "Title", "Status", "result", "iStatus","Detail","Open Date","Closed Date","Status"])
+
+    #     for x in range(0,len(dataDownload['item'])):
+    #          f.writerow([dataDownload['item'][x]["system"],
+    #                     dataDownload['item'][x]["title"],
+    #                     dataDownload['item'][x]["stats"],
+    #                     dataDownload['item'][x]["result"],
+    #                     dataDownload['item'][x]["i_status"],
+    #                     dataDownload['item'][x]["detail"],
+    #                     dataDownload['item'][x]["open_date"],
+    #                     dataDownload['item'][x]["closed_date"],
+    #                     dataDownload['item'][x]["status"],
+    #                     ])
+    #     return f

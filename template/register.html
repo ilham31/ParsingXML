@@ -29,12 +29,13 @@
 <!--===============================================================================================-->
 </head>
 <body></body>
+	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form"  action="{{ url_for('proses_user') }}" method="POST" enctype=multipart/form-data>
+				<form class="login100-form validate-form"  action="{{ url_for('regist_user') }}" method="POST" enctype=multipart/form-data>
 					<span class="login100-form-title p-b-70">
-						Welcome
+						Register
 					</span>
 					<span class="">
 						<img src="{{ url_for('static',filename='imageslogin/xl.png') }}" alt="XL">
@@ -52,22 +53,11 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type=submit name="submit">
-							Login
+							Register
 						</button>
 					</div>
 
-					<ul class="login-more p-t-190">
-
-						<li>
-							<span class="txt1">
-								Don’t have an account?
-							</span>
-
-							<a href="{{url_for( 'regist_user' ) }}" class="txt2">
-								Sign up
-							</a>
-						</li>
-					</ul>
+					
 				</form>
 			</div>
 		</div>

@@ -1,0 +1,18 @@
+System,Title,Status,result,iStatus,Detail,Open Date,Closed Date,Status
+10.23.67.85,6.2.19 Ensure no duplicate group names exist,PASSED,"""6.2.19 Ensure no duplicate group names exist"" : [PASSED] If a group is assigned a duplicate group name, it will create and have access to files with the first GID for that group in /etc/group. Effectively, the GID is shared, which is a security problem.
+
+See Also : 
+
+https://workbench.cisecurity.org/files/1860
+
+Reference(s) : 
+
+800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,LEVEL|1S,PCI-DSS|2.2.4 ",0,"""6.2.19 Ensure no duplicate group names exist"" : [PASSED] If a group is assigned a duplicate group name, it will create and have access to files with the first GID for that group in /etc/group. Effectively, the GID is shared, which is a security problem.
+
+See Also : 
+
+https://workbench.cisecurity.org/files/1860
+
+Reference(s) : 
+
+800-53|IA-4,800-171|3.5.5,800-171|3.5.6,CN-L3|7.1.2.7(b),CSF|PR.AC-1,ITSG-33|IA-4,LEVEL|1S,PCI-DSS|2.2.4 ",2018-07-31T14:30:16.780Z,,open

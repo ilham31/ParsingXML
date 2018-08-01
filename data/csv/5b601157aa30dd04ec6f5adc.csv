@@ -1,0 +1,2346 @@
+System,Title,Status,result,iStatus,Detail,Open Date,Closed Date,Status
+"""10.23.67.85""","""6.1.10 Ensure no world writable files exist""","""FAILED""","""""6.1.10 Ensure no world writable files exist"" : [FAILED] Unix-based systems support variable settings to control access to files. World writable files are the least secure. See the chmod(2) man page for more information.
+
+Rationale:
+
+Data in world-writable files can be modified and compromised by any user on the system. World writable files may also indicate an incorrectly written script or program that could potentially be the cause of a larger compromise to the system's integrity.
+
+The following 577 files are world writeable:
+
+  /opt/bmc/bladelogic/RSCD/Transactions/Database/package_tracking.db      owner: root, group: root, permissions: 0777
+
+  /opt/bmc/bladelogic/RSCD/Transactions/d8fa23e1481b30d883a0a8152c6b519a/1      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/templates/settings.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/tasks/os.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/tasks/app.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/tasks/sql.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/vars.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/inventory/vagrant      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/vars/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/handlers/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/create_non_root_sudo_user.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/setup_uncomplicated_firewall.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/setup_fail2ban.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/force_ssh_authentication.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/perform_aptitude_dist_upgrade.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/setup_unattended_upgrades.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/files/apt_periodic      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/handlers/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/tasks/setup_mysql.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/tasks/setup_postgresql.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/certbot/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/certbot/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/nginx/templates/dojo.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/nginx/handlers/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/nginx/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/nginx/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/common/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/common/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/supervisor_config.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/virtualenv_postactivate.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/maintenance_off.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/prod-settings.py.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/superuser_exists.py.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/gunicorn_start.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/changepassword.sh.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/handlers/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/setup_git_repo.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/setup_virtualenv.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/create_django_superuser.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/setup_django_app.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/set_file_permissions.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/setup_supervisor.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/create_users_and_groups.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/install_additional_packages.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/avahi/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/site.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/dbservers.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/Vagrantfile      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/production      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/production.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vars/production.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vars/development.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vars/base.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vars/all.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/security.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/development      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/ansible.cfg      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/development.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/README.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/.gitignore      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vagrant_ansible_inventory      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/webservers.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/files/requirements/production.txt      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/files/requirements/development.txt      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/change_dojo_password.sh.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/requirements.txt      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/startup-dojo.sh.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/settings.py.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/super_user_exists.py.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/dojo-dev-environment.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/deploy-vars.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/ansible.cfg      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/README.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/EXAMPLE-inventory      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/reports.sh      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/wsgi.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/Vagrantfile      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/about.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/features.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/conf.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/labels.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/api-docs.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/Makefile      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/models.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/dojo.env      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/upgrading.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/running-in-production.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/getting-started.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/README.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/workflows.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/bug-2x.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/dashboard.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_18.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_14.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_5.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/eng_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_10.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/scan_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/report_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_11.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/report_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_4.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/imp_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_16.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_5.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_21.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_4.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/end_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/product_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/api_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_12.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/imp_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/end_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/product_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_8.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_6.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_17.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_6.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_4.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/notifications_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/api_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/key-2x.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_9.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/scan_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/end_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_20.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_7.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_19.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/DD-Hierarchy.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_22.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/api_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/scan_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/graph-2x.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/prod-owner-creds.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/product_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_5.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_15.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/admin-creds.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_13.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/eng_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/start-using.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/index.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/index      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/config      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/info/exclude      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/description      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/refs/remotes/origin/HEAD      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/refs/heads/master      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/packed-refs      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/HEAD      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/hooks/post-update.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/pre-commit.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/update.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/prepare-commit-msg.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/pre-rebase.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/applypatch-msg.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/pre-applypatch.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/commit-msg.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/pre-push.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/logs/refs/remotes/origin/HEAD      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/logs/refs/heads/master      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/logs/HEAD      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/PULL_REQUEST_TEMPLATE.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/setup.bash      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/DefectDojoMaintainers.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/components/package.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo.celerydb.sqlite      owner: ariz, group: ariz, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_18.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_14.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/cash_reward.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_10.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_11.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_16.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_5.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/screenshot1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_21.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_4.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_12.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/admin.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/XING_logo.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/slack_rgb.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_8.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_6.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_17.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_9.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_20.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_7.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_19.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/owner.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/swag_reward.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_22.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/Twitter_Logo.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/dojo_tshirt_back.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_15.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_13.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/dojo_tshirt_front.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/manage.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/docker/setup-superuser.expect      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/VCG-WebGoatNet-Results.xml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/Bodgeit-burp.xml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/dependency-check-report.xml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/dojo-csv-example.csv      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/SampleGenericImport.csv      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/Bodgeit-checkmarx.xml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/VCG-WebGoatNet-Results.csv      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/initial_dojo_data.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/readme.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/wait-for-it.sh      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/docker/dojo-base-build-push.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/dojo-base.docker      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/dojo-data.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/dojo-container-build-push.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/docker-startup.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/app.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/requirements.txt      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/403.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/404.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/report_base.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/pt_nav_items.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/other.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/engagement_added.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/user_mentioned.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/results_added.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/report_created.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/test_added.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/upcoming_engagement.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/clear_finding_review.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_product_meta_data.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/defect_finding_review.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/checklist.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_filter_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/request_endpoint_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_endpoint.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/dashboard-metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_endpoints.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_tool_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/calendar.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/research_metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_eng.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_filter_js_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_eng.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/alerts.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/engineer_metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_test.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/test_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/close_finding.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/exist_new_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/accepted_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_user.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_tool_config.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_widget.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_cred_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/import_scan_results.html      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/tool_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report_cover_page.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/filter_js_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product_type_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/api_key.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/filter_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_dev_env.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/pt_counts.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_cred_all_details.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/endpoints.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_cred.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_finding.html      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/finding_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/request_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/review_finding.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_tool_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_cred.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_related.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_tool_config.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_endpoint.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_tool_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/endpoint_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_nessus_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_test_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_engineer.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_checklist.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/tool_config.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report_cover_page.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/ad_hoc_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/template_search.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_cover_page.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_cred.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_burp_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/login.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/simple_search.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_endpoint_meta_data.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/dev_env.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_checkmarx_scan.html      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_nexpose_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/all_product_findings.html      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/templates.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/gmap.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/change_pwd.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_jira.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report_finding_list.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/system_settings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/reports.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_product_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/manage_images.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report_wysiwyg_content.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/launch_va.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product_endpoint_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report_wysiwyg_content.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_tool_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_veracode_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_scan_settings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_builder.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_product_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_jira.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_user.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_cred_details.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_tests.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_scan_settings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/paging_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/jira.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_template.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/dashboard.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/simple_metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_engagement.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/engagement.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_dev_env.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_cred_mapping.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/users.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/open_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/form_fields.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_endpoint.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_tool_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/promote_to_finding.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_cred_all.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_product_meta_data.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/up_risk.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/pdf_toc.xsl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/closed_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_endpoint_meta_data.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report_endpoint_list.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_test.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_cred_all.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/engagement_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_risk.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_test.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/action_history.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_tool_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/asciidoc_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_endpoint.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/test_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/notifications.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_test_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report_endpoints.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_toc.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/up_threat.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/profile.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/base.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/tastypie_swagger/index.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/filters.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/forms.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/settings.dist.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/wsgi.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/development_environment/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/development_environment/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/development_environment/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/utils.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/product.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/test.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/scansettings.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/finding.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/engagement.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/views.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/scans/read.me      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tasks.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/search/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/search/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/search/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_product/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_product/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_product/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/jira_link/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/jira_link/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/jira_link/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/system_settings/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/system_settings/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/system_settings/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/fixtures/product_type.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/fixtures/test_type.json      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/fixtures/system_settings.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/fixtures/development_environment.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/middleware.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nsp/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nsp/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/vcg/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/vcg/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualys/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualys/utfdictcsv.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualys/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/arachni/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/arachni/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/retirejs/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/retirejs/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/veracode/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/veracode/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nmap/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nmap/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/openvas_csv/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/openvas_csv/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nessus/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nessus/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualyswebapp/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualyswebapp/utfdictcsv.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualyswebapp/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/burp/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/burp/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/nexpose/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nexpose/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/factory.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/snyk/__init__.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/snyk/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/generic/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/generic/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/zap/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/zap/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/dependencycheck/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/dependencycheck/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/appspider/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/appspider/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/checkmarx/__init__.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/checkmarx/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/models.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/management/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/push_to_jira_update.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/migrate_product_contacts.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/stamp_finding_last_reviewed.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/csv_findings_export.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/run_scan.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/migrate_finding_templates.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/jira_async_updates.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/notify_isoc.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test_type/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test_type/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test_type/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product_type/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product_type/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product_type/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_config/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_config/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_config/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/urls.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/cred/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/cred/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/cred/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/reports/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/reports/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/reports/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/reports/widgets.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/notifications/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/notifications/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/notifications/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/celery.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/bootstrap/dist/css/bootstrap.min.css      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/glyphicons-halflings-white.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/logo.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/cloud_sec.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/glyphicons-halflings.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/chop.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/index.jpg      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/favicon.ico      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/css/dojo.css      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/fonts/icomoon.ttf      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/fonts/icomoon.eot      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/fonts/icomoon.woff      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/fonts/icomoon.svg      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/js/index.js      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/xsl/pdf_toc.xsl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/dojo.celery.beat.db      owner: ariz, group: ariz, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_type/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_type/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_type/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/endpoint/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/endpoint/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/endpoint/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/user/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/user/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/user/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/metrics/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/metrics/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/metrics/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/scan/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/scan/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/scan/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/finding/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/finding/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/finding/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/uploads/threat/read.me      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/uploads/risk/read.me      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product/views.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/product/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/engagement/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/engagement/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/engagement/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/display_tags.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/get_system_setting.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/event_tags.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/get_config_setting.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/navigation_tags.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/home/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/home/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/home/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/check_status_ui.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/check_status.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/generic_finding_upload_unit_test.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/smoke_test.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/vcg_unit_tests.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/endpoint_metadata_tests.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/dependency_check_unit_tests.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/zap.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/ISSUE_TEMPLATE.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/sample_deployments/nginx/nginx.conf      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/sample_deployments/nginx/env/bin/dojo-startup      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/sample_deployments/nginx/env/bin/celery-startup      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/sample_deployments/nginx/superverisord.conf      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.travis.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/README.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.gitignore      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/wsgi_params      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/setup.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/run_dojo.bash      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/CONTRIBUTING.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/Dockerfile      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/scripts/travis-integration-test.sh      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/scripts/dojo-shared-functions.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/LICENSE.md      owner: root, group: root, permissions: 0666
+
+
+
+Solution : 
+
+Removing write access for the 'other' category ( chmod o-w  ) is advisable, but always consult relevant vendor documentation to avoid breaking any application dependencies on a given file.
+
+See Also : 
+
+https://workbench.cisecurity.org/files/1860
+
+Reference(s) : 
+
+800-53|AC-6,PCI-DSSv3.1|7.1.2,PCI-DSSv3.2|7.1.2,800-171|3.1.5,CN-L3|7.1.3.2(b),CN-L3|7.1.3.2(g),CSF|PR.AC-4,CSF|PR.DS-5,ITSG-33|AC-6,SWIFT-CSCv1|5.1,CCE|CCE-80131-6,LEVEL|1S ""","""3""","""""6.1.10 Ensure no world writable files exist"" : [FAILED] Unix-based systems support variable settings to control access to files. World writable files are the least secure. See the chmod(2) man page for more information.
+
+Rationale:
+
+Data in world-writable files can be modified and compromised by any user on the system. World writable files may also indicate an incorrectly written script or program that could potentially be the cause of a larger compromise to the system's integrity.
+
+The following 577 files are world writeable:
+
+  /opt/bmc/bladelogic/RSCD/Transactions/Database/package_tracking.db      owner: root, group: root, permissions: 0777
+
+  /opt/bmc/bladelogic/RSCD/Transactions/d8fa23e1481b30d883a0a8152c6b519a/1      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/templates/settings.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/tasks/os.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/tasks/app.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/tasks/sql.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/roles/webserver/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/vars.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/inventory/vagrant      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/legacy/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/vars/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/handlers/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/create_non_root_sudo_user.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/setup_uncomplicated_firewall.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/setup_fail2ban.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/force_ssh_authentication.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/perform_aptitude_dist_upgrade.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/tasks/setup_unattended_upgrades.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/security/files/apt_periodic      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/handlers/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/tasks/setup_mysql.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/tasks/setup_postgresql.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/db/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/certbot/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/certbot/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/nginx/templates/dojo.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/nginx/handlers/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/nginx/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/nginx/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/common/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/common/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/supervisor_config.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/virtualenv_postactivate.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/maintenance_off.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/prod-settings.py.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/superuser_exists.py.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/gunicorn_start.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/templates/changepassword.sh.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/handlers/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/defaults/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/setup_git_repo.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/setup_virtualenv.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/create_django_superuser.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/setup_django_app.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/set_file_permissions.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/setup_supervisor.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/create_users_and_groups.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/web/tasks/install_additional_packages.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/roles/avahi/tasks/main.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/site.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/dbservers.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/Vagrantfile      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/production      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/production.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vars/production.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vars/development.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vars/base.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vars/all.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/security.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/development      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/ansible.cfg      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/development.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/README.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/.gitignore      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/vagrant_ansible_inventory      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/webservers.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/files/requirements/production.txt      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/prod-install/files/requirements/development.txt      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/change_dojo_password.sh.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/requirements.txt      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/startup-dojo.sh.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/settings.py.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/templates/super_user_exists.py.j2      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/dojo-dev-environment.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/deploy-vars.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/ansible.cfg      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/README.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/ansible/dev-install/EXAMPLE-inventory      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/reports.sh      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/wsgi.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/Vagrantfile      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/about.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/features.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/conf.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/labels.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/api-docs.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/Makefile      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/models.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/dojo.env      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/upgrading.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/running-in-production.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/getting-started.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/README.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/workflows.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/bug-2x.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/dashboard.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_18.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_14.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_5.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/eng_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_10.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/scan_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/report_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_11.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/report_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_4.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/imp_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_16.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_5.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_21.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_4.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/end_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/product_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/api_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_12.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/imp_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/end_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/product_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_8.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_6.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_17.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_6.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_4.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/notifications_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/api_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/key-2x.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_9.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/scan_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/end_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_20.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_7.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_19.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/DD-Hierarchy.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_22.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/api_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/scan_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/graph-2x.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/prod-owner-creds.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/product_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_5.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/met_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_15.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/admin-creds.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/getting_started_13.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/find_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/_static/eng_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/start-using.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docs/index.rst      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/index      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/config      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/info/exclude      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/description      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/refs/remotes/origin/HEAD      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/refs/heads/master      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/packed-refs      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/HEAD      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/hooks/post-update.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/pre-commit.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/update.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/prepare-commit-msg.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/pre-rebase.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/applypatch-msg.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/pre-applypatch.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/commit-msg.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/hooks/pre-push.sample      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/.git/logs/refs/remotes/origin/HEAD      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/logs/refs/heads/master      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.git/logs/HEAD      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/PULL_REQUEST_TEMPLATE.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/setup.bash      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/DefectDojoMaintainers.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/components/package.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo.celerydb.sqlite      owner: ariz, group: ariz, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_18.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_14.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/cash_reward.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_10.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_11.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_16.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_5.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/screenshot1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_21.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_4.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_12.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/admin.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/XING_logo.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/slack_rgb.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_8.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_2.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_6.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_17.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_9.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_20.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_7.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_19.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/owner.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/swag_reward.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_22.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_3.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/Twitter_Logo.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/dojo_tshirt_back.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_15.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_1.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/getting_started_13.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/doc/img/dojo_tshirt_front.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/manage.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/docker/setup-superuser.expect      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/VCG-WebGoatNet-Results.xml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/Bodgeit-burp.xml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/dependency-check-report.xml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/dojo-csv-example.csv      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/SampleGenericImport.csv      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/Bodgeit-checkmarx.xml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/scans/VCG-WebGoatNet-Results.csv      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/sample_data/initial_dojo_data.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/readme.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/wait-for-it.sh      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/docker/dojo-base-build-push.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/dojo-base.docker      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/dojo-data.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/dojo-container-build-push.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/docker/docker-startup.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/app.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/requirements.txt      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/403.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/404.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/report_base.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/pt_nav_items.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/other.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/engagement_added.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/user_mentioned.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/results_added.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/report_created.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/test_added.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/notifications/upcoming_engagement.tpl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/clear_finding_review.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_product_meta_data.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/defect_finding_review.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/checklist.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_filter_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/request_endpoint_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_endpoint.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/dashboard-metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_endpoints.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_tool_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/calendar.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/research_metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_eng.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_filter_js_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_eng.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/alerts.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/engineer_metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_test.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/test_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/close_finding.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/exist_new_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/accepted_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_user.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_tool_config.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_widget.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_cred_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/import_scan_results.html      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/tool_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report_cover_page.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/filter_js_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product_type_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/api_key.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/filter_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_dev_env.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/pt_counts.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_cred_all_details.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/endpoints.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_cred.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_finding.html      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/finding_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/request_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/review_finding.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_tool_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_cred.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_related.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_tool_config.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_endpoint.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_tool_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/endpoint_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_nessus_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_test_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_engineer.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_checklist.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/tool_config.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report_cover_page.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/ad_hoc_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/template_search.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_cover_page.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_cred.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_burp_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/login.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/simple_search.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_endpoint_meta_data.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/dev_env.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_checkmarx_scan.html      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_nexpose_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/all_product_findings.html      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/templates.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/gmap.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/change_pwd.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_jira.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report_finding_list.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/system_settings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/reports.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_product_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/manage_images.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report_wysiwyg_content.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/launch_va.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product_endpoint_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report_wysiwyg_content.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_tool_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_veracode_scan.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_scan_settings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/report_builder.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_product_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_jira.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_user.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_cred_details.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_tests.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_scan_settings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/paging_snippet.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/jira.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_template.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/dashboard.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/simple_metrics.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_engagement.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/engagement.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_dev_env.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/new_cred_mapping.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/users.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/open_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/form_fields.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_endpoint.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_tool_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/promote_to_finding.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_cred_all.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_product_meta_data.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/up_risk.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/pdf_toc.xsl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/closed_findings.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/add_endpoint_meta_data.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_pdf_report_endpoint_list.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_test.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_cred_all.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/engagement_pdf_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_risk.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_test.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/action_history.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/view_tool_product.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/asciidoc_report.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/delete_endpoint.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/test_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/notifications.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/edit_test_type.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_report_endpoints.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/custom_asciidoc_toc.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/up_threat.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/dojo/profile.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/base.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templates/tastypie_swagger/index.html      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/filters.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/forms.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/settings.dist.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/wsgi.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/development_environment/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/development_environment/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/development_environment/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/utils.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/product.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/test.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/scansettings.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/finding.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api_test_files/engagement.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/views.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/scans/read.me      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tasks.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/api.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/search/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/search/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/search/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_product/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_product/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_product/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/jira_link/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/jira_link/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/jira_link/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/system_settings/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/system_settings/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/system_settings/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/fixtures/product_type.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/fixtures/test_type.json      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/fixtures/system_settings.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/fixtures/development_environment.json      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/middleware.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nsp/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nsp/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/vcg/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/vcg/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualys/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualys/utfdictcsv.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualys/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/arachni/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/arachni/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/retirejs/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/retirejs/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/veracode/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/veracode/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nmap/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nmap/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/openvas_csv/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/openvas_csv/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nessus/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nessus/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualyswebapp/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualyswebapp/utfdictcsv.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/qualyswebapp/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/burp/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/burp/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/nexpose/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/nexpose/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/factory.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/snyk/__init__.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/snyk/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/generic/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/generic/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/zap/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/zap/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/dependencycheck/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/dependencycheck/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/appspider/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/appspider/parser.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tools/checkmarx/__init__.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/tools/checkmarx/parser.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/models.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/management/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/push_to_jira_update.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/migrate_product_contacts.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/stamp_finding_last_reviewed.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/csv_findings_export.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/run_scan.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/migrate_finding_templates.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/jira_async_updates.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/management/commands/notify_isoc.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test_type/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test_type/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test_type/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product_type/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product_type/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product_type/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_config/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_config/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_config/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/urls.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/cred/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/cred/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/cred/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/reports/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/reports/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/reports/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/reports/widgets.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/notifications/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/notifications/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/notifications/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/celery.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/bootstrap/dist/css/bootstrap.min.css      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/glyphicons-halflings-white.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/logo.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/cloud_sec.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/glyphicons-halflings.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/chop.png      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/index.jpg      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/img/favicon.ico      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/css/dojo.css      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/fonts/icomoon.ttf      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/fonts/icomoon.eot      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/fonts/icomoon.woff      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/fonts/icomoon.svg      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/js/index.js      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/static/dojo/xsl/pdf_toc.xsl      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/dojo.celery.beat.db      owner: ariz, group: ariz, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_type/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_type/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/tool_type/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/endpoint/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/endpoint/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/endpoint/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/user/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/user/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/user/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/metrics/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/metrics/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/metrics/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/scan/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/scan/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/scan/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/finding/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/finding/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/finding/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/uploads/threat/read.me      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/uploads/risk/read.me      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product/views.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/dojo/product/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/product/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/engagement/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/engagement/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/engagement/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/display_tags.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/get_system_setting.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/event_tags.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/get_config_setting.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/templatetags/navigation_tags.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/test/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/home/views.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/home/__init__.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/dojo/home/urls.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/check_status_ui.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/check_status.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/generic_finding_upload_unit_test.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/smoke_test.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/vcg_unit_tests.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/endpoint_metadata_tests.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/dependency_check_unit_tests.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/tests/zap.py      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/ISSUE_TEMPLATE.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/sample_deployments/nginx/nginx.conf      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/sample_deployments/nginx/env/bin/dojo-startup      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/sample_deployments/nginx/env/bin/celery-startup      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/sample_deployments/nginx/superverisord.conf      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.travis.yml      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/README.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/.gitignore      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/wsgi_params      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/setup.py      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/run_dojo.bash      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/CONTRIBUTING.md      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/Dockerfile      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/scripts/travis-integration-test.sh      owner: root, group: root, permissions: 0777
+
+  /home/ariz/django-DefectDojo/scripts/dojo-shared-functions.bash      owner: root, group: root, permissions: 0666
+
+  /home/ariz/django-DefectDojo/LICENSE.md      owner: root, group: root, permissions: 0666
+
+
+
+Solution : 
+
+Removing write access for the 'other' category ( chmod o-w  ) is advisable, but always consult relevant vendor documentation to avoid breaking any application dependencies on a given file.
+
+See Also : 
+
+https://workbench.cisecurity.org/files/1860
+
+Reference(s) : 
+
+800-53|AC-6,PCI-DSSv3.1|7.1.2,PCI-DSSv3.2|7.1.2,800-171|3.1.5,CN-L3|7.1.3.2(b),CN-L3|7.1.3.2(g),CSF|PR.AC-4,CSF|PR.DS-5,ITSG-33|AC-6,SWIFT-CSCv1|5.1,CCE|CCE-80131-6,LEVEL|1S ""","""2018-07-31T14:35:51.328Z""","""open"""

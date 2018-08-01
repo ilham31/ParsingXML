@@ -9,7 +9,7 @@ module.exports = function(app) {
         .get( compCtrl.get_all_compliance);
 
     app.route('/compliance')
-        .post( compCtrl.create_compliance);
+        .post( tokenController, compCtrl.create_compliance);
         
     app.route('/compliance/comp')
         .get( compCtrl.get_compliance);    
@@ -21,7 +21,7 @@ module.exports = function(app) {
         .delete( compCtrl.delete_item);
         
     app.route('/compliance/:itemId')
-        .patch( compCtrl.edit_compliance);
+        .patch(compCtrl.edit_compliance);
 
     app.route('/compliance/:fileId')
         .delete( compCtrl.delete_compliance);

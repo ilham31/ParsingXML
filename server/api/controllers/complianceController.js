@@ -46,7 +46,7 @@ exports.create_compliance = function (req, res) {
     console.log("data adalah", data);
         var comp = new Comp ({
             name: req.body.name,
-            // uploader: req.userData.username,
+            uploader: req.userData.username,
             upload_date: new Date().addHours(7),
             item: data
         });         
@@ -98,9 +98,11 @@ exports.delete_item = function (req, res) {
 };
 
 exports.edit_compliance = function (req, res) {
-    if(req.userData.privilege=='user') res.status(401).json("user tidak bisa edit"); 
+    // console.log("privilege", req.userData.privilege)
+    console.log("item id", req.params.itemId)
+    // if(req.userData.privilege=='user') res.status(401).json("user tidak bisa edit");
     Comp.update({"item._id": req.params.itemId}, { $set: {
-            "item.$.status": req.body.status,
+            "item.$.status": "closed",
             "item.$.closed_date": new Date().addHours(7)
             } 
         })
