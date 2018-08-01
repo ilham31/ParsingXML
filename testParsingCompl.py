@@ -37,8 +37,8 @@ def compl(filename,token):
                                 'system': System,
                                 'title': title,
                                 'stats': status,
-                                'result': result,
-                                'detail': detail,
+                                'result': result.replace("\n", ""),
+                                'detail': detail.replace("\n", ""),
                                 'i_status':iStatus,
                             })
                     # reportHostName.append({
