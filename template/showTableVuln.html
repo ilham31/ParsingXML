@@ -266,20 +266,52 @@
 	-moz-transition: All 0.3s ease;
 	-o-transition: All 0.3s ease;
 }
+.tombolDownload{
+    margin-bottom: 20px
+}
+.posisiDropDown{
+    margin-right: 10px;
+    padding-top: 18px;
+}
+.textDropdown {
+        display: inline-block;
+        width:100px ;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        }
 </style>
 </head>
 
 <body class="animsition">
         <header class="headerAwal">
-                <!-- > -->
+                <div class="posisiDropDown">
+                        <div class="dropdown">
+                               <button class="btn btn-primary  dropdown-toggle float-right textDropdown" type="button" data-toggle="dropdown">{{data.username}}
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a class="dropdown-item" href = '/logout'>log out</a></li>
+                                    {% if data.privilege == "admin" %}
+                                        <li><a class="dropdown-item" href="#">reegister admin</a></li>
+                                    {% endif %}
+                                </ul>
+                            
+                        </div>
+                        
+                    </div>
         </header>
 
         <div class="main-content">
             <div class="row">
                 <div class="col-lg-12">
                         <h2 class="title-1 m-b-25">data vulnerability</h2>
-                    <div class="table-responsive table--no-card m-b-40" style="height:500px;overflow:auto;">
-                        <table class="table table-borderless table-striped table-earning">
+                        <div class="tombolDownload float-right">
+                            <div class="input-group-btn">
+                                <a href="{{url_for( 'downloadVuln', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-primary">Download As XLSX</button></a>                    
+                            </div>
+                        </div>
+                    <div class="table-responsive table--no-card m-b-40" style="height:405px;overflow:auto;">
+                        <table class="table  table-striped ">
                                 <thead>
                                     <tr>
                                         <th>System</th>
@@ -299,16 +331,16 @@
                              
                             {% for dataVuln in idFile.item %}
                                 <tr >
-                                        <td >{{dataVuln.system}}</td>
-                                        <td class="text">{{dataVuln.name}}</td>
-                                        <td>{{dataVuln.port_protocol}}</td>
-                                        <td>{{dataVuln.risk_level}}</td>
-                                        <td>{{dataVuln.synopsis}}</td>
-                                        <td class="text" >{{dataVuln.detail}}</td>
-                                        <td>{{dataVuln.solution}}</td>
-                                        <td>{{dataVuln.severity}}</td>
-                                        <td>{{dataVuln.open_date}}</td>
-                                        <td>{{dataVuln.closed_date}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.system}}</td>
+                                        <td class="text" data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.name}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.port_protocol}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.risk_level}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.synopsis}}</td>
+                                        <td class="text"  data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.detail}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.solution}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.severity}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.open_date}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.closed_date}}</td>
                                         {% if statusUser == 1  %}
                                              {% if dataVuln.status == "closed" %}
                                                 <td><label class="switch switch-left-right">
@@ -336,9 +368,7 @@
 
                
                 <!-- <form class="downloadCSV" method=post enctype=multipart/form-data> -->
-                    <div class="input-group-btn">
-                            <a href="{{url_for( 'downloadVulnAsCSV', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-primary">Download As CSV</button></a>                    
-                    </div>
+                    
                 <!-- </form> -->
             
     <!-- Modal Status -->
@@ -364,9 +394,9 @@
 {% endfor %} 
 
 
-<!-- modal detail -->
+<!-- modal data -->
 {% for dataVuln in idFile.item %}
-<div id="modalDetail{{dataVuln._id}}" class="modal fade" role="dialog">
+<div id="modalData{{dataVuln._id}}" class="modal fade" role="dialog">
         <div class="modal-dialog">
       
           <!-- Modal content-->
@@ -376,10 +406,15 @@
             </div>
             <div class="modal-body">
               
-              <p>Detail : {{dataVuln.detail}}</p>
-              <p>Detail : {{dataVuln.detail}}</p>
-              <p>Detail : {{dataVuln.detail}}</p>
-              <p>Detail : {{dataVuln.detail}}</p>
+              <p>System : {{dataVuln.system}}</p><br>
+              <p>Name   :{{dataVuln.name}} </p><br>
+              <p>Port/Protocol  : {{dataVuln.port_protocol}}</p><br>
+              <p>Risk Level  : {{dataVuln.risk_level}}</p><br>
+              <p>Synopsis  : {{dataVuln.synopsis}}</p><br>
+              <p>Detail  : {{dataVuln.detail}}</p><br>
+              <p>Soluion  : {{dataVuln.solution}}</p><br>
+              <p>Severity  : {{dataVuln.severity}}</p><br>
+               
             </div>
             <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
@@ -401,6 +436,8 @@
                 loadWithAjax(ev.target.href);
     }   
 });
+
+    
     </script>
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
     <!-- Jquery JS-->

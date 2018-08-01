@@ -116,6 +116,7 @@
                                     <th>Filename</th>
                                     <th>Date</th>
                                     <th>Uploader</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -124,7 +125,7 @@
                                     <td><a href="{{url_for( 'vulnGet', id=Vuln._id ) }}">{{Vuln.name}}</a></td>
                                     <td>{{Vuln.upload_date}}</td>
                                     <td class="textUploader">{{Vuln.uploader}}</td>
-                                    <td data-toggle="modal" data-target="#myModal{{Vuln._id}}">Delete</td>
+                                    <td data-toggle="modal" data-target="#myModal{{Vuln._id}}"><button  type="button" class="btn btn-danger">Delete</button></td>
                                     
                                 </tr>
                         {% endfor %}
@@ -190,6 +191,7 @@
                                         <th>Filename</th>
                                         <th>Date</th>
                                         <th>Uploader</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -198,7 +200,7 @@
                                         <td><a href="{{url_for( 'compGet', id=Comp._id ) }}">{{Comp.name}}</td></a>
                                         <td>{{Comp.upload_date}}</td>
                                         <td>{{Comp.uploader}}</td>
-                                        <td data-toggle="modal" data-target="#modalComp{{Comp._id}}">Delete</td>
+                                        <td data-toggle="modal" data-target="#modalComp{{Comp._id}}" ><button  type="button" class="btn btn-danger">Delete</button></td>
                                     </tr>
                         {% endfor %}
                                 </tbody>

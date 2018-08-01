@@ -3,6 +3,7 @@ from io import open
 import json
 import csv
 import os,requests as req
+import xlsxwriter
 
 def vuln(filename,token):
     os.chdir('D:/ilham/ParsingXML/data')
@@ -120,31 +121,55 @@ def getDataVuln(idVuln):
     dataFile=req.get(url_data,params=parameter)
     return dataFile.json()
 
-def downloadVulnCSV(idFile):
+def downloadVulnXLSX(idFile):
     os.chdir('D:/ilham/ParsingXML/data/csv')
     find_data='http://localhost:3000/vulnerabilities/vuln'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)
     dataDownload = dataFile.json()
     
-    
-    with open(idFile+'.csv', 'wb') as csvfile:
-        f = csv.writer(csvfile)
+    workbook = xlsxwriter.Workbook(idFile +'.xlsx')
+    worksheet = workbook.add_worksheet()
 
-        f.writerow(["System", "Name", "Port/Protocol", "Risk Level", "Synopsis","Detail","Solution","Severity","Open Date","Closed Date","Status"])
+    row=1
+    col=0
 
-        for x in range(0,len(dataDownload['item'])):
-             f.writerow([dataDownload['item'][x]["system"],
-                        dataDownload['item'][x]["name"],
-                        dataDownload['item'][x]["port_protocol"],
-                        dataDownload['item'][x]["risk_level"],
-                        dataDownload['item'][x]["synopsis"],
-                        dataDownload['item'][x]["detail"],
-                        dataDownload['item'][x]["solution"],
-                        dataDownload['item'][x]["severity"],
-                        dataDownload['item'][x]["open_date"],
-                        dataDownload['item'][x]["closed_date"],
-                        dataDownload['item'][x]["status"],
-                        ])
-        return f
+    head = ['System', 'Name', 'Port/Protocol', 'Risk Level', 'Synopsis', 'Detail','Solution','Severity','Open Date', 'Closed Date', 'Status']
+    for i in range (0,len(head)):
+        worksheet.write(0, i, head[i])
+        
+    for x in range(0,len(dataDownload['item'])):
+        worksheet.write(row, 0, dataDownload['item'][x]["system"])
+        worksheet.write(row, 1, dataDownload['item'][x]["name"])
+        worksheet.write(row, 2, dataDownload['item'][x]["port_protocol"])
+        worksheet.write(row, 3, dataDownload['item'][x]["risk_level"])
+        worksheet.write(row, 4, dataDownload['item'][x]["synopsis"])
+        worksheet.write(row, 5, dataDownload['item'][x]["detail"])
+        worksheet.write(row, 6, dataDownload['item'][x]["solution"])
+        worksheet.write(row, 7, dataDownload['item'][x]["severity"])
+        worksheet.write(row, 8, dataDownload['item'][x]["open_date"])
+        worksheet.write(row, 9, dataDownload['item'][x]["closed_date"])
+        worksheet.write(row, 10, dataDownload['item'][x]["status"])
+        row += 1
+
+    workbook.close()
+    # with open(idFile+'.csv', 'wb') as csvfile:
+    #     f = csv.writer(csvfile)
+
+    #     f.writerow(["System", "Name", "Port/Protocol", "Risk Level", "Synopsis","Detail","Solution","Severity","Open Date","Closed Date","Status"])
+
+    #     for x in range(0,len(dataDownload['item'])):
+    #          f.writerow([dataDownload['item'][x]["system"],
+    #                     dataDownload['item'][x]["name"],
+    #                     dataDownload['item'][x]["port_protocol"],
+    #                     dataDownload['item'][x]["risk_level"],
+    #                     dataDownload['item'][x]["synopsis"],
+    #                     dataDownload['item'][x]["detail"],
+    #                     dataDownload['item'][x]["solution"],
+    #                     dataDownload['item'][x]["severity"],
+    #                     dataDownload['item'][x]["open_date"],
+    #                     dataDownload['item'][x]["closed_date"],
+    #                     dataDownload['item'][x]["status"],
+    #                     ])
+    #     return f
     
