@@ -6,7 +6,7 @@ module.exports = function(app) {
     var vulnCtrl = require('../controllers/vulnerabilitiesController');
 
     app.route('/vulnerabilities')
-        .get( vulnCtrl.get_all_vulnerabilities);
+        .get(vulnCtrl.get_all_vulnerabilities);
 
     app.route('/vulnerabilities')
         .post( tokenController,vulnCtrl.create_vulnerabilities);
