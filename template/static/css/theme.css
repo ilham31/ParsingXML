@@ -4251,7 +4251,7 @@ section {
     color: #808080;
     padding: 12px 40px;
     white-space: nowrap;
-    line-height: 0;
+    line-height: 2;
 }
 
 .table-earning tbody td.text-right {
@@ -6170,7 +6170,9 @@ section {
 }
 
 .m-b-25 {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline
 }
 
 .m-t-25 {

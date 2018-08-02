@@ -38,8 +38,8 @@ def compl(filename,token):
                                 'system': System,
                                 'title': title,
                                 'stats': status,
-                                'result': result.replace("\n", ""),
-                                'detail': detail.replace("\n", ""),
+                                'result': result,
+                                'detail': detail,
                                 'i_status':iStatus,
                             })
                     # reportHostName.append({
@@ -106,7 +106,7 @@ def readComp():
     
     return fileComp
 
-def downloadCompCSV(idFile):
+def downloadCompXLSX(idFile):
     os.chdir('D:/Project/XL/ParsingXML/data/csv')
     find_data='http://localhost:3000/compliance/comp'
     parameterDownload={'id':idFile}
@@ -114,7 +114,7 @@ def downloadCompCSV(idFile):
     dataDownload = dataFile.json()
     
     
-    workbook = xlsxwriter.Workbook('COMPLIANCE.xlsx')
+    workbook = xlsxwriter.Workbook(idFile +'.xlsx')
     worksheet = workbook.add_worksheet()
 
     row=1
@@ -125,8 +125,15 @@ def downloadCompCSV(idFile):
         worksheet.write(0, i, head[i])
         
     for x in range(0,len(dataDownload['item'])):
-        worksheet.write(row, col, dataDownload['item'][x]["result"])
-        worksheet.write(row, col + 1, dataDownload['item'][x]["i_status"])
+        worksheet.write(row, 0, dataDownload['item'][x]["system"])
+        worksheet.write(row, 1, dataDownload['item'][x]["title"])
+        worksheet.write(row, 2, dataDownload['item'][x]["stats"])
+        worksheet.write(row, 3, dataDownload['item'][x]["result"])
+        worksheet.write(row, 4, dataDownload['item'][x]["i_status"])
+        worksheet.write(row, 5, dataDownload['item'][x]["detail"])
+        worksheet.write(row, 6, dataDownload['item'][x]["open_date"])
+        worksheet.write(row, 7, dataDownload['item'][x]["closed_date"])
+        worksheet.write(row, 8, dataDownload['item'][x]["status"])
         row += 1
 
     workbook.close()

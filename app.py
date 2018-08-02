@@ -60,20 +60,20 @@ def vulnGet():
         dataUser=r.json()
         if dataUser["privilege"]=="admin": 
             status=1
-            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status)
+            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser)
         else:
             status=0
-            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status)
+            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser)
     else:
         return render_template('login.html')
         
 @app.route('/downloadVuln', methods=['GET', 'POST'])
-def downloadVulnAsCSV():
+def downloadVuln():
     idFile=request.args.get('id')
-    downloadVulnCSV(idFile)
-    return send_file('data/csv/'+idFile+'.csv',
-                     mimetype='text/csv',
-                     attachment_filename='vulnerabilities_'+idFile+'.csv',
+    downloadVulnXLSX(idFile)
+    return send_file('data/csv/'+idFile+'.xlsx',
+                    #  mimetype='text/csv',
+                     attachment_filename='vulnerabilities_'+idFile+'.xlsx',
                      as_attachment=True)
 
 @app.route('/compliance', methods=['GET', 'POST'])
@@ -88,19 +88,19 @@ def compGet():
         dataUser=r.json()
         if dataUser["privilege"]=="admin": 
             status=1
-            return render_template('showTableComp.html', idFile=fileComp,statusUser=status)
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser)
         else:
             status=0
-            return render_template('showTableComp.html', idFile=fileComp,statusUser=status)
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser)
     else:
         return render_template('login.html')
 @app.route('/downloadComp', methods=['GET', 'POST'])
-def downloadCompAsCSV():
+def downloadComp():
     idFile=request.args.get('id')
-    downloadCompCSV(idFile)
-    return send_file('data/csv/COMPLIANCE.xlsx',
+    downloadCompXLSX(idFile)
+    return send_file('data/csv/'+idFile+'.xlsx',
                     #  mimetype='text/csv',
-                     attachment_filename='compliance_uhuy.xlsx',
+                     attachment_filename='compliance '+idFile+'.xlsx',
                      as_attachment=True)
 
 @app.route('/index', methods=['GET', 'POST'])
@@ -193,6 +193,21 @@ def regist_user():
         return redirect(url_for('proses_user'))
     else:
         return render_template('register.html')
+
+@app.route('/registerAdmin', methods=['GET', 'POST'])
+def regist_admin():
+    if request.method == 'POST':
+        user=request.form['username']
+        passwd=request.form['pass']
+        userData={
+                'username':user,
+                'password':passwd,
+                'privilege':"admin"
+            }
+        r=req.post('http://localhost:3000/users',data=userData)
+        return redirect(url_for('upload_file'))
+    else:
+        return render_template('registerAdmin.html')
 
 @app.route('/deletevuln', methods=['GET', 'POST'])
 def deleteVuln():
