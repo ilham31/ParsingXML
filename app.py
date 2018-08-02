@@ -194,6 +194,20 @@ def regist_user():
     else:
         return render_template('register.html')
 
+@app.route('/registerAdmin', methods=['GET', 'POST'])
+def regist_admin():
+    if request.method == 'POST':
+        user=request.form['username']
+        passwd=request.form['pass']
+        userData={
+                'username':user,
+                'password':passwd,
+                'privilege':"admin"
+            }
+        r=req.post('http://localhost:3000/users',data=userData)
+        return redirect(url_for('upload_file'))
+   
+
 @app.route('/deletevuln', methods=['GET', 'POST'])
 def deleteVuln():
    selectedID = request.args.get('id')
