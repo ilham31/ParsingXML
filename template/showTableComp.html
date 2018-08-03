@@ -409,9 +409,9 @@
                     <p><b>System:</b><br>{{dataComp.system}}</p><br>
                     <p><b>Title:</b><br>{{dataComp.title}}</p><br>
                     <p><b>Status:</b><br>{{dataComp.stats}}</p><br>
-                    <p><b>Result:</b><br>{{dataComp.result}}</p><br>
+                    <p style="white-space: pre-wrap;"><b>Result:</b><br>{{dataComp.result}}</p><br>
                     <p><b>iStatus:</b><br>{{dataComp.i_status}}</p><br>
-                    <p><b>Detail:</b><br>{{dataComp.detail}}</p><br>
+                    <p style="white-space: pre-wrap;"><b>Detail:</b><br>{{dataComp.detail}}</p><br>
                 </div>
                 <div class="modal-footer">
                         <a href="{{url_for( 'close_comp', idItem=dataComp._id,idFile=idFile._id ) }}" class="edit"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></a> 
