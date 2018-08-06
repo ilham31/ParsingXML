@@ -12,7 +12,7 @@ exports.create_user = function(req, res) {
 
   user.save(function(err) {
     if (err){
-      return res.status(409).send(err);
+      return res.status(409).json('username sudah terdaftar');;
     };
     return res.json('user created');
   });
@@ -31,7 +31,7 @@ exports.login_user = function(req, res) {
       if (err) { return res.status(401).json(err) }
 
       // Password did not match
-      if (!isMatch) { return res.status(401).json('password tidak cocok') }
+      if (!isMatch) { return res.status(401).json('password salah') }
 
       // Success
       token = jwt.sign({

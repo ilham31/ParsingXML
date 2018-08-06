@@ -116,6 +116,21 @@ def downloadCompXLSX(idFile):
     
     workbook = xlsxwriter.Workbook(idFile +'.xlsx')
     worksheet = workbook.add_worksheet()
+    
+    green_format = workbook.add_format()
+    green_format.set_pattern(1)
+    green_format.set_bg_color('green')
+    green_format.set_font_color('white')
+
+    yellow_format = workbook.add_format()
+    yellow_format.set_pattern(1)
+    yellow_format.set_bg_color('yellow')
+    yellow_format.set_font_color('white')
+
+    red_format = workbook.add_format()
+    red_format.set_pattern(1)
+    red_format.set_bg_color('red')
+    red_format.set_font_color('white')
 
     row=1
     col=0
@@ -127,7 +142,12 @@ def downloadCompXLSX(idFile):
     for x in range(0,len(dataDownload['item'])):
         worksheet.write(row, 0, dataDownload['item'][x]["system"])
         worksheet.write(row, 1, dataDownload['item'][x]["title"])
-        worksheet.write(row, 2, dataDownload['item'][x]["stats"])
+        if dataDownload['item'][x]['stats']== 'PASSED':
+            worksheet.write(row, 2, dataDownload['item'][x]["stats"],green_format)
+        elif dataDownload['item'][x]['stats']== 'WARNING' :
+            worksheet.write(row, 2, dataDownload['item'][x]["stats"],yellow_format)
+        else:
+            worksheet.write(row, 2, dataDownload['item'][x]["stats"],red_format)
         worksheet.write(row, 3, dataDownload['item'][x]["result"])
         worksheet.write(row, 4, dataDownload['item'][x]["i_status"])
         worksheet.write(row, 5, dataDownload['item'][x]["detail"])

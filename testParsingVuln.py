@@ -131,6 +131,22 @@ def downloadVulnXLSX(idFile):
     workbook = xlsxwriter.Workbook(idFile +'.xlsx')
     worksheet = workbook.add_worksheet()
 
+    green_format = workbook.add_format()
+    green_format.set_pattern(1)
+    green_format.set_bg_color('green')
+    green_format.set_font_color('white')
+
+    yellow_format = workbook.add_format()
+    yellow_format.set_pattern(1)
+    yellow_format.set_bg_color('yellow')
+    yellow_format.set_font_color('white')
+
+    red_format = workbook.add_format()
+    red_format.set_pattern(1)
+    red_format.set_bg_color('red')
+    red_format.set_font_color('white')
+
+
     row=1
     col=0
 
@@ -142,7 +158,14 @@ def downloadVulnXLSX(idFile):
         worksheet.write(row, 0, dataDownload['item'][x]["system"])
         worksheet.write(row, 1, dataDownload['item'][x]["name"])
         worksheet.write(row, 2, dataDownload['item'][x]["port_protocol"])
-        worksheet.write(row, 3, dataDownload['item'][x]["risk_level"])
+        if dataDownload['item'][x]["risk_level"] == 'High':
+            worksheet.write(row, 3, dataDownload['item'][x]["risk_level"],red_format)
+        elif dataDownload['item'][x]["risk_level"] == 'Medium':
+            worksheet.write(row, 3, dataDownload['item'][x]["risk_level"],yellow_format)
+        elif dataDownload['item'][x]["risk_level"] == 'Low':
+            worksheet.write(row, 3, dataDownload['item'][x]["risk_level"],green_format)
+        else :
+            worksheet.write(row, 3, dataDownload['item'][x]["risk_level"])
         worksheet.write(row, 4, dataDownload['item'][x]["synopsis"])
         worksheet.write(row, 5, dataDownload['item'][x]["detail"])
         worksheet.write(row, 6, dataDownload['item'][x]["solution"])

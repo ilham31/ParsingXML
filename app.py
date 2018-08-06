@@ -177,9 +177,9 @@ def logout():
    session.pop('token', None)
    return redirect(url_for('proses_user'))
 
-@app.errorhandler(Exception)
-def all_exception_handler(error):
-   return render_template('505.html'), 500
+# @app.errorhandler(Exception)
+# def all_exception_handler(error):
+#    return render_template('505.html'), 500
 
 @app.route('/register', methods=['GET', 'POST'])
 def regist_user():
