@@ -34,8 +34,8 @@ def proses_user():
             'password':passwd
         }
         r=req.post('http://localhost:3000/users/login',data=userLogin)
-        if r.json()== 'user tidak ada' or r.json() =='password tidak cocok':
-            return redirect(url_for('proses_user'))
+        if r.status_code == 401:
+            return render_template('login.html',errorMessage=r.json(),stats=1)
         else:
             session['token'] = r.json()
             return redirect(url_for('upload_file'))
@@ -45,6 +45,7 @@ def proses_user():
         if session.get('token') is not None:
             return redirect(url_for('upload_file'))
         else:
+            
             return render_template('login.html')
 
 
@@ -175,9 +176,10 @@ def logout():
    # remove the username from the session if it is there
    session.pop('token', None)
    return redirect(url_for('proses_user'))
-# @app.errorhandler(Exception)
-# def all_exception_handler(error):
-#    return 'Error', 500
+
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+   return render_template('505.html'), 500
 
 @app.route('/register', methods=['GET', 'POST'])
 def regist_user():
@@ -190,7 +192,11 @@ def regist_user():
                 'privilege':"user"
             }
         r=req.post('http://localhost:3000/users',data=userData)
-        return redirect(url_for('proses_user'))
+        status_code=r.status_code
+        if status_code == 409:
+            return render_template('register.html',err=r.json(),stats=1)
+        else :
+            return redirect(url_for('proses_user'))
     else:
         return render_template('register.html')
 
@@ -206,7 +212,8 @@ def regist_admin():
             }
         r=req.post('http://localhost:3000/users',data=userData)
         return redirect(url_for('upload_file'))
-   
+    else:
+        return render_template('registerAdmin.html')
 
 @app.route('/deletevuln', methods=['GET', 'POST'])
 def deleteVuln():

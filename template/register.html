@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login</title>
+	<title>Register</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -50,7 +50,11 @@
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
-
+					{% if stats == 1 %}
+						<div class="alert alert-danger">
+							<strong>Error!</strong> {{err.errmsg}}
+						</div>
+					{% endif %}
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type=submit name="submit">
 							Register

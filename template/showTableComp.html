@@ -92,7 +92,7 @@
 	height: inherit;
 	font-size: 10px;
 	text-transform: uppercase;
-	background: #E1B42B;
+	background: royalblue;
 	border-radius: inherit;
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
 	box-sizing:content-box;
@@ -267,6 +267,8 @@
 .posisiDropDown{
     margin-right: 10px;
     padding-top: 18px;
+    position: relative;
+    display: inline;
 }
 .textDropdown {
         display: inline-block;
@@ -275,19 +277,27 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         }
+        .gambar{
+    padding-top: 8px;
+    margin-left: 50px;
+    
+}
 </style>
 </head>
 
 <body class="animsition">
         <header class="headerAwal">
-                <div class="posisiDropDown">
+            <div class="gambar float-left">
+                    <a href="{{url_for( 'upload_file' ) }}"><img   src="{{ url_for('static',filename='imageslogin/xl.png') }}" alt="XL"></a>    
+            </div>
+            <div class="posisiDropDown">    
                         <div class="dropdown">
-                               <button class="btn btn-primary  dropdown-toggle float-right textDropdown" type="button" data-toggle="dropdown">{{data.username}}
+                               <button class="btn btn-link  dropdown-toggle float-right textDropdown" type="button" data-toggle="dropdown">{{data.username}}
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a class="dropdown-item" href = '/logout'>log out</a></li>
                                     {% if data.privilege == "admin" %}
-                                        <li><a class="dropdown-item" href="/registerAdmin">reegister admin</a></li>
+                                        <li><a class="dropdown-item" href="/registerAdmin">register admin</a></li>
                                     {% endif %}
                                 </ul>
                             
@@ -302,7 +312,7 @@
                         <h2 class="title-1 m-b-25">data compliance</h2>
                         <div class="tombolDownload float-right">
                             <div class="input-group-btn">
-                                <a href="{{url_for( 'downloadVuln', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-primary">Download As XLSX</button></a>                    
+                                <a href="{{url_for( 'downloadComp', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-success">Download as XLSX</button></a>                    
                             </div>
                         </div>
                     <div class="table-responsive table--no-card m-b-40" style="height:405px;overflow:auto;">
@@ -331,8 +341,8 @@
                                         <td class="text" data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.result}}</td>
                                         <td data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.i_status}}</td>
                                         <td class="text" data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.detail}}</td>
-                                        <td>{{dataComp.open_date}}</td>
-                                        <td>{{dataComp.closed_date}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.open_date}}</td>
+                                        <td data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.closed_date}}</td>
                                         {% if statusUser == 1  %}
                                              {% if dataComp.status == "closed" %}
                                                 <td><label class="switch switch-left-right">
@@ -388,7 +398,7 @@
     <!-- Modal Data -->
     {% for dataComp in idFile.item %}
     <div id="modalData{{dataComp._id}}" class="modal fade" role="dialog">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
           
               <!-- Modal content-->
               <div class="modal-content">
@@ -396,12 +406,12 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>System : {{dataComp.system}}</p><br>
-                    <p>Title : {{dataComp.title}}</p><br>
-                    <p>Status : {{dataComp.stats}}</p><br>
-                    <p>Result : {{dataComp.result}}</p><br>
-                    <p>Istatus : {{dataComp.i_status}}</p><br>
-                    <p>Detail: {{dataComp.detail}}</p><br>
+                    <p><b>System:</b><br>{{dataComp.system}}</p><br>
+                    <p><b>Title:</b><br>{{dataComp.title}}</p><br>
+                    <p><b>Status:</b><br>{{dataComp.stats}}</p><br>
+                    <p><b>Result:</b><br>{{dataComp.result}}</p><br>
+                    <p><b>iStatus:</b><br>{{dataComp.i_status}}</p><br>
+                    <p><b>Detail:</b><br>{{dataComp.detail}}</p><br>
                 </div>
                 <div class="modal-footer">
                         <a href="{{url_for( 'close_comp', idItem=dataComp._id,idFile=idFile._id ) }}" class="edit"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></a> 

@@ -64,25 +64,31 @@
         }
 .textUploader{
     display: block;
-    width:200px ;
+    width:100px ;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+.gambar{
+    padding-top: 8px;
+    margin-left: 50px;
 }
 </style>
 </head>
 
 <body class="animsition" style="animation-duration: 50ms; opacity: 1;">
         <header class="headerAwal">
-
+            <div class="gambar float-left">
+                <a href="{{url_for( 'upload_file' ) }}"><img   src="{{ url_for('static',filename='imageslogin/xl.png') }}" alt="XL"></a>    
+            </div>
             <div class="posisiDropDown">
                 <div class="dropdown">
-                       <button class="btn btn-primary  dropdown-toggle float-right text" type="button" data-toggle="dropdown">{{data.username}}
+                       <button class="btn btn-link  dropdown-toggle float-right text" type="button" data-toggle="dropdown">{{data.username}}
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li><a class="dropdown-item" href = '/logout'>log out</a></li>
                             {% if data.privilege == "admin" %}
-                                <li><a class="dropdown-item" href="#">reegister admin</a></li>
+                                <li><a class="dropdown-item" href="/registerAdmin">register admin</a></li>
                             {% endif %}
                         </ul>
                     
@@ -96,7 +102,7 @@
         <div class="main-content">
             
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-sm-6">
 
                     <h2 class="title-1 m-b-25">Vulnerabilities</h2>
                     <form class="formUpload" method=post enctype=multipart/form-data >
@@ -110,7 +116,7 @@
                     </div>
                     </form>
                 <div class="table-responsive table--no-card m-b-40" style="height:500px;overflow:auto;">
-                    <table class="table table-borderless table-striped table-earning">
+                    <table class="table  table-striped ">
                             <thead>
                                 <tr>
                                     <th>Filename</th>
@@ -149,7 +155,7 @@
                           <p>Apakah anda yakin menghapus {{Vuln.name}} ini ?</p>
                         </div>
                         <div class="modal-footer">
-                                <a href="{{url_for( 'deleteVuln', id=Vuln._id ) }}" class="deleteVuln"><button  type="button" class="btn btn-danger" data-dismiss="modal">YAY</button></a> 
+                                <a href="{{url_for( 'deleteVuln', id=Vuln._id ) }}" class="deleteVuln"><button  type="button" class="btn btn-danger" data-dismiss="modal">Ya</button></a> 
                         </div>
                       </div>
                   
@@ -172,7 +178,7 @@
                   <!-- end     -->
             
 
-                <div class="col-lg-6">
+                <div class="col-sm-6">
 
                         <h2 class="title-1 m-b-25">Compliance</h2>
                         <form class="formUpload" method=post enctype=multipart/form-data >
@@ -185,7 +191,7 @@
                         </div>
                         </form>
                     <div class="table-responsive table--no-card m-b-40" style="height:500px;overflow:auto;">
-                        <table class="table table-borderless table-striped table-earning">
+                        <table class="table  table-striped ">
                                 <thead>
                                     <tr>
                                         <th>Filename</th>
@@ -199,7 +205,7 @@
                                 <tr data-toggle="modal" data-target="#myModal">
                                         <td><a href="{{url_for( 'compGet', id=Comp._id ) }}">{{Comp.name}}</td></a>
                                         <td>{{Comp.upload_date}}</td>
-                                        <td>{{Comp.uploader}}</td>
+                                        <td class="textUploader">{{Comp.uploader}}</td>
                                         <td data-toggle="modal" data-target="#modalComp{{Comp._id}}" ><button  type="button" class="btn btn-danger">Delete</button></td>
                                     </tr>
                         {% endfor %}

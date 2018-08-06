@@ -97,7 +97,7 @@
 	height: inherit;
 	font-size: 10px;
 	text-transform: uppercase;
-	background: #E1B42B;
+	background: royalblue;
 	border-radius: inherit;
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
 	box-sizing:content-box;
@@ -272,6 +272,8 @@
 .posisiDropDown{
     margin-right: 10px;
     padding-top: 18px;
+    position: relative;
+    display: inline;
 }
 .textDropdown {
         display: inline-block;
@@ -280,19 +282,26 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         }
+        .gambar{
+    padding-top: 8px;
+    margin-left: 50px;
+}
 </style>
 </head>
 
 <body class="animsition">
         <header class="headerAwal">
-                <div class="posisiDropDown">
+            <div class="gambar float-left">
+                    <a href="{{url_for( 'upload_file' ) }}"><img   src="{{ url_for('static',filename='imageslogin/xl.png') }}" alt="XL"></a>    
+            </div>    
+            <div class="posisiDropDown">
                         <div class="dropdown">
-                               <button class="btn btn-primary  dropdown-toggle float-right textDropdown" type="button" data-toggle="dropdown">{{data.username}}
+                               <button class="btn btn-link  dropdown-toggle float-right textDropdown" type="button" data-toggle="dropdown">{{data.username}}
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a class="dropdown-item" href = '/logout'>log out</a></li>
                                     {% if data.privilege == "admin" %}
-                                        <li><a class="dropdown-item" href="/registerAdmin">reegister admin</a></li>
+                                        <li><a class="dropdown-item" href="/registerAdmin">register admin</a></li>
                                     {% endif %}
                                 </ul>
                             
@@ -303,11 +312,11 @@
 
         <div class="main-content">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-sm-12">
                         <h2 class="title-1 m-b-25">data vulnerability</h2>
                         <div class="tombolDownload float-right">
                             <div class="input-group-btn">
-                                <a href="{{url_for( 'downloadVuln', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-primary">Download As XLSX</button></a>                    
+                                <a href="{{url_for( 'downloadVuln', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-success">Download as XLSX</button></a>                    
                             </div>
                         </div>
                     <div class="table-responsive table--no-card m-b-40" style="height:405px;overflow:auto;">
@@ -397,7 +406,7 @@
 <!-- modal data -->
 {% for dataVuln in idFile.item %}
 <div id="modalData{{dataVuln._id}}" class="modal fade" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
       
           <!-- Modal content-->
           <div class="modal-content">
@@ -406,14 +415,14 @@
             </div>
             <div class="modal-body">
               
-              <p>System : {{dataVuln.system}}</p><br>
-              <p>Name   :{{dataVuln.name}} </p><br>
-              <p>Port/Protocol  : {{dataVuln.port_protocol}}</p><br>
-              <p>Risk Level  : {{dataVuln.risk_level}}</p><br>
-              <p>Synopsis  : {{dataVuln.synopsis}}</p><br>
-              <p>Detail  : {{dataVuln.detail}}</p><br>
-              <p>Soluion  : {{dataVuln.solution}}</p><br>
-              <p>Severity  : {{dataVuln.severity}}</p><br>
+              <p><b>System:</b><br>{{dataVuln.system}}</p><br>
+              <p><b>Name:</b><br>{{dataVuln.name}} </p><br>
+              <p><b>Port/Protocol:</b><br>{{dataVuln.port_protocol}}</p><br>
+              <p><b>Risk Level:</b><br>{{dataVuln.risk_level}}</p><br>
+              <p><b>Synopsis:</b><br>{{dataVuln.synopsis}}</p><br>
+              <p><b>Detail:</b><br>{{dataVuln.detail}}</p><br>
+              <p><b>Soluion:</b><br>{{dataVuln.solution}}</p><br>
+              <p><b>Severity:</b><br>{{dataVuln.severity}}</p><br>
                
             </div>
             <div class="modal-footer">

@@ -28,10 +28,10 @@ exports.login_user = function(req, res) {
       return res.status(401).json('user tidak ada');
     }
     user.verifyPassword(req.body.password, function(err, isMatch) {
-      if (err) { return res.json(err) }
+      if (err) { return res.status(401).json(err) }
 
       // Password did not match
-      if (!isMatch) { return res.json('password tidak cocok') }
+      if (!isMatch) { return res.status(401).json('password tidak cocok') }
 
       // Success
       token = jwt.sign({
