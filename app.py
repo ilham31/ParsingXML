@@ -21,7 +21,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-
+url='http://10.16.91.198:5000'
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -95,6 +95,7 @@ def compGet():
             return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser)
     else:
         return render_template('login.html')
+
 @app.route('/downloadComp', methods=['GET', 'POST'])
 def downloadComp():
     idFile=request.args.get('id')
@@ -128,7 +129,7 @@ def upload_file():
                         uploadData=getDataVuln(idUploadFile)
                         # variabel=data[0]
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
-                        return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idUploadFile)
+                        return redirect(url+'/vulnerabilities?id=' + idUploadFile)
                     elif request.form['submit'] == 'compliance':
                         token = session['token']
                         filename = file.filename
@@ -139,7 +140,7 @@ def upload_file():
                         idUploadComp=dataUploadComp['fileId']
                         uploadData=getDataComp(idUploadComp)
                         # variabel=data[0][0]["system"]
-                        return redirect('http://127.0.0.1:5000/compliance?id=' + idUploadComp)
+                        return redirect(url+'/compliance?id=' + idUploadComp)
                         
         
     elif request.method=='GET':
@@ -177,9 +178,9 @@ def logout():
    session.pop('token', None)
    return redirect(url_for('proses_user'))
 
-# @app.errorhandler(Exception)
-# def all_exception_handler(error):
-#    return render_template('505.html'), 500
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+   return render_template('505.html'), 500
 
 @app.route('/register', methods=['GET', 'POST'])
 def regist_user():
@@ -232,4 +233,4 @@ def deleteComp():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=true)
