@@ -21,7 +21,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-url='http://10.16.91.198:5000'
+url='http://localhost:5000'
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -233,4 +233,4 @@ def deleteComp():
 
 
 if __name__ == "__main__":
-    app.run(debug=true)
+    app.run(debug=True)
