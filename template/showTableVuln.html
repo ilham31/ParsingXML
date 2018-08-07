@@ -271,10 +271,9 @@
 }
 .posisiDropDown{
 
-    padding-top: 18px;
     position: relative;
     display: inline;
-    float: right;
+    top: -32px;
     margin-right: 20px
 }
 .textDropdown {
@@ -292,15 +291,23 @@
     background-image: url(/css/searchicon.png);
     background-position: 10px 12px;
     background-repeat: no-repeat;
-    width: 50%;
+    width: 27%;
     font-size: 16px;
-    padding: 12px 20px 12px 40px;
+    /* padding: 12px 20px 12px 40px; */
     border: 1px solid #ddd;
-    margin-bottom: 12px;
-    margin-top: 12px;
+    /* margin-bottom: 6px; */
+    /* margin-top: 12px; */
+    /* position: relative; */
+    /* display: inline; */
+    margin-left: -4px
+}
+.filterSearch{
+    width: 5%
+}
+.posisiSearch{
+    margin-top: 25px;
+    margin-left: 160px;
     position: relative;
-    display: inline;
-    margin-left: 50px;
 }
 </style>
 </head>
@@ -310,8 +317,25 @@
             <div class="gambar float-left">
                     <a href="{{url_for( 'upload_file' ) }}"><img   src="{{ url_for('static',filename='imageslogin/xl.png') }}" alt="XL"></a>    
             </div>  
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for data..">
-  
+            
+            <div class="posisiSearch">
+                    <select id="kolom" class="filterSearch">
+                            <option value="11">All</option>
+                            <option value="0">System</option>
+                            <option value="1">Name</option>
+                            <option value="2">Port/protocol</option>
+                            <option value="3">Risk Level</option>
+                            <option value="4">Synopsis</option>
+                            <option value="5">Detail</option>
+                            <option value="6">Solution</option>
+                            <option value="7">Severity</option>
+                            <option value="8">Open Date</option>
+                            <option value="9">Closed Date</option>
+                            <option value="10">Status (Open/Closed)</option>
+                          </select>
+                          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+            
+            </div>
             <div class="posisiDropDown float-right">
                         <div class="dropdown">
                                <button class="btn btn-link  dropdown-toggle float-right textDropdown" type="button" data-toggle="dropdown">{{data.username}}
@@ -465,15 +489,17 @@
                 loadWithAjax(ev.target.href);
     }   
 });
-
     function myFunction() {
-  // Declare variables 
     var input, filter, found, table, tr, td, i, j;
+    var e = document.getElementById("kolom");
+    var kolom = e.options[e.selectedIndex].value;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable");
     tr = table.getElementsByTagName("tr");
-    for (i = 0; i < tr.length; i++) {
+    if (kolom == 11)
+    {
+        for (i = 0; i < tr.length; i++) {
         td = tr[i].getElementsByTagName("td");
         for (j = 0; j < td.length; j++) {
             if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -490,7 +516,25 @@
             } 
         }
     }
-}
+    }
+    else
+    {
+        for (i = 0; i < tr.length; i++) {
+         td = tr[i].getElementsByTagName("td")[kolom];
+        if (td) {
+        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+        }
+        } 
+    }
+   }
+
+   }
+    
+
+
     </script>
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
     <!-- Jquery JS-->

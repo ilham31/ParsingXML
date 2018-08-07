@@ -1,0 +1,9 @@
+documentation
+1. Node JS
+2. MongoDB
+
+1. Python 2.7
+	-lxml
+	-requests
+	-flask
+	-xlsxwriter
