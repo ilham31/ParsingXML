@@ -109,18 +109,20 @@ def vuln(filename,token):
     return r.json()
 
 
-def readVuln():
+def readVuln(token):
     get_url='http://localhost:3000/vulnerabilities'
-    readData = req.get(get_url)
+    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
+    readData = req.get(get_url,headers=headers)
     fileVuln=readData.json()
     
     return fileVuln
 
 
-def getDataVuln(idVuln):
+def getDataVuln(idVuln,token):
     url_data='http://localhost:3000/vulnerabilities/vuln'
+    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     parameter={'id':idVuln}
-    dataFile=req.get(url_data,params=parameter)
+    dataFile=req.get(url_data,params=parameter,headers=headers)
     return dataFile.json()
 
 def downloadVulnXLSX(idFile):
