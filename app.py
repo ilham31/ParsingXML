@@ -53,7 +53,8 @@ def proses_user():
 def vulnGet():
     selectedID = request.args.get('id')
     dataId=selectedID
-    fileVuln=getDataVuln(dataId)
+    token = session['token']
+    fileVuln=getDataVuln(dataId,token)
     if session.get('token') is not None:
         token=session['token']
         header = {'Authorization': 'Bearer ' +token}
@@ -81,7 +82,8 @@ def downloadVuln():
 def compGet():
     selectedID = request.args.get('id')
     dataId=selectedID
-    fileComp=getDataComp(dataId)
+    token = session['token']
+    fileComp=getDataComp(dataId,token)
     if session.get('token') is not None:
         token=session['token']
         header = {'Authorization': 'Bearer ' +token}
@@ -144,8 +146,9 @@ def upload_file():
                         
         
     elif request.method=='GET':
-        dataVuln=readVuln()
-        dataComp=readComp()
+        token=session['token']
+        dataVuln=readVuln(token)
+        dataComp=readComp(token)
         if 'token' in session :
             token = session['token']
             header = {'Authorization': '"Bearer ' +token}
@@ -160,16 +163,20 @@ def upload_file():
 def close_vuln():
     selectedID = request.args.get('idItem')
     idFile=request.args.get('idFile')
+    token=session['token']
+    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     patch_Vuln='http://localhost:3000/vulnerabilities/'+ selectedID
-    r = req.patch(patch_Vuln)
+    r = req.patch(patch_Vuln,headers=headers)
     return redirect(url+'/vulnerabilities?id=' + idFile)
 
 @app.route('/editComp', methods=['GET', 'POST'])
 def close_comp():
     selectedID = request.args.get('idItem')
     idFile=request.args.get('idFile')
+    token=session['token']
+    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     patch_Vuln='http://localhost:3000/compliance/'+ selectedID
-    r = req.patch(patch_Vuln)
+    r = req.patch(patch_Vuln,headers=headers)
     return redirect(url+'/compliance?id=' + idFile)           
 
 @app.route('/logout', methods=['GET', 'POST'])
@@ -219,16 +226,20 @@ def regist_admin():
 @app.route('/deletevuln', methods=['GET', 'POST'])
 def deleteVuln():
    selectedID = request.args.get('id')
+   token=session['token']
+   headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
    url='http://localhost:3000/vulnerabilities/'+selectedID
-   r=req.delete(url)
+   r=req.delete(url,headers=headers)
    return redirect(url_for('upload_file'))
 
 
 @app.route('/deletecomp', methods=['GET', 'POST'])
 def deleteComp():
    selectedID = request.args.get('id')
+   token=session['token']
+   headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
    url='http://localhost:3000/compliance/'+selectedID
-   r=req.delete(url)
+   r=req.delete(url,headers=headers)
    return redirect(url_for('upload_file'))
 
 
