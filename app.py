@@ -5,7 +5,7 @@ from testParsingCompl import *
 import requests as req
 
 
-UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -123,7 +123,7 @@ def upload_file():
                     if request.form['submit'] == 'vulnerability':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile)
@@ -133,7 +133,7 @@ def upload_file():
                     elif request.form['submit'] == 'compliance':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)
@@ -162,7 +162,7 @@ def close_vuln():
     idFile=request.args.get('idFile')
     patch_Vuln='http://localhost:3000/vulnerabilities/'+ selectedID
     r = req.patch(patch_Vuln)
-    return redirect('http://127.0.0.1:5000/vulnerabilities?id=' + idFile)
+    return redirect(url+'/vulnerabilities?id=' + idFile)
 
 @app.route('/editComp', methods=['GET', 'POST'])
 def close_comp():
@@ -170,7 +170,7 @@ def close_comp():
     idFile=request.args.get('idFile')
     patch_Vuln='http://localhost:3000/compliance/'+ selectedID
     r = req.patch(patch_Vuln)
-    return redirect('http://127.0.0.1:5000/compliance?id=' + idFile)           
+    return redirect(url+'/compliance?id=' + idFile)           
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():

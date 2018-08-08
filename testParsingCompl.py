@@ -5,7 +5,7 @@ import csv,json,requests as req
 import xlsxwriter
 
 def compl(filename,token):
-    os.chdir('D:/Project/XL/ParsingXML/data')
+    os.chdir('D:/ilham/ParsingXML/data')
     api_url='http://localhost:3000/compliance'
     i=0
     report = {}
@@ -107,7 +107,7 @@ def readComp():
     return fileComp
 
 def downloadCompXLSX(idFile):
-    os.chdir('D:/Project/XL/ParsingXML/data/csv')
+    os.chdir('D:/ilham/ParsingXML/data/csv')
     find_data='http://localhost:3000/compliance/comp'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)
