@@ -4,8 +4,10 @@ from collections import defaultdict
 import csv,json,requests as req
 import xlsxwriter
 
+path = 'D:/Project/XL/ParsingXML/data'
+
 def compl(filename,token):
-    os.chdir('D:/Project/XL/ParsingXML/data')
+    os.chdir(path)
     api_url='http://localhost:3000/compliance'
     i=0
     report = {}
@@ -107,7 +109,7 @@ def readComp():
     return fileComp
 
 def downloadCompXLSX(idFile):
-    os.chdir('D:/Project/XL/ParsingXML/data/csv')
+    os.chdir(path+'/csv')
     find_data='http://localhost:3000/compliance/comp'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)

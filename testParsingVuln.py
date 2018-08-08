@@ -5,8 +5,10 @@ import csv
 import os,requests as req
 import xlsxwriter
 
+path = 'D:/Project/XL/ParsingXML/data'
+
 def vuln(filename,token):
-    os.chdir('D:/Project/XL/ParsingXML/data')
+    os.chdir(path)
     api_url='http://localhost:3000/vulnerabilities'
     i=0
     report = {}
@@ -122,7 +124,7 @@ def getDataVuln(idVuln):
     return dataFile.json()
 
 def downloadVulnXLSX(idFile):
-    os.chdir('D:/Project/XL/ParsingXML/data/csv')
+    os.chdir(path+'/csv')
     find_data='http://localhost:3000/vulnerabilities/vuln'
     parameterDownload={'id':idFile}
     dataFile=req.get(find_data,params=parameterDownload)
