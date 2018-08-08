@@ -16,8 +16,8 @@ module.exports = function(app) {
 
  
     app.route('/vulnerabilities/:itemId')
-        .patch( tokenController,vulnCtrl.edit_vulnerabilities);
+        .patch( vulnCtrl.edit_vulnerabilities);
 
     app.route('/vulnerabilities/:fileId')
-        .delete( tokenController,vulnCtrl.delete_vulnerabilities);
+        .delete( vulnCtrl.delete_vulnerabilities);
 };
