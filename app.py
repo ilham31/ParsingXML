@@ -128,7 +128,7 @@ def upload_file():
                         file.save(os.path.join('D:/'+path+'/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
-                        uploadData=getDataVuln(idUploadFile)
+                        uploadData=getDataVuln(idUploadFile,token)
                         # variabel=data[0]
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
                         return redirect(url+'/vulnerabilities?id=' + idUploadFile)
@@ -140,7 +140,7 @@ def upload_file():
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)
                         idUploadComp=dataUploadComp['fileId']
-                        uploadData=getDataComp(idUploadComp)
+                        uploadData=getDataComp(idUploadComp,token)
                         # variabel=data[0][0]["system"]
                         return redirect(url+'/compliance?id=' + idUploadComp)
                         
@@ -185,9 +185,9 @@ def logout():
    session.pop('token', None)
    return redirect(url_for('proses_user'))
 
-@app.errorhandler(Exception)
-def all_exception_handler(error):
-   return render_template('505.html'), 500
+# @app.errorhandler(Exception)
+# def all_exception_handler(error):
+#    return render_template('505.html'), 500
 
 @app.route('/register', methods=['GET', 'POST'])
 def regist_user():
