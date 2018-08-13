@@ -21,6 +21,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
 app._static_folder ='template/static'
 app.secret_key = 'my super secret key'.encode('utf8')
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -41,6 +42,8 @@ def proses_user():
         r=req.post('http://localhost:3000/users/login',data=userLogin)
         if r.status_code == 401:
             return render_template('login.html',errorMessage=r.json(),stats=1)
+        elif r.status_code == 403:
+            return render_template('login.html',errorMessage=r.json(),stats=0)
         else:
             session['token'] = r.json()
             return redirect(url_for('upload_file'))
@@ -72,7 +75,7 @@ def change_password():
                         r=req.patch('http://localhost:3000/users/password',headers=header,data=changePass)
                         status_code=r.status_code
                         if status_code == 401:
-                            return render_template('reset_password.html',status=1)
+                            return render_template('reset_password.html',status=1,err=r.json())
                         else:
                             return redirect(url_for('upload_file'))
                        
@@ -223,9 +226,9 @@ def logout():
    session.pop('token', None)
    return redirect(url_for('proses_user'))
 
-@app.errorhandler(Exception)
-def all_exception_handler(error):
-   return render_template('505.html'), 500
+# @app.errorhandler(Exception)
+# def all_exception_handler(error):
+#    return render_template('505.html'), 500
 
 @app.route('/register', methods=['GET', 'POST'])
 def regist_user():
@@ -235,7 +238,6 @@ def regist_user():
         userData={
                 'username':user,
                 'password':passwd,
-                'privilege':"user"
             }
         r=req.post('http://localhost:3000/users',data=userData)
         status_code=r.status_code

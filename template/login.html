@@ -53,6 +53,10 @@
 						<div class="alert alert-danger">
 							<strong>Error!</strong> {{errorMessage}}
 						</div>
+					{% elif stats == 0 %}
+						<div class="alert alert-danger">
+							<strong>Error!</strong> {{errorMessage}}
+						</div>
 					{% endif %}
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type=submit name="submit">

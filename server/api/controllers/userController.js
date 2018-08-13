@@ -1,6 +1,8 @@
 // Load required packages
 var User = require('../models/userModels');
 var jwt = require('jsonwebtoken');
+var bcrypt = require('bcrypt-nodejs');
+
 
 // Create endpoint /api/users for POST
 exports.create_user = function(req, res) {
@@ -43,6 +45,55 @@ exports.login_user = function(req, res) {
         expiresIn: "12h"
       });
       res.json(token);
+    });
+  })
+}
+
+exports.change_password = function(req, res) {
+  console.log("username user", req.userData.username)
+  User.findOne({ username: req.userData.username })
+  .exec()
+  .then(user =>
+  {
+    if (!user) 
+    {
+      return res.status(401).json('user tidak ada');
+    }
+    user.verifyPassword(req.body.old_password, function(err, isMatch) {
+      if (err) { return res.status(401).json(err) }
+
+      // Password did not match
+      if (!isMatch) { return res.status(401).json('password lama salah') }
+
+      bcrypt.genSalt(5, function(err, salt) {
+        if (err) return res.json(err)
+    
+        bcrypt.hash(req.body.new_password, salt, null, function(err, hash) {
+          if (err) return res.json(err)
+
+          User.findOneAndUpdate(
+            {username: req.userData.username}, { $set: { password: hash }}
+          )
+          .exec()
+            .then(result => {
+                res.status(200).json({
+                    result,
+                    message: "Password updated",
+                    request: {
+                        type: "PATCH"
+                    }
+                });
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({
+                    error: err
+                });
+            })
+        });
+      });
+
+      
     });
   })
 }

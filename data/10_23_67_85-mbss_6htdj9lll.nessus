@@ -5830,7 +5830,7 @@ cpe:/o:redhat:enterprise_linux:7.4</cpe>
 <cvss3_vector>CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H</cvss3_vector>
 <cvss_base_score>6.8</cvss_base_score>
 <cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:P/I:P/A:P</cvss_vector>
-<description>An update for gcab is now available for Red Hat Enterprise Linux 7.
+<!-- <description>An update for gcab is now available for Red Hat Enterprise Linux 7.
 
 Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
 
@@ -5841,8 +5841,8 @@ Security Fix(es) :
 
 * gcab: Extracting malformed .cab files causes stack smashing potentially leading to arbitrary code execution (CVE-2018-5345)
 
-For more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.</description>
-<fname>redhat-RHSA-2018-0350.nasl</fname>
+For more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.</description> -->
+<!-- <fname>redhat-RHSA-2018-0350.nasl</fname> -->
 <patch_publication_date>2018/02/26</patch_publication_date>
 <plugin_modification_date>2018/02/27</plugin_modification_date>
 <plugin_name>RHEL 7 : gcab (RHSA-2018:0350)</plugin_name>

@@ -1,7 +1,6 @@
 'use strict';
 var tokenController = require('../controllers/tokenController');
 
-
 module.exports = function(app) {
     var userCtrl = require('../controllers/userController');
 
@@ -13,4 +12,7 @@ module.exports = function(app) {
 
     app.route('/users')
         .get(tokenController, userCtrl.get_user);
+
+    app.route('/users/password')
+        .patch(tokenController, userCtrl.change_password);
 };

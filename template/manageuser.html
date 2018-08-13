@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <!-- {{ url_for('static',filename='css/theme.css') }} -->
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Dashboard</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="{{ url_for('static',filename='css/font-face.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{{ url_for('static',filename='vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="{{ url_for('static',filename='vendor/animsition/animsition.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/wow/animate.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/slick/slick.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/select2/select2.min.css') }}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static',filename='vendor/perfect-scrollbar/perfect-scrollbar.css') }}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{ url_for('static',filename='css/theme.css') }}" rel="stylesheet" media="all">
+    
+<style>
+    .headerAwal {
+    background: #f5f5f5;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 75px;
+    z-index: 3;
+}
+.formUpload{
+    margin-bottom: 10px;
+}
+
+.posisiDropDown{
+    padding-top: 18px;
+    position: relative;
+    display: inline;
+    float: right;
+    margin-right: 20px
+}
+.text {
+        display: inline-block;
+        width:100px ;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        }
+.textUploader{
+    display: block;
+    width:100px ;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.gambar{
+    padding-top: 8px;
+    margin-left: 50px;
+}
+#myInput {
+    background-image: url(static/css/searchicon.png);
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 50%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    position: relative;
+    display: inline;
+    margin-left: 50px;
+}
+</style>
+</head>
+
+<body class="animsition" style="animation-duration: 1ms; opacity: 1;">
+        <header class="headerAwal">
+            <div class="gambar float-left">
+                <a href="{{url_for( 'upload_file' ) }}"><img   src="{{ url_for('static',filename='imageslogin/xl.png') }}" alt="XL"></a>    
+            </div>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for data..">
+             <div class="posisiDropDown">
+                <div class="dropdown">
+                       <button class="btn btn-link  dropdown-toggle float-right text" type="button" data-toggle="dropdown">{{data.username}}
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a class="dropdown-item" href = "{{url_for( 'change_password' ) }}">Change Password</a></li>
+                            {% if data.privilege == "admin" %}
+                                <li><a class="dropdown-item" href="/registerAdmin">register admin</a></li>
+                            {% endif %}
+                            <li><a class="dropdown-item" href = '/logout'>log out</a></li>
+                        </ul>
+                    
+                </div>
+                
+            </div>
+            
+           
+        
+        </header>
+        <div class="main-content">
+            
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <h2 class="title-1 m-b-25"></h2>
+                    
+                <div class="table-responsive table--no-card m-b-40" style="height:500px;overflow:auto;">
+                    <table class="table  table-striped " id="vuln">
+                            <thead>
+                                <tr id='tableHeader'>
+                                    <th>User</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        {% for Vuln in dataFileV  %}
+                            <tr >
+                                    <td>{{Vuln.name}}</td>
+                                    <td data-toggle="modal" data-target="#myModal{{Vuln._id}}"><button  type="button" class="btn btn-success">Approve</button></td>
+                                    <td data-toggle="modal" data-target="#myModal{{Vuln._id}}"><button  type="button" class="btn btn-danger">Deny</button></td>
+                                    
+                                </tr>
+                        {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <!-- modal approve -->
+                {% for Vuln in dataFileV  %}
+                <div id="myModal{{Vuln._id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                  
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="sel1">Choose role:</label>
+                                <select class="form-control" id="sel1">
+                                  <option>User</option>
+                                  <option>Admin</option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{url_for( 'deleteVuln', id=Vuln._id ) }}" class="deleteVuln"><button  type="button" class="btn btn-primary" data-dismiss="modal">Submit</button></a> 
+                        </div>
+                      </div>
+                  
+                    </div>
+                  </div> 
+                  {% endfor %}
+
+                  <script>
+                    $(function() {
+                        $('#toggle-one').bootstrapToggle();
+                    })
+            
+                    addEventListener('click', function (ev) {
+                        if (ev.target.classList.contains('deleteVuln')) {
+                            ev.preventDefault();
+                            loadWithAjax(ev.target.href);
+                }   
+            });
+
+
+                                function myFunction() {
+                // Declare variables 
+                    var input, filter, found, table, tr, td, i, j;
+                    input = document.getElementById("myInput");
+                    filter = input.value.toUpperCase();
+                    tableVuln = document.getElementById("vuln");
+                    trVuln = tableVuln.getElementsByTagName("tr");
+                    for (i = 0; i < trVuln.length; i++) {
+                        tdVuln = trVuln[i].getElementsByTagName("td");
+                        for (j = 0; j < tdVuln.length; j++) {
+                            if (tdVuln[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                found = true;
+                            }
+                        }
+                        if (found) {
+                            trVuln[i].style.display = "";
+                            found = false;
+                        } else {
+                            if (trVuln[i].id != 'tableHeader')
+                            {
+                                trVuln[i].style.display = "none";
+                            } 
+                        }
+                    }
+
+                    
+
+                }
+                </script>
+                 
+
+                
+           <script>
+             $(function() {
+                 $('#toggle-one').bootstrapToggle();
+             })
+     
+             addEventListener('click', function (ev) {
+                 if (ev.target.classList.contains('deleteComp')) {
+                     ev.preventDefault();
+                     loadWithAjax(ev.target.href);
+         }   
+     });
+         </script>
+           <!-- end     -->
+          
+    <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
+    <!-- Jquery JS-->
+    <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/popper.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
+    <!-- Vendor JS       -->
+    <script src="{{ url_for('static',filename='vendor/slick/slick.min.js') }}">
+    </script>
+    <script src="{{ url_for('static',filename='vendor/wow/wow.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/animsition/animsition.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}">
+    </script>
+    <script src="{{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/counter-up/jquery.counterup.min.js') }}">
+    </script>
+    <script src="{{ url_for('static',filename='vendor/circle-progress/circle-progress.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/chartjs/Chart.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='vendor/select2/select2.min.js') }}">
+    </script>
+
+    <!-- Main JS-->
+    <script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
+<!-- end document-->
