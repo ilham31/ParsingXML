@@ -11,7 +11,7 @@ module.exports = function(app) {
         .get(tokenController, userCtrl.get_user_waiting);
 
     app.route('/users/delete/:idUser')
-        .delete(tokenController, userCtrl.delete_user);
+        .delete(userCtrl.delete_user);
 
     app.route('/users/edit')
         .patch(tokenController, userCtrl.edit_user_status);

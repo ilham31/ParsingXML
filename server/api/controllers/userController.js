@@ -77,13 +77,14 @@ exports.edit_user_status = function(req, res){
 }
 
 exports.delete_user = function(req, res){
+  console.log(req.params.idUser)
   User.findOneAndRemove(
-    {_id: req.param.idUser, status: 'waiting'}
+    {_id: req.params.idUser, status: 'waiting'}
   )
   .exec()
   .then(result => {
     if (result) res.status(200).json({result, message: 'user deleted'});
-    else res.status(401).json('user has approved')
+    else res.status(401).json('user not found')
   })
 }
 
