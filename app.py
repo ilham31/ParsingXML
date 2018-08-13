@@ -3,6 +3,7 @@ from flask import Flask, request, send_file, redirect, url_for,flash,render_temp
 from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
+from flask_compress import Compress
 
 
 UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
@@ -12,6 +13,10 @@ ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
 app = Flask(__name__)
+COMPRESS_MIMETYPES = ['text/html','text/css','application/json']
+COMPRESS_LEVEL = 6
+COMPRESS_MIN_SIZE=500
+Compress(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
 app._static_folder ='template/static'
@@ -47,6 +52,37 @@ def proses_user():
         else:
             
             return render_template('login.html')
+
+
+@app.route('/change_password',methods=['GET', 'POST'])
+def change_password():
+    if request.method == 'POST':
+        old_password=request.form['old_password']
+        new_password=request.form['new_password']
+        retype_password=request.form['retype_password']
+        if 'token' in session :
+                token = session['token']
+                header = {'Authorization': '"Bearer ' +token}
+                changePass={
+                    'old_password':old_password,
+                    'new_password':new_password
+                }
+                
+                if new_password == retype_password:
+                        r=req.patch('http://localhost:3000/users/password',headers=header,data=changePass)
+                        status_code=r.status_code
+                        if status_code == 401:
+                            return render_template('reset_password.html',status=1)
+                        else:
+                            return redirect(url_for('upload_file'))
+                       
+                else:
+                    return render_template('reset_password.html',status=0)
+        else:
+            return redirect (url_for('proses_user'))
+    else:
+        return render_template('reset_password.html')
+
 
 
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
@@ -148,11 +184,11 @@ def upload_file():
                         
         
     elif request.method=='GET':
-        token=session['token']
-        dataVuln=readVuln(token)
-        dataComp=readComp(token)
+        
         if 'token' in session :
             token = session['token']
+            dataVuln=readVuln(token)
+            dataComp=readComp(token)
             header = {'Authorization': '"Bearer ' +token}
             r = req.get('http://localhost:3000/users',headers=header)
             dataUser=r.json()
@@ -246,4 +282,5 @@ def deleteComp():
 
 
 if __name__ == "__main__":
+    app.jinja_env.cache = {}
     app.run(debug=True)

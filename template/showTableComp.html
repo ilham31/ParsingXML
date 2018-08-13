@@ -336,10 +336,11 @@
                                <button class="btn btn-link  dropdown-toggle float-right textDropdown" type="button" data-toggle="dropdown">{{data.username}}
                                 <span class="caret"></span></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="dropdown-item" href = '/logout'>log out</a></li>
+                                    <li><a class="dropdown-item" href = "{{url_for( 'change_password' ) }}">Change Password</a></li>
                                     {% if data.privilege == "admin" %}
                                         <li><a class="dropdown-item" href="/registerAdmin">register admin</a></li>
                                     {% endif %}
+                                    <li><a class="dropdown-item" href = '/logout'>log out</a></li>
                                 </ul>
                             
                         </div>
