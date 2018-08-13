@@ -125,11 +125,12 @@ def getDataVuln(idVuln,token):
     dataFile=req.get(url_data,params=parameter,headers=headers)
     return dataFile.json()
 
-def downloadVulnXLSX(idFile):
+def downloadVulnXLSX(idFile,token):
     os.chdir(path+'/csv')
     find_data='http://localhost:3000/vulnerabilities/vuln'
+    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     parameterDownload={'id':idFile}
-    dataFile=req.get(find_data,params=parameterDownload)
+    dataFile=req.get(find_data,params=parameterDownload,headers=headers)
     dataDownload = dataFile.json()
     
     workbook = xlsxwriter.Workbook(idFile +'.xlsx')

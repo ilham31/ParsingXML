@@ -4,8 +4,8 @@ from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
 
-path = 'Project/XL'
-UPLOAD_FOLDER = 'D:/'+path+'/ParsingXML/data'
+
+UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -16,6 +16,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
 app._static_folder ='template/static'
 app.secret_key = 'my super secret key'.encode('utf8')
+
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -72,7 +73,8 @@ def vulnGet():
 @app.route('/downloadVuln', methods=['GET', 'POST'])
 def downloadVuln():
     idFile=request.args.get('id')
-    downloadVulnXLSX(idFile)
+    token = session['token']
+    downloadVulnXLSX(idFile,token)
     return send_file('data/csv/'+idFile+'.xlsx',
                     #  mimetype='text/csv',
                      attachment_filename='vulnerabilities_'+idFile+'.xlsx',
@@ -101,7 +103,8 @@ def compGet():
 @app.route('/downloadComp', methods=['GET', 'POST'])
 def downloadComp():
     idFile=request.args.get('id')
-    downloadCompXLSX(idFile)
+    token = session['token']
+    downloadCompXLSX(idFile,token)
     return send_file('data/csv/'+idFile+'.xlsx',
                     #  mimetype='text/csv',
                      attachment_filename='compliance '+idFile+'.xlsx',
@@ -125,7 +128,7 @@ def upload_file():
                     if request.form['submit'] == 'vulnerability':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/'+path+'/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile,token)
@@ -135,7 +138,7 @@ def upload_file():
                     elif request.form['submit'] == 'compliance':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/'+path+'/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)

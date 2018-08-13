@@ -5818,7 +5818,7 @@
 <tag name="host-fqdn">infosec.intra.excelcom.co.id</tag>
 <tag name="HOST_START">Fri Mar  2 17:27:33 2018</tag>
 </HostProperties>
-<ReportItem port="0" svc_name="general" protocol="tcp" severity="2" pluginID="107017" pluginName="RHEL 7 : gcab (RHSA-2018:0350)" pluginFamily="Red Hat Local Security Checks">
+<ReportItem svc_name="general" protocol="tcp" severity="2" pluginID="107017" pluginName="RHEL 7 : gcab (RHSA-2018:0350)" pluginFamily="Red Hat Local Security Checks">
 <cpe>p-cpe:/a:redhat:enterprise_linux:gcab
 p-cpe:/a:redhat:enterprise_linux:gcab-debuginfo
 p-cpe:/a:redhat:enterprise_linux:libgcab1
@@ -5830,18 +5830,7 @@ cpe:/o:redhat:enterprise_linux:7.4</cpe>
 <cvss3_vector>CVSS:3.0/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H</cvss3_vector>
 <cvss_base_score>6.8</cvss_base_score>
 <cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:P/I:P/A:P</cvss_vector>
-<description>An update for gcab is now available for Red Hat Enterprise Linux 7.
 
-Red Hat Product Security has rated this update as having a security impact of Important. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
-
-The gcab package contains a utility for managing the Cabinet archives.
-It can list, extract, and create Microsoft cabinet (.cab) files.
-
-Security Fix(es) :
-
-* gcab: Extracting malformed .cab files causes stack smashing potentially leading to arbitrary code execution (CVE-2018-5345)
-
-For more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.</description>
 <fname>redhat-RHSA-2018-0350.nasl</fname>
 <patch_publication_date>2018/02/26</patch_publication_date>
 <plugin_modification_date>2018/02/27</plugin_modification_date>
@@ -5880,22 +5869,13 @@ p-cpe:/a:redhat:enterprise_linux:systemd-sysv
 cpe:/o:redhat:enterprise_linux:7
 cpe:/o:redhat:enterprise_linux:7.4</cpe>
 <cve>CVE-2018-1049</cve>
-<description>An update for systemd is now available for Red Hat Enterprise Linux 7.
 
-Red Hat Product Security has rated this update as having a security impact of Moderate. A Common Vulnerability Scoring System (CVSS) base score, which gives a detailed severity rating, is available for each vulnerability from the CVE link(s) in the References section.
-
-The systemd packages contain systemd, a system and service manager for Linux, compatible with the SysV and LSB init scripts. It provides aggressive parallelism capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, and keeps track of processes using Linux cgroups. In addition, it supports snapshotting and restoring of the system state, maintains mount and automount points, and implements an elaborate transactional dependency-based service control logic. It can also work as a drop-in replacement for sysvinit.
-
-Security Fix(es) :
-
-* A race condition was found in systemd. This could result in automount requests not being serviced and processes using them could hang, causing denial of service. (CVE-2018-1049)</description>
 <exploit_available>false</exploit_available>
 <exploitability_ease>No known exploits are available</exploitability_ease>
 <fname>redhat-RHSA-2018-0260.nasl</fname>
 <osvdb>173018</osvdb>
 <patch_publication_date>2018/01/31</patch_publication_date>
 <plugin_modification_date>2018/02/01</plugin_modification_date>
-<plugin_name>RHEL 7 : systemd (RHSA-2018:0260)</plugin_name>
 <plugin_publication_date>2018/02/01</plugin_publication_date>
 <plugin_type>local</plugin_type>
 <rhsa>2018:0260</rhsa>
