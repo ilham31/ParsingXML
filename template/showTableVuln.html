@@ -439,6 +439,7 @@
               <p>Status Sekarang : {{dataVuln.status}}</p>
             </div>
             <div class="modal-footer">
+                    <button type="button" class=" btn btn-success" data-dismiss="modal">Cancel</button>
                     <a href="{{url_for( 'close_vuln', idItem=dataVuln._id,idFile=idFile._id ) }}" class="edit"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></a> 
             </div>
           </div>

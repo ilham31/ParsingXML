@@ -90,6 +90,7 @@
     display: inline;
     margin-left: 50px;
 }
+.i-am-centered { margin: auto; max-width: 1000px;}
 </style>
 </head>
 
@@ -121,7 +122,7 @@
         <div class="main-content">
             
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6 i-am-centered">
 
                     <h2 class="title-1 m-b-25"></h2>
                     
@@ -154,7 +155,7 @@
                 
 
                 <div id="approve{{User._id}}" class="modal fade" role="dialog">
-                <form action="{{url_for( 'approve_user', id=User._id) }}">
+                
                     <div class="modal-dialog">
                   
                       <!-- Modal content-->
@@ -163,6 +164,7 @@
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body">
+                            <form action="{{url_for( 'approve_user', id=User._id ) }}" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="sel1">Choose role:</label>
                                 <select class="form-control" id="sel1" name="role">
@@ -172,12 +174,12 @@
                               </div>
                         </div>
                         <div class="modal-footer">
-                            <button  type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                                <button  type="submit" class="btn btn-primary" >Submit</button>
+                            </form>
                         </div>
                       </div>
                   
                     </div>
-                </form> 
                   </div>
                 
                   {% endfor %}
@@ -187,7 +189,7 @@
                 {% for User in data  %}
                 
 
-                <div id="deny{{User._id}}" class="modal fade" role="dialog">
+                <div id="den{{User._id}}" class="modal fade" role="dialog">
                      <div class="modal-dialog">
                   
                       <!-- Modal content-->

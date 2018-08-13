@@ -106,6 +106,7 @@ def approve_user():
     select = request.form.get('role')
     idUser=request.args.get('id')
     token=session['token']
+    
     data={
         'privilege':select,
         'idUser':idUser
@@ -119,7 +120,7 @@ def deny_user():
     idUser=request.args.get('idUser')
     token=session['token']
     header = {'Authorization': 'Bearer ' +token}
-    r=req.delete('http://localhost:3000/users/delete'+idUser,headers=header)
+    r=req.delete('http://localhost:3000/users/delete/'+idUser,headers=header)
     return redirect(url_for('manage_user'))
 
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
