@@ -53,7 +53,7 @@ exports.login_user = function(req, res) {
 
 exports.edit_user_status = function(req, res){
   User.findOneAndUpdate(
-    { username: req.body.username }, { $set: { 
+    { _id: req.body.idUser }, { $set: { 
       status: 'approved', 
       privilege: req.body.privilege
     }}

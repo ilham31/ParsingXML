@@ -14,7 +14,7 @@ module.exports = function(app) {
         .delete(tokenController, userCtrl.delete_user);
 
     app.route('/users/edit')
-        .post(userCtrl.edit_user_status);
+        .patch(tokenController, userCtrl.edit_user_status);
 
     app.route('/users/login')
         .post(userCtrl.login_user);
