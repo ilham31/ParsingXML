@@ -95,7 +95,7 @@ def manage_user():
         dataUser=r.json()
         if dataUser['privilege']=='admin':
             getUser=req.get('http://localhost:3000/users/status',headers=header)
-            return render_template('manageuser.html',data=dataUser)
+            return render_template('manageuser.html',data=getUser.json(),Users=dataUser)
         else:
             return redirect(url_for('upload_file'))
     else:
@@ -105,6 +105,7 @@ def manage_user():
 def approve_user():
     select = request.form.get('role')
     idUser=request.args.get('id')
+    token=session['token']
     data={
         'privilege':select,
         'idUser':idUser
@@ -115,9 +116,10 @@ def approve_user():
 
 @app.route('/deny_user',methods=['GET', 'POST'])
 def deny_user():
-    idUser=request.args.get('id')
+    idUser=request.args.get('idUser')
+    token=session['token']
     header = {'Authorization': 'Bearer ' +token}
-    r=req.delete('http://localhost:3000/users/delete',headers=header,data=idUser)
+    r=req.delete('http://localhost:3000/users/delete'+idUser,headers=header)
     return redirect(url_for('manage_user'))
 
 @app.route('/vulnerabilities', methods=['GET', 'POST'])

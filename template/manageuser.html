@@ -101,11 +101,11 @@
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for data..">
              <div class="posisiDropDown">
                 <div class="dropdown">
-                       <button class="btn btn-link  dropdown-toggle float-right text" type="button" data-toggle="dropdown">{{data.username}}
+                       <button class="btn btn-link  dropdown-toggle float-right text" type="button" data-toggle="dropdown">{{Users.username}}
                         <span class="caret"></span></button>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li><a class="dropdown-item" href = "{{url_for( 'change_password' ) }}">Change Password</a></li>
-                            {% if data.privilege == "admin" %}
+                            {% if Users.privilege == "admin" %}
                                 <li><a class="dropdown-item" href="{{url_for( 'manage_user' ) }}">Manage User</a></li>
                             {% endif %}
                             <li><a class="dropdown-item" href = '/logout'>log out</a></li>
@@ -187,7 +187,7 @@
                 {% for User in data  %}
                 
 
-                <div id="den{{User._id}}" class="modal fade" role="dialog">
+                <div id="deny{{User._id}}" class="modal fade" role="dialog">
                      <div class="modal-dialog">
                   
                       <!-- Modal content-->
