@@ -14,7 +14,11 @@ var UserSchema = new mongoose.Schema({
   },
   privilege: {
       type: String,
-      required: true
+      default: null
+  },
+  status: {
+    type: String,
+    default: "waiting"
   }
 });
 
