@@ -30,7 +30,7 @@ exports.login_user = function(req, res) {
       return res.status(401).json('user not found');
     }
 
-    if(user.status=='waiting') res.status(403).json('user status: WAITING, need admin approval first.')
+    if(user.status=='waiting') return res.status(403).json('user status: WAITING, need admin approval first.')
     user.verifyPassword(req.body.password, function(err, isMatch) {
       if (err) { return res.status(401).json(err) }
 
@@ -78,7 +78,7 @@ exports.edit_user_status = function(req, res){
 
 exports.delete_user = function(req, res){
   User.findOneAndRemove(
-    {_id: req.body.idUser, status: 'waiting'}
+    {_id: req.param.idUser, status: 'waiting'}
   )
   .exec()
   .then(result => {
