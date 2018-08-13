@@ -343,7 +343,7 @@
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a class="dropdown-item" href = "{{url_for( 'change_password' ) }}">Change Password</a></li>
                                     {% if data.privilege == "admin" %}
-                                        <li><a class="dropdown-item" href="/registerAdmin">register admin</a></li>
+                                    <li><a class="dropdown-item" href="{{url_for( 'manage_user' ) }}">Manage User</a></li>
                                     {% endif %}
                                     <li><a class="dropdown-item" href = '/logout'>log out</a></li>
                                 </ul>

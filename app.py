@@ -86,7 +86,39 @@ def change_password():
     else:
         return render_template('reset_password.html')
 
+@app.route('/manage_user',methods=['GET', 'POST'])
+def manage_user():
+    if session.get('token') is not None:
+        token=session['token']
+        header = {'Authorization': 'Bearer ' +token}
+        r = req.get('http://localhost:3000/users',headers=header)
+        dataUser=r.json()
+        if dataUser['privilege']=='admin':
+            getUser=req.get('http://localhost:3000/users/status',headers=header)
+            return render_template('manageuser.html',data=dataUser)
+        else:
+            return redirect(url_for('upload_file'))
+    else:
+        return redirect(url_for('proses_user'))
+    
+@app.route('/approve_user',methods=['GET', 'POST'])
+def approve_user():
+    select = request.form.get('role')
+    idUser=request.args.get('id')
+    data={
+        'privilege':select,
+        'idUser':idUser
+    }
+    header = {'Authorization': 'Bearer ' +token}
+    r=req.patch('http://localhost:3000/users/edit',headers=header,data=data)
+    return redirect(url_for('manage_user'))
 
+@app.route('/deny_user',methods=['GET', 'POST'])
+def deny_user():
+    idUser=request.args.get('id')
+    header = {'Authorization': 'Bearer ' +token}
+    r=req.delete('http://localhost:3000/users/delete',headers=header,data=idUser)
+    return redirect(url_for('manage_user'))
 
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
 def vulnGet():

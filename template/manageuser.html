@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu dropdown-menu-right">
                             <li><a class="dropdown-item" href = "{{url_for( 'change_password' ) }}">Change Password</a></li>
                             {% if data.privilege == "admin" %}
-                                <li><a class="dropdown-item" href="/registerAdmin">register admin</a></li>
+                                <li><a class="dropdown-item" href="{{url_for( 'manage_user' ) }}">Manage User</a></li>
                             {% endif %}
                             <li><a class="dropdown-item" href = '/logout'>log out</a></li>
                         </ul>
@@ -135,11 +135,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                        {% for Vuln in dataFileV  %}
+                        {% for User in data  %}
                             <tr >
-                                    <td>{{Vuln.name}}</td>
-                                    <td data-toggle="modal" data-target="#myModal{{Vuln._id}}"><button  type="button" class="btn btn-success">Approve</button></td>
-                                    <td data-toggle="modal" data-target="#myModal{{Vuln._id}}"><button  type="button" class="btn btn-danger">Deny</button></td>
+                                    <td>{{User.username}}</td>
+                                    <td data-toggle="modal" data-target="#approve{{User._id}}"><button  type="button" class="btn btn-success">Approve</button></td>
+                                    <td data-toggle="modal" data-target="#deny{{User._id}}"><button  type="button" class="btn btn-danger">Deny</button></td>
                                     
                                 </tr>
                         {% endfor %}
@@ -150,8 +150,11 @@
                 </div>
 
                 <!-- modal approve -->
-                {% for Vuln in dataFileV  %}
-                <div id="myModal{{Vuln._id}}" class="modal fade" role="dialog">
+                {% for User in data  %}
+                
+
+                <div id="approve{{User._id}}" class="modal fade" role="dialog">
+                <form action="{{url_for( 'approve_user', id=User._id) }}">
                     <div class="modal-dialog">
                   
                       <!-- Modal content-->
@@ -162,19 +165,48 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="sel1">Choose role:</label>
-                                <select class="form-control" id="sel1">
-                                  <option>User</option>
-                                  <option>Admin</option>
+                                <select class="form-control" id="sel1" name="role">
+                                  <option value="user">User</option>
+                                  <option value="admin">Admin</option>
                                 </select>
                               </div>
                         </div>
                         <div class="modal-footer">
-                            <a href="{{url_for( 'deleteVuln', id=Vuln._id ) }}" class="deleteVuln"><button  type="button" class="btn btn-primary" data-dismiss="modal">Submit</button></a> 
+                            <button  type="submit" class="btn btn-primary" data-dismiss="modal">Submit</button>
                         </div>
                       </div>
                   
                     </div>
-                  </div> 
+                </form> 
+                  </div>
+                
+                  {% endfor %}
+
+                  
+                <!-- modal deny -->
+                {% for User in data  %}
+                
+
+                <div id="den{{User._id}}" class="modal fade" role="dialog">
+                     <div class="modal-dialog">
+                  
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure ?</p>
+                        </div>
+                        <div class="modal-footer">
+                                <a href="{{url_for( 'deny_user', id=User._id ) }}" class="deleteVuln"><button  type="button" class="btn btn-danger" data-dismiss="modal">Ya</button></a> 
+                        </div>
+                      </div>
+                  
+                    </div>
+                </form> 
+                  </div>
+                
                   {% endfor %}
 
                   <script>
