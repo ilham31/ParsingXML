@@ -10,7 +10,7 @@ module.exports = function(app) {
     app.route('/users/status')
         .get(tokenController, userCtrl.get_user_waiting);
 
-    app.route('/users/delete')
+    app.route('/users/delete/:idUser')
         .delete(tokenController, userCtrl.delete_user);
 
     app.route('/users/edit')
