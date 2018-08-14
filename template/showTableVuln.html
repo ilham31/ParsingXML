@@ -384,7 +384,8 @@
                                 <tbody>
                              
                             {% for dataVuln in idFile.item %}
-                                <tr >
+                            <div>
+                                <tr id="data{{dataVuln._id}}">
                                         <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.system}}</td>
                                         <td class="text" data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.name}}</td>
                                         <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.port_protocol}}</td>
@@ -411,9 +412,11 @@
                                         {% else %}
                                             <td>{{dataVuln.status}}</td>
                                         {% endif %}
+                                               
                                     </tr>
                             {% endfor %}        
                                 </tbody>
+                            </div>
                             </table>
                             </div>
                         </div>
@@ -437,17 +440,36 @@
             </div>
             <div class="modal-body">
               <p>Status Sekarang : {{dataVuln.status}}</p>
+              <p>{{dataVuln._id}}</p>
             </div>
+            <form> 
             <div class="modal-footer">
                     <button type="button" class=" btn btn-success" data-dismiss="modal">Cancel</button>
-                    <a href="{{url_for( 'close_vuln', idItem=dataVuln._id,idFile=idFile._id ) }}" class="edit"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></a> 
+                    <button data-dismiss="modal" type="button" value="Submit" class="btn btn-danger" onclick="fungsiku(this.id)"  id="{{ dataVuln._id }}"  >{{ dataVuln._id }}</button>
             </div>
           </div>
-      
+        </form>
         </div>
       </div>        
 {% endfor %} 
+<script type="text/javascript">
+function fungsiku(id){
+    console.log('masuk')
+    var dataid = id;
+    console.log('data:',dataid)
+    req = $.ajax({
+        url : '/editVuln',
+        type : 'POST',
+        data : { idItem : dataid}
+    });
+    req.done(function(data) {
 
+        $('#data'+dataid).fadeOut(1000).fadeIn(1000);
+        location.reload();
+    });
+}
+
+</script>
 
 <!-- modal data -->
 {% for dataVuln in idFile.item %}
@@ -540,6 +562,7 @@
     </script>
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
     <!-- Jquery JS-->
+    <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
     <!-- Bootstrap JS-->
     <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/popper.min.js') }}"></script>

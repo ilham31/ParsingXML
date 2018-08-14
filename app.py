@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, send_file, redirect, url_for,flash,render_template,send_from_directory,Response,session
+from flask import Flask, request, send_file, redirect, url_for,flash,render_template,send_from_directory,Response,session,jsonify
 from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
@@ -237,13 +237,23 @@ def upload_file():
 
 @app.route('/editVuln', methods=['GET', 'POST'])
 def close_vuln():
-    selectedID = request.args.get('idItem')
-    idFile=request.args.get('idFile')
+    selectedID = request.form['idItem']
+    # idFile=request.args.get('idFile')
     token=session['token']
     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     patch_Vuln='http://localhost:3000/vulnerabilities/'+ selectedID
     r = req.patch(patch_Vuln,headers=headers)
-    return redirect(url+'/vulnerabilities?id=' + idFile)
+    return jsonify({'message':'success'})
+
+# @app.route('/showVuln', methods=['GET', 'POST'])
+# def close_vuln():
+#     selectedID = request.form['idItem']
+#     # idFile=request.args.get('idFile')
+#     token=session['token']
+#     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
+#     patch_Vuln='http://localhost:3000/vulnerabilities/'+ selectedID
+#     r = req.get(patch_Vuln,headers=headers)
+#     return jsonify({'message':'success'})
 
 @app.route('/editComp', methods=['GET', 'POST'])
 def close_comp():
