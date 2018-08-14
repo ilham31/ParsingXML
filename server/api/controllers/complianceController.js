@@ -101,11 +101,11 @@ exports.edit_compliance = function (req, res) {
     // console.log("privilege", req.userData.privilege)
     console.log("item id", req.params.itemId)
     // if(req.userData.privilege=='user') res.status(401).json("user tidak bisa edit");
-    Comp.update({"item._id": req.params.itemId}, { $set: {
+    Comp.findOneAndUpdate({"item._id": req.params.itemId}, { $set: {
             "item.$.status": "closed",
             "item.$.closed_date": new Date().addHours(7)
             } 
-        }, function(err, result){
+        }, {new: true}, function(err, result){
             if(err){
                 return res.status(401).json(err);
             }
