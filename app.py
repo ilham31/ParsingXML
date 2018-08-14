@@ -3,15 +3,20 @@ from flask import Flask, request, send_file, redirect, url_for,flash,render_temp
 from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
+from flask_compress import Compress
 
 
-UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
 
 
 app = Flask(__name__)
+COMPRESS_MIMETYPES = ['text/html','text/css','application/json']
+COMPRESS_LEVEL = 6
+COMPRESS_MIN_SIZE=500
+Compress(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app = Flask(__name__, template_folder='template')
 app._static_folder ='template/static'
@@ -37,6 +42,8 @@ def proses_user():
         r=req.post('http://localhost:3000/users/login',data=userLogin)
         if r.status_code == 401:
             return render_template('login.html',errorMessage=r.json(),stats=1)
+        elif r.status_code == 403:
+            return render_template('login.html',errorMessage=r.json(),stats=0)
         else:
             session['token'] = r.json()
             return redirect(url_for('upload_file'))
@@ -49,6 +56,72 @@ def proses_user():
             
             return render_template('login.html')
 
+
+@app.route('/change_password',methods=['GET', 'POST'])
+def change_password():
+    if request.method == 'POST':
+        old_password=request.form['old_password']
+        new_password=request.form['new_password']
+        retype_password=request.form['retype_password']
+        if 'token' in session :
+                token = session['token']
+                header = {'Authorization': '"Bearer ' +token}
+                changePass={
+                    'old_password':old_password,
+                    'new_password':new_password
+                }
+                
+                if new_password == retype_password:
+                        r=req.patch('http://localhost:3000/users/password',headers=header,data=changePass)
+                        status_code=r.status_code
+                        if status_code == 401:
+                            return render_template('reset_password.html',status=1,err=r.json())
+                        else:
+                            return redirect(url_for('upload_file'))
+                       
+                else:
+                    return render_template('reset_password.html',status=0)
+        else:
+            return redirect (url_for('proses_user'))
+    else:
+        return render_template('reset_password.html')
+
+@app.route('/manage_user',methods=['GET', 'POST'])
+def manage_user():
+    if session.get('token') is not None:
+        token=session['token']
+        header = {'Authorization': 'Bearer ' +token}
+        r = req.get('http://localhost:3000/users',headers=header)
+        dataUser=r.json()
+        if dataUser['privilege']=='admin':
+            getUser=req.get('http://localhost:3000/users/status',headers=header)
+            return render_template('manageuser.html',data=getUser.json(),Users=dataUser)
+        else:
+            return redirect(url_for('upload_file'))
+    else:
+        return redirect(url_for('proses_user'))
+    
+@app.route('/approve_user',methods=['GET', 'POST'])
+def approve_user():
+    select = request.form.get('role')
+    idUser=request.args.get('id')
+    token=session['token']
+    
+    data={
+        'privilege':select,
+        'idUser':idUser
+    }
+    header = {'Authorization': 'Bearer ' +token}
+    r=req.patch('http://localhost:3000/users/edit',headers=header,data=data)
+    return redirect(url_for('manage_user'))
+
+@app.route('/deny_user',methods=['GET', 'POST'])
+def deny_user():
+    idUser=request.args.get('idUser')
+    token=session['token']
+    header = {'Authorization': 'Bearer ' +token}
+    r=req.delete('http://localhost:3000/users/delete/'+idUser,headers=header)
+    return redirect(url_for('manage_user'))
 
 @app.route('/vulnerabilities', methods=['GET', 'POST'])
 def vulnGet():
@@ -128,7 +201,7 @@ def upload_file():
                     if request.form['submit'] == 'vulnerability':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile,token)
@@ -138,7 +211,7 @@ def upload_file():
                     elif request.form['submit'] == 'compliance':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)
@@ -149,11 +222,11 @@ def upload_file():
                         
         
     elif request.method=='GET':
-        token=session['token']
-        dataVuln=readVuln(token)
-        dataComp=readComp(token)
+        
         if 'token' in session :
             token = session['token']
+            dataVuln=readVuln(token)
+            dataComp=readComp(token)
             header = {'Authorization': '"Bearer ' +token}
             r = req.get('http://localhost:3000/users',headers=header)
             dataUser=r.json()
@@ -200,7 +273,6 @@ def regist_user():
         userData={
                 'username':user,
                 'password':passwd,
-                'privilege':"user"
             }
         r=req.post('http://localhost:3000/users',data=userData)
         status_code=r.status_code
@@ -247,4 +319,5 @@ def deleteComp():
 
 
 if __name__ == "__main__":
+    app.jinja_env.cache = {}
     app.run(debug=True)

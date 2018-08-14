@@ -4,7 +4,7 @@ from collections import defaultdict
 import csv,json,requests as req
 import xlsxwriter
 
-path = 'D:/Project/XL/ParsingXML/data'
+path = 'D:/ilham/ParsingXML/data'
 
 def compl(filename,token):
     os.chdir(path)
