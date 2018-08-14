@@ -105,22 +105,11 @@ exports.edit_compliance = function (req, res) {
             "item.$.status": "closed",
             "item.$.closed_date": new Date().addHours(7)
             } 
-        })
-        .exec()
-        .then(result => {
-            res.status(200).json({
-                result,
-                message: "Comp updated",
-                request: {
-                    type: "PATCH"
-                }
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json({
-                error: err
-            });
+        }, function(err, result){
+            if(err){
+                return res.status(401).json(err);
+            }
+            return res.status(200).json(result);
         })
 };
 

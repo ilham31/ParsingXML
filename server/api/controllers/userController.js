@@ -77,7 +77,6 @@ exports.edit_user_status = function(req, res){
 }
 
 exports.delete_user = function(req, res){
-  console.log(req.params.idUser)
   User.findOneAndRemove(
     {_id: req.params.idUser, status: 'waiting'}
   )
