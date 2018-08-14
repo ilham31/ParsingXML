@@ -98,11 +98,11 @@ exports.delete_item = function (req, res) {
 
 exports.edit_vulnerabilities = function (req, res) {
     // if(req.userData.privilege=='user') res.status(401).json('user tidak bisa edit');
-    Vuln.update({"item._id": req.params.itemId}, { $set: {
+    Vuln.findOneAndUpdate({"item._id": req.params.itemId}, { $set: {
             "item.$.status": "closed",
             "item.$.closed_date": new Date().addHours(7)
             } 
-        }, function(err, result){
+        }, {new: true}, function(err, result){
             if(err){
                 return res.status(401).json(err);
             }
