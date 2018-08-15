@@ -28,7 +28,14 @@ def vuln(filename,token):
                     # reportItem = []
                     for report_item in report_host:
                         if report_item.tag=="ReportItem":
-                            
+                            portProtocol=None
+                            severity=None
+                            name=None
+                            solution=None
+                            synopsis=None
+                            risk_factor=None
+                            desc=None
+                            detail=None
                             portProtocol = report_item.attrib['svc_name'] +"/" +report_item.attrib['protocol']
                             severity = report_item.attrib['severity']
                             name = report_item.attrib['pluginName'] +" ("+report_item.attrib['pluginID']+")"
@@ -44,9 +51,12 @@ def vuln(filename,token):
 
                                 elif param.tag =="description":
                                     desc=param.text
-
-                            detail = synopsis + desc
-
+                            if desc and synopsis is not None:
+                                detail = synopsis + desc
+                            elif desc is None:
+                                detail=synopsis
+                            elif synopsis is None:
+                                detail=desc
                             reportItem.append({
                                 'system': Hostname,
                                 'name': name,

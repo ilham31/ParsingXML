@@ -412,8 +412,9 @@
                                         {% else %}
                                             <td>{{dataVuln.status}}</td>
                                         {% endif %}
-                                               
+                                                    
                                     </tr>
+
                             {% endfor %}        
                                 </tbody>
                             </div>
@@ -439,14 +440,13 @@
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-              <p>Status Sekarang : {{dataVuln.status}}</p>
-              <p>{{dataVuln._id}}</p>
-              <p>{{idFile._id}}</p>
+              <p>Current status : {{dataVuln.status}}</p>
+              <p>Are you sure close this item ?</p>
             </div>
             <form> 
             <div class="modal-footer">
                     <button type="button" class=" btn btn-success" data-dismiss="modal">Cancel</button>
-                    <button data-dismiss="modal" type="button" value="Submit" class="btn btn-danger" onclick="fungsiku(this.id,this.idFile)"  id="{{ dataVuln._id }}" idFile="{{ idFile._id }}" >{{ dataVuln._id }}</button>
+                    <button data-dismiss="modal" type="button" value="Submit" class="btn btn-danger" onclick="fungsiku(this.id,this.idFile)"  id="{{ dataVuln._id }}" idFile="{{ idFile._id }}" >yes</button>
             </div>
           </div>
         </form>
@@ -462,10 +462,10 @@ function fungsiku(id){
         url : "{{url_for( 'close_vuln' ) }}",
         type : 'POST',
         data : { idItem : dataid}
+
     });
     req.done(function(data) {
-
-        $( '#data'+dataid ).fadeOut(1000).fadeIn(1000);
+        location.reload();
     });
 }
 

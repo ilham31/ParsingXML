@@ -310,7 +310,7 @@ def regist_admin():
 
 @app.route('/deletevuln', methods=['GET', 'POST'])
 def deleteVuln():
-   selectedID = request.args.get('id')
+   selectedID = request.form['id']
    token=session['token']
    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
    url='http://localhost:3000/vulnerabilities/'+selectedID

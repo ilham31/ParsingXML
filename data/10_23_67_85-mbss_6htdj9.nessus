@@ -5854,7 +5854,6 @@ For more details about the security issue(s), including the impact, a CVSS score
 <see_also>http://rhn.redhat.com/errata/RHSA-2018-0350.html
 https://www.redhat.com/security/data/cve/CVE-2018-5345.html</see_also>
 <solution>Update the affected packages.</solution>
-<synopsis>The remote Red Hat host is missing one or more security updates.</synopsis>
 <xref>RHSA:2018:0350</xref>
 <plugin_output>
 Remote package installed : libgcab1-0.7-3.el7

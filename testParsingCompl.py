@@ -27,6 +27,10 @@ def compl(filename,token):
                     for report_item in report_host:
                         if report_item.tag=="ReportItem":
                             # i=i+1
+                            title=None
+                            iStatus=None
+                            status=None
+                            desc=None
                             iStatus=report_item.attrib['severity']
                             for param in report_item:
                                 if param.tag=="{http://www.nessus.org/cm}compliance-check-name":
@@ -34,14 +38,15 @@ def compl(filename,token):
                                 elif param.tag=="{http://www.nessus.org/cm}compliance-result":
                                     status=param.text
                                 elif param.tag =="description":
-                                    result=param.text
-                                    detail=param.text
+                                    desc=param.text
+                                    
+                                    
                             reportItem.append({
                                 'system': System,
                                 'title': title,
                                 'stats': status,
-                                'result': result,
-                                'detail': detail,
+                                'result': desc,
+                                'detail': desc,
                                 'i_status':iStatus,
                             })
                     # reportHostName.append({
