@@ -6,7 +6,7 @@ import requests as req
 from flask_compress import Compress
 
 
-UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -201,7 +201,7 @@ def upload_file():
                     if request.form['submit'] == 'vulnerability':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile,token)
@@ -211,7 +211,7 @@ def upload_file():
                     elif request.form['submit'] == 'compliance':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)

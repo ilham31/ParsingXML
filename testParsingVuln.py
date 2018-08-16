@@ -5,7 +5,7 @@ import csv
 import os,requests as req
 import xlsxwriter
 
-path = 'D:/ilham/ParsingXML/data'
+path = 'D:/Project/XL/ParsingXML/data'
 
 def vuln(filename,token):
     os.chdir(path)
