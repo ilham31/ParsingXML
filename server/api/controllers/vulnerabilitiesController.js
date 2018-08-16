@@ -27,14 +27,17 @@ exports.get_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
-    var start = (req.query.page-1)*100
+    var start = req.query.page-1
     var fileId = req.query.id
-    Vuln.findOne({_id:fileId}, {item: {$slice:[start,100]} },function(err, docs){
-        if(err) res.status(500).json({
-            error: err
-        })
-        res.json(docs)
-    })
+
+    Promise.all([
+        Vuln.aggregate().match({_id: mongoose.Types.ObjectId(fileId)}).project({ukuran: {$size: '$item'}}),
+        Vuln.findOne({_id:fileId}, {item: {$slice:[start,100]} })
+      ]).then( ([ total, data ]) => {
+        var obj = data.toObject();
+        obj.total_item=total[0].ukuran
+        res.json(obj)
+      });
 };
 
 exports.create_vulnerabilities = function (req, res) {
