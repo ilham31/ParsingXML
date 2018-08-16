@@ -12,7 +12,10 @@ module.exports = function(app) {
         .post( tokenController, compCtrl.create_compliance);
         
     app.route('/compliance/comp')
-        .get(tokenController, compCtrl.get_compliance);    
+        .get(tokenController, compCtrl.get_compliance);
+        
+    app.route('/compliance/download')
+        .get(tokenController, compCtrl.get_all_data);
 
     app.route('/compliance/item')
         .post(tokenController, compCtrl.create_item);

@@ -117,7 +117,7 @@ def readComp(token):
 
 def downloadCompXLSX(idFile,token):
     os.chdir(path+'/csv')
-    find_data='http://localhost:3000/compliance/comp'
+    find_data='http://localhost:3000/compliance/download'
     parameterDownload={'id':idFile}
     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
    

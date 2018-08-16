@@ -14,6 +14,8 @@ module.exports = function(app) {
     app.route('/vulnerabilities/vuln')
         .get( tokenController,vulnCtrl.get_vulnerabilities);
 
+    app.route('/vulnerabilities/download')
+        .get(tokenController, vulnCtrl.get_all_data);
  
     app.route('/vulnerabilities/:itemId')
         .patch( vulnCtrl.edit_vulnerabilities);

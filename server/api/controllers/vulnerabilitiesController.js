@@ -40,6 +40,16 @@ exports.get_vulnerabilities = function (req, res) {
       });
 };
 
+exports.get_all_data = function(req, res){
+    var fileId = req.query.id
+    Vuln.findOne({_id:fileId}, function(err, docs){
+        if(err) res.status(500).json({
+            error: err
+        })
+        res.json(docs)
+    })
+};
+
 exports.create_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
