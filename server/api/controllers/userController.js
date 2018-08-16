@@ -69,7 +69,6 @@ exports.edit_user_status = function(req, res){
         });
     })
     .catch(err => {
-        console.log(err);
         res.status(500).json({
             error: err
         });
@@ -96,7 +95,6 @@ exports.get_user_waiting = function(req, res){
 }
 
 exports.change_password = function(req, res) {
-  console.log("username user", req.userData.username)
   User.findOne({ username: req.userData.username })
   .exec()
   .then(user =>
@@ -131,7 +129,6 @@ exports.change_password = function(req, res) {
                 });
             })
             .catch(err => {
-                console.log(err);
                 res.status(500).json({
                     error: err
                 });

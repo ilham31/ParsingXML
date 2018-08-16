@@ -26,8 +26,9 @@ exports.get_compliance = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
+    var start = (req.query.page-1)*100
     var fileId = req.query.id
-    Comp.findOne({_id:fileId}, function(err, docs){
+    Comp.findOne({_id:fileId}, {item: {$slice:[start,100]} },function(err, docs){
         if(err) res.status(500).json({
             error: err
         })
@@ -43,7 +44,6 @@ exports.create_compliance = function (req, res) {
         data[i].open_date = new Date().addHours(7);
         data[i].status = "open";
     }
-    console.log("data adalah", data);
         var comp = new Comp ({
             name: req.body.name,
             uploader: req.userData.username,
@@ -57,7 +57,6 @@ exports.create_compliance = function (req, res) {
               });
           })
           .catch(err => {
-              console.log(err);
               res.status(500).json({
                   error: err
               });
@@ -99,7 +98,6 @@ exports.delete_item = function (req, res) {
 
 exports.edit_compliance = function (req, res) {
     // console.log("privilege", req.userData.privilege)
-    console.log("item id", req.params.itemId)
     // if(req.userData.privilege=='user') res.status(401).json("user tidak bisa edit");
     Comp.findOneAndUpdate({"item._id": req.params.itemId}, { $set: {
             "item.$.status": "closed",
