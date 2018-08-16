@@ -61,7 +61,7 @@ def proses_user():
 def change_password():
     if request.method == 'POST':
         old_password=request.form['old_password']
-        new_password=request.form['new_password']
+        new_password=request.form['psw']
         retype_password=request.form['retype_password']
         if 'token' in session :
                 token = session['token']
@@ -117,7 +117,7 @@ def approve_user():
 
 @app.route('/deny_user',methods=['GET', 'POST'])
 def deny_user():
-    idUser=request.args.get('idUser')
+    idUser=request.args.get('id')
     token=session['token']
     header = {'Authorization': 'Bearer ' +token}
     r=req.delete('http://localhost:3000/users/delete/'+idUser,headers=header)
@@ -279,7 +279,7 @@ def logout():
 def regist_user():
     if request.method == 'POST':
         user=request.form['username']
-        passwd=request.form['pass']
+        passwd=request.form['psw']
         userData={
                 'username':user,
                 'password':passwd,
