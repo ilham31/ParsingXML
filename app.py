@@ -4,6 +4,7 @@ from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
 from flask_compress import Compress
+import math
 
 
 UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
@@ -129,6 +130,9 @@ def vulnGet():
     dataId=selectedID
     token = session['token']
     fileVuln=getDataVuln(dataId,token)
+    sumPage=len(fileVuln['item'])/100.0
+    count=math.ceil(sumPage)
+    pages=int(count)
     if session.get('token') is not None:
         token=session['token']
         header = {'Authorization': 'Bearer ' +token}
@@ -136,10 +140,10 @@ def vulnGet():
         dataUser=r.json()
         if dataUser["privilege"]=="admin": 
             status=1
-            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser)
+            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser,page=pages)
         else:
             status=0
-            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser)
+            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser,page=pages)
     else:
         return render_template('login.html')
         
@@ -243,7 +247,7 @@ def close_vuln():
     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     patch_Vuln='http://localhost:3000/vulnerabilities/'+ selectedID
     r = req.patch(patch_Vuln,headers=headers)
-    return jsonify({'message':'success'})
+    return jsonify({'message':'success','idItem':selectedID})
 
 # @app.route('/showVuln', methods=['GET', 'POST'])
 # def close_vuln():

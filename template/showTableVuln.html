@@ -419,12 +419,19 @@
                                 </tbody>
                             </div>
                             </table>
+                            
                             </div>
                         </div>
+                        
                     </div>
+                    <ul class="pagination">
+                        {% for i in range(page) %}
+                       
+                            <li class="page-item"><a class="page-link" href="#{{ loop.index }}">{{ loop.index }}</a></li>     
+                        {% endfor %}
+                         </ul> 
                 </div>
-
-               
+                 
                 <!-- <form class="downloadCSV" method=post enctype=multipart/form-data> -->
                     
                 <!-- </form> -->
@@ -560,6 +567,7 @@ function fungsiku(id){
 
 
     </script>
+    
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
     <!-- Jquery JS-->
     <script src="http://code.jquery.com/jquery.js"></script>
