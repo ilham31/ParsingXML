@@ -27,8 +27,9 @@ exports.get_vulnerabilities = function (req, res) {
     // const token = req.headers.authorization.split(" ")[1];
     // const decode = jwt.verify(token, "rahasia");
     // const userId = decode.userId
+    var start = (req.query.page-1)*100
     var fileId = req.query.id
-    Vuln.findOne({_id:fileId}, function(err, docs){
+    Vuln.findOne({_id:fileId}, {item: {$slice:[start,100]} },function(err, docs){
         if(err) res.status(500).json({
             error: err
         })
@@ -44,7 +45,6 @@ exports.create_vulnerabilities = function (req, res) {
         data[i].open_date = new Date().addHours(7);
         data[i].status = "open";
     }
-    console.log("data adalah", data);
         var vuln = new Vuln ({
             name: req.body.name,
             uploader: req.userData.username,
@@ -58,7 +58,6 @@ exports.create_vulnerabilities = function (req, res) {
               });
           })
           .catch(err => {
-              console.log(err);
               res.status(500).json({
                   error: err
               });
