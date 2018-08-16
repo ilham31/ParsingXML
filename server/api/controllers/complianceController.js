@@ -28,12 +28,14 @@ exports.get_compliance = function (req, res) {
     // const userId = decode.userId
     var start = (req.query.page-1)*100
     var fileId = req.query.id
-    Comp.findOne({_id:fileId}, {item: {$slice:[start,100]} },function(err, docs){
-        if(err) res.status(500).json({
-            error: err
-        })
-        res.json(docs)
-    })
+    Promise.all([
+        Comp.aggregate().match({_id: mongoose.Types.ObjectId(fileId)}).project({ukuran: {$size: '$item'}}),
+        Comp.findOne({_id:fileId}, {item: {$slice:[start,100]} })
+      ]).then( ([ total, data ]) => {
+        var obj = data.toObject();
+        obj.total_item=total[0].ukuran
+        res.json(obj)
+      });
 };
 
 exports.create_compliance = function (req, res) {
