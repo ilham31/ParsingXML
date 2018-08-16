@@ -128,10 +128,10 @@ def readVuln(token):
     return fileVuln
 
 
-def getDataVuln(idVuln,token):
+def getDataVuln(idVuln,token,hal):
     url_data='http://localhost:3000/vulnerabilities/vuln'
     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
-    parameter={'id':idVuln}
+    parameter={'id':idVuln,'page':hal}
     dataFile=req.get(url_data,params=parameter,headers=headers)
     return dataFile.json()
 

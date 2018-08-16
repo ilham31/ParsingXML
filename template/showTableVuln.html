@@ -427,7 +427,7 @@
                     <ul class="pagination">
                         {% for i in range(page) %}
                        
-                            <li class="page-item"><a class="page-link" href="#{{ loop.index }}">{{ loop.index }}</a></li>     
+                            <li class="page-item"><a class="page-link"  href="{{url_for( 'vulnGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li>     
                         {% endfor %}
                          </ul> 
                 </div>
@@ -472,7 +472,7 @@ function fungsiku(id){
 
     });
     req.done(function(data) {
-        location.reload();
+        location.reload(false);
     });
 }
 

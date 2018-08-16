@@ -409,6 +409,12 @@
                             </div>
                         </div>
                     </div>
+                     <ul class="pagination">
+                        {% for i in range(page) %}
+
+                            <li class="page-item"><a class="page-link" href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li>     
+                        {% endfor %}
+                         </ul> 
                 </div>
                 <!-- <form class="downloadCSV" method=post enctype=multipart/form-data> -->
                     
@@ -426,10 +432,11 @@
                 </div>
                 <div class="modal-body">
                   <p>Status Sekarang : {{dataComp.status}}</p>
+                  <p>ID : {{dataComp._id}}</p>
                 </div>
                 <div class="modal-footer">
                         <button type="button" class=" btn btn-success" data-dismiss="modal">Cancel</button>
-                        <a href="{{url_for( 'close_comp', idItem=dataComp._id,idFile=idFile._id ) }}" class="edit"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></a> 
+                        <button data-dismiss="modal" type="button" value="Submit" class="btn btn-danger" onclick="fungsiku(this.id)"  id="{{ dataComp._id }}"  >yes</button> 
                 </div>
               </div>
           
@@ -437,6 +444,23 @@
           </div>        
     {% endfor %} 
             
+    <script type="text/javascript">
+        function fungsiku(id){
+            console.log('masuk')
+            var dataid = id;
+            console.log('data:',dataid)
+            req = $.ajax({
+                url : "{{url_for( 'close_comp' ) }}",
+                type : 'POST',
+                data : { idItem : dataid}
+        
+            });
+            req.done(function(data) {
+                location.reload(false);
+            });
+        }
+        
+        </script>
 
     <!-- Modal Data -->
     {% for dataComp in idFile.item %}

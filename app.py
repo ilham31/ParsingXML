@@ -129,8 +129,9 @@ def vulnGet():
     selectedID = request.args.get('id')
     dataId=selectedID
     token = session['token']
-    fileVuln=getDataVuln(dataId,token)
-    sumPage=len(fileVuln['item'])/100.0
+    hal=request.args.get('page')
+    fileVuln=getDataVuln(dataId,token,hal)
+    sumPage=fileVuln['total_item']/100.0
     count=math.ceil(sumPage)
     pages=int(count)
     if session.get('token') is not None:
@@ -162,7 +163,11 @@ def compGet():
     selectedID = request.args.get('id')
     dataId=selectedID
     token = session['token']
-    fileComp=getDataComp(dataId,token)
+    hal=request.args.get('page')
+    fileComp=getDataComp(dataId,token,hal)
+    sumPage=fileComp['total_item']/100.0
+    count=math.ceil(sumPage)
+    pages=int(count)
     if session.get('token') is not None:
         token=session['token']
         header = {'Authorization': 'Bearer ' +token}
@@ -170,10 +175,10 @@ def compGet():
         dataUser=r.json()
         if dataUser["privilege"]=="admin": 
             status=1
-            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser)
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages)
         else:
             status=0
-            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser)
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages)
     else:
         return render_template('login.html')
 
@@ -247,7 +252,7 @@ def close_vuln():
     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     patch_Vuln='http://localhost:3000/vulnerabilities/'+ selectedID
     r = req.patch(patch_Vuln,headers=headers)
-    return jsonify({'message':'success','idItem':selectedID})
+    return jsonify({'message':'success'})
 
 # @app.route('/showVuln', methods=['GET', 'POST'])
 # def close_vuln():
@@ -261,13 +266,13 @@ def close_vuln():
 
 @app.route('/editComp', methods=['GET', 'POST'])
 def close_comp():
-    selectedID = request.args.get('idItem')
-    idFile=request.args.get('idFile')
+    selectedID = request.form['idItem']
+    # idFile=request.args.get('idFile')
     token=session['token']
     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     patch_Vuln='http://localhost:3000/compliance/'+ selectedID
     r = req.patch(patch_Vuln,headers=headers)
-    return redirect(url+'/compliance?id=' + idFile)           
+    return jsonify({'message':'success'})          
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():

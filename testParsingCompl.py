@@ -100,9 +100,9 @@ def compl(filename,token):
     return r.json()
 
 
-def getDataComp(idComp,token):
+def getDataComp(idComp,token,hal):
     url_data='http://localhost:3000/compliance/comp'
-    parameter={'id':idComp}
+    parameter={'id':idComp,'page':hal}
     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     dataFile=req.get(url_data,params=parameter,headers=headers)
     return dataFile.json()
