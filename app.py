@@ -175,10 +175,10 @@ def compGet():
         dataUser=r.json()
         if dataUser["privilege"]=="admin": 
             status=1
-            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages)
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages,active=hal)
         else:
             status=0
-            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages)
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages,active=hal)
     else:
         return render_template('login.html')
 
@@ -213,7 +213,7 @@ def upload_file():
                         file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
-                        uploadData=getDataVuln(idUploadFile,token)
+                        uploadData=getDataVuln(idUploadFile,token,hal=1)
                         # variabel=data[0]
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', csvFile))
                         return redirect(url+'/vulnerabilities?id=' + idUploadFile)
@@ -225,7 +225,7 @@ def upload_file():
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)
                         idUploadComp=dataUploadComp['fileId']
-                        uploadData=getDataComp(idUploadComp,token)
+                        uploadData=getDataComp(idUploadComp,token,hal=1)
                         # variabel=data[0][0]["system"]
                         return redirect(url+'/compliance?id=' + idUploadComp)
                         

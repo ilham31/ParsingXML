@@ -351,7 +351,7 @@
         <div class="main-content">
             <div class="row">
                 <div class="col-lg-12">
-                        <h2 class="title-1 m-b-25">data compliance</h2>
+                        <h2 class="title-1 m-b-25">data compliance {{active}}</h2>
                         <div class="tombolDownload float-right">
                             <div class="input-group-btn">
                                 <a href="{{url_for( 'downloadComp', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-success">Download as XLSX</button></a>                    
@@ -411,8 +411,12 @@
                     </div>
                      <ul class="pagination">
                         {% for i in range(page) %}
-
-                            <li class="page-item"><a class="page-link" href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li>     
+                            {% if loop.index == active  %}
+                                <li class="page-item active"><a class="page-link"  href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}={{active}}</a></li> 
+                            {% else %}   
+                                <li class="page-item "><a class="page-link"  href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}={{active}}</a></li> 
+                            {% endif %} 
+                                              
                         {% endfor %}
                          </ul> 
                 </div>
