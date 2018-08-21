@@ -7,7 +7,7 @@ from flask_compress import Compress
 import math
 
 
-UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -130,6 +130,10 @@ def vulnGet():
     dataId=selectedID
     token = session['token']
     hal=request.args.get('page')
+    if hal is None:
+        halaman=1
+    else:
+        halaman=int(hal)
     fileVuln=getDataVuln(dataId,token,hal)
     sumPage=fileVuln['total_item']/100.0
     count=math.ceil(sumPage)
@@ -141,10 +145,10 @@ def vulnGet():
         dataUser=r.json()
         if dataUser["privilege"]=="admin": 
             status=1
-            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser,page=pages)
+            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser,page=pages,active=halaman)
         else:
             status=0
-            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser,page=pages)
+            return render_template('showTableVuln.html', idFile=fileVuln,statusUser=status,data=dataUser,page=pages,active=halaman)
     else:
         return render_template('login.html')
         
@@ -164,6 +168,10 @@ def compGet():
     dataId=selectedID
     token = session['token']
     hal=request.args.get('page')
+    if hal is None:
+        halaman=1
+    else:
+        halaman=int(hal)
     fileComp=getDataComp(dataId,token,hal)
     sumPage=fileComp['total_item']/100.0
     count=math.ceil(sumPage)
@@ -175,10 +183,10 @@ def compGet():
         dataUser=r.json()
         if dataUser["privilege"]=="admin": 
             status=1
-            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages,active=hal)
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages,active=halaman)
         else:
             status=0
-            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages,active=hal)
+            return render_template('showTableComp.html', idFile=fileComp,statusUser=status,data=dataUser,page=pages,active=halaman)
     else:
         return render_template('login.html')
 
@@ -210,7 +218,7 @@ def upload_file():
                     if request.form['submit'] == 'vulnerability':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile,token,hal=1)
@@ -220,7 +228,7 @@ def upload_file():
                     elif request.form['submit'] == 'compliance':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)

@@ -352,7 +352,7 @@
         <div class="main-content">
             <div class="row">
                 <div class="col-lg-12">
-                        <h2 class="title-1 m-b-25">data compliance {{active}}</h2>
+                        <h2 class="title-1 m-b-25">data compliance {{idFile.name}}</h2>
                         <div class="tombolDownload float-right">
                             <div class="input-group-btn">
                                 <a href="{{url_for( 'downloadComp', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-success">Download as XLSX</button></a>                    
@@ -449,7 +449,6 @@
                 </div>
                 <div class="modal-body">
                   <p>Status Sekarang : {{dataComp.status}}</p>
-                  <p>ID : {{dataComp._id}}</p>
                 </div>
                 <div class="modal-footer">
                         <button type="button" class=" btn btn-success" data-dismiss="modal">Cancel</button>

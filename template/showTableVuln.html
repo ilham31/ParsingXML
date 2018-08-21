@@ -16,7 +16,10 @@
     <style>
     
     </style>
-    
+     <script src="http://code.jquery.com/jquery.js"></script>
+     <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
+     <script src="{{ url_for('static',filename='jquery.twbsPagination.js') }}"></script>
+     <script src="{{ url_for('static',filename='jquery.twbsPagination.min.js') }}"></script>
     <!-- Fontfaces CSS-->
     <link href="{{ url_for('static',filename='css/font-face.css') }}" rel="stylesheet" media="all">
     <link href="{{ url_for('static',filename='vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
@@ -357,7 +360,7 @@
         <div class="main-content">
             <div class="row">
                 <div class="col-sm-12">
-                        <h2 class="title-1 m-b-25">data vulnerability</h2>
+                        <h2 class="title-1 m-b-25">data vulnerability {{idFile.name}}</h2>
                         <div class="tombolDownload float-right">
                             <div class="input-group-btn">
                                 <a href="{{url_for( 'downloadVuln', id=idFile._id ) }}" target="_blank"><button  type=submit name="submit"  class="btn btn-success">Download as XLSX</button></a>                    
@@ -426,8 +429,11 @@
                     </div>
                     <ul class="pagination">
                         {% for i in range(page) %}
-                       
-                            <li class="page-item"><a class="page-link"  href="{{url_for( 'vulnGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li>     
+                            {% if loop.index == active  %}
+                                <li class="page-item active"><a class="page-link"  href="{{url_for( 'vulnGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li>     
+                            {% else %}
+                                <li class="page-item "><a class="page-link"  href="{{url_for( 'vulnGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li>
+                            {% endif %}
                         {% endfor %}
                          </ul> 
                 </div>
@@ -564,14 +570,23 @@ function fungsiku(id){
 
    }
     
-
+   $(function () {
+        window.pagObj = $('.pagination').twbsPagination({
+            totalPages: '{{page}}',
+            visiblePages: 5,
+            onPageClick: function (event, page) {
+                console.info(page + ' (from options)');
+            }
+        }).on('page', function (event, page) {
+            console.info(page + ' (from event listening)');
+        });
+    });
 
     </script>
     
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
     <!-- Jquery JS-->
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
+   
     <!-- Bootstrap JS-->
     <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/popper.min.js') }}"></script>
     <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
