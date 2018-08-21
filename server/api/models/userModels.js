@@ -1,6 +1,11 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
+var validatePassword = function(password) {
+  var re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  return re.test(password)
+};
+
 // Define our user schema
 var UserSchema = new mongoose.Schema({
   username: {
@@ -10,7 +15,9 @@ var UserSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    validate: [validatePassword, 'Please fill a valid password'],
+    match: [/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/, 'Please fill a valid password']
   },
   privilege: {
       type: String,
