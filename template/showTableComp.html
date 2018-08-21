@@ -9,6 +9,7 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
 
     <!-- Title Page-->
     <title>Dashboard</title>
@@ -409,16 +410,28 @@
                             </div>
                         </div>
                     </div>
-                     <ul class="pagination">
+                     <!-- <ul class="pagination">
                         {% for i in range(page) %}
                             {% if loop.index == active  %}
-                                <li class="page-item active"><a class="page-link"  href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}={{active}}</a></li> 
+                                <li class="page-item active"><a class="page-link"  href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li> 
                             {% else %}   
-                                <li class="page-item "><a class="page-link"  href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}={{active}}</a></li> 
+                                <li class="page-item "><a class="page-link"  href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li> 
                             {% endif %} 
                                               
                         {% endfor %}
-                         </ul> 
+                         </ul>  -->
+                    <ul class="pagination">
+                         <li class="page-item pag_prev">
+                            <a class="page-link" href="{{url_for( 'compGet', id=idFile._id,page=currentPage  ) }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item pag_next">
+                            <a class="page-link" href="{{url_for( 'compGet', id=idFile._id,page=currentPage  ) }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <!-- <form class="downloadCSV" method=post enctype=multipart/form-data> -->
                     
@@ -539,10 +552,47 @@
     
 }
 
+//PAGINATION
+$( document ).ready(function() { 
+    
+    
+    var currentPage = 1;
+    
+    /////////// PREPARE NAV ///////////////
+    var nav = '';
+    var totalPages = '{{page}}';
+    console.log("total masuk", totalPages);
+    for (var s=0; s<totalPages; s++){
+        nav += '<li class="page-item numeros"><a class="page-link" href="#">'+(s+1)+'</a></li>';
+    }
+    $(".pag_prev").after(nav);
+    $(".numeros").first().addClass("active");
+    //////////////////////////////////////
+
+
+    $(".pagination li.numeros").click(function() {
+        $(".pagination li").removeClass("active");
+        $(this).addClass("active");
+        currentPage = parseInt($(this).text());
+    });
+
+    $(".pagination li.pag_prev").click(function() {
+        if($(this).next().is('.active')) return;
+        $('.numeros.active').removeClass('active').prev().addClass('active');
+        currentPage = currentPage > 1 ? (currentPage-1) : 1;
+    });
+
+    $(".pagination li.pag_next").click(function() {
+        if($(this).prev().is('.active')) return;
+        $('.numeros.active').removeClass('active').next().addClass('active');
+        currentPage = currentPage < totalPages ? (currentPage+1) : totalPages;
+    });
+});
+
     </script>
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
     <!-- Jquery JS-->
-    <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
+    
     <!-- Bootstrap JS-->
     <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/popper.min.js') }}"></script>
     <script src="{{ url_for('static',filename='vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
