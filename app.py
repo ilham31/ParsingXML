@@ -120,7 +120,7 @@ def approve_user():
 
 @app.route('/deny_user',methods=['GET', 'POST'])
 def deny_user():
-    idUser=request.args.get('id')
+    idUser=request.form['id']
     token=session['token']
     header = {'Authorization': 'Bearer ' +token}
     r=req.delete('http://localhost:3000/users/delete/'+idUser,headers=header)
@@ -339,7 +339,7 @@ def deleteVuln():
 
 @app.route('/deletecomp', methods=['GET', 'POST'])
 def deleteComp():
-   selectedID = request.args.get('id')
+   selectedID = request.form['id']
    token=session['token']
    headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
    url='http://localhost:3000/compliance/'+selectedID
