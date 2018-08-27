@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request, send_file, redirect, url_for,flash,render_template,send_from_directory,Response,session,jsonify
+from flask_jsglue import JSGlue
 from testParsingVuln import *
 from testParsingCompl import *
 import requests as req
@@ -7,13 +8,14 @@ from flask_compress import Compress
 import math
 
 
-UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
 
-
+jsglue = JSGlue()
 app = Flask(__name__)
+jsglue.init_app(app)
 COMPRESS_MIMETYPES = ['text/html','text/css','application/json']
 COMPRESS_LEVEL = 6
 COMPRESS_MIN_SIZE=500
@@ -218,7 +220,7 @@ def upload_file():
                     if request.form['submit'] == 'vulnerability':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile,token,hal=1)
@@ -228,7 +230,7 @@ def upload_file():
                     elif request.form['submit'] == 'compliance':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)
@@ -280,7 +282,7 @@ def close_comp():
     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
     patch_Vuln='http://localhost:3000/compliance/'+ selectedID
     r = req.patch(patch_Vuln,headers=headers)
-    return jsonify({'message':'success'})          
+    return jsonify(r.json())          
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():

@@ -163,11 +163,10 @@
             var $itemContainer = $('<li></li>'),
                 $itemContent = $('<a></a>'),
                 itemText = this.options[type] ? this.makeText(this.options[type], page) : page;
-
             $itemContainer.addClass(this.options[type + 'Class']);
             $itemContainer.data('page', page);
             $itemContainer.data('page-type', type);
-            $itemContainer.append($itemContent.attr('href', this.makeHref(page)).addClass(this.options.anchorClass).html(itemText));
+            // $itemContainer.append($itemContent.attr('href', this.makeHref(page)).addClass(this.options.anchorClass).html(itemText));
 
             return $itemContainer;
         },
@@ -260,7 +259,21 @@
         },
 
         makeHref: function (page) {
-            return this.options.href ? this.generateQueryString(page) : "wadu";
+            if (this.options.href) {
+                var queryString = this.generateQueryString(page);
+                console.log("masuk", queryString)
+                if (!queryString) {
+                    return '?' + this.options.pageVariable + '=' + page;
+                } else {
+                    if (queryString.indexOf(this.options.pageVariable) === -1) {
+                        return queryString + '&' + this.options.pageVariable + '=' + page;
+                    } else {
+                        return queryString;
+                    }
+                }
+            } else {
+                return '#';
+            }
         },
 
         makeText: function (text, page) {
@@ -286,7 +299,9 @@
         generateQueryString: function (pageNumber, searchStr) {
             var search = this.getSearchString(searchStr),
                 regex = new RegExp(this.options.pageVariable + '=*[^&#]*');
-            if (!search) return '';
+            if(!regex.test(search)){ //search not include pageVariable
+                search = this.options.pageVariable + '=' + pageNumber + (search?"&" + search:"");
+            }
             return '?' + search.replace(regex, this.options.pageVariable + '=' + pageNumber);
         },
 

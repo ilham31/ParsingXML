@@ -428,14 +428,14 @@
                         
                     </div>
                     <ul class="pagination">
-                        {% for i in range(page) %}
+                        <!-- {% for i in range(page) %}
                             {% if loop.index == active  %}
                                 <li class="page-item active"><a class="page-link"  href="{{url_for( 'vulnGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li>     
                             {% else %}
                                 <li class="page-item "><a class="page-link"  href="{{url_for( 'vulnGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li>
                             {% endif %}
-                        {% endfor %}
-                         </ul> 
+                        {% endfor %} -->
+                    </ul> 
                 </div>
                  
                 <!-- <form class="downloadCSV" method=post enctype=multipart/form-data> -->
@@ -569,16 +569,40 @@ function fungsiku(id){
    }
 
    }
-    
+   
+//    function GetURLParameter(sParam)
+//     {
+//         var sPageURL = window.location.search.substring(1);
+//         var sURLVariables = sPageURL.split('&');
+//         for (var i = 0; i < sURLVariables.length; i++) 
+//         {
+//             var sParameterName = sURLVariables[i].split('=');
+//             if (sParameterName[0] == sParam) 
+//             {
+//                 return sParameterName[1];
+//             }
+//         }
+//     }​
+   
+//     var idFile = GetURLParameter('id');
+//     console.log(idFile)
    $(function () {
         window.pagObj = $('.pagination').twbsPagination({
+            startPage: 1,
+            pageVariable: 'page',
             totalPages: '{{page}}',
-            visiblePages: 5,
+            visiblePages: 11,
+            href: true,
+            // defaultHref: '&page=',
+
             onPageClick: function (event, page) {
                 console.info(page + ' (from options)');
+                // location.href=window.location.href+'&?page='+page
             }
         }).on('page', function (event, page) {
-            console.info(page + ' (from event listening)');
+            console.info(window.location.search + ' (from event listening)');
+            // Flask.url_for('vulnGet', {"id": idFile._id, "page": page})
+            // location.href=window.location.hostname+'/vulnerabilities?id='+idFile+'&?page='+page
         });
     });
 

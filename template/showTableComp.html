@@ -9,11 +9,19 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
-    <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
+    <!-- <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script> -->
 
     <!-- Title Page-->
     <title>Dashboard</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
 
+    <link href="{{ url_for('static',filename='jquery-sortable-table/Contents/bootstrap-sortable.css') }}" rel="stylesheet" type="text/css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script src="{{ url_for('static',filename='jquery-sortable-table/Scripts/bootstrap-sortable.js') }}"></script> 
+    
+    <script src="{{ url_for('static',filename='vendor/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='jquery.twbsPagination.js') }}"></script>
+    <script src="{{ url_for('static',filename='jquery.twbsPagination.min.js') }}"></script>
     <!-- Fontfaces CSS-->
     <link href="{{ url_for('static',filename='css/font-face.css') }}" rel="stylesheet" media="all">
     <link href="{{ url_for('static',filename='vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet" media="all">
@@ -350,6 +358,7 @@
         </header>
 
         <div class="main-content">
+            <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
                         <h2 class="title-1 m-b-25">data compliance {{idFile.name}}</h2>
@@ -359,7 +368,7 @@
                             </div>
                         </div>
                     <div class="table-responsive table--no-card m-b-40" style="height:405px;overflow:auto;">
-                        <table class="table  table-striped " id="myTable">
+                        <table class="table  table-striped sortable" id="myTable">
                                 <thead>
                                     <tr id='tableHeader'>
                                         <th>System</th>
@@ -375,9 +384,9 @@
                                 </thead>
                                 <tbody>
                             
-                                   
+                            <div>
                             {% for dataComp in idFile.item %}
-                                <tr data-toggle="modal" data-target="#myModal">
+                                <tr id="idBaris{{dataComp._id}}" data-toggle="modal" data-target="#myModal">
                                         <td data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.system}}</td>
                                         <td class="text" data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.title}}</td>
                                         <td data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.stats}}</td>
@@ -405,33 +414,23 @@
                                         
                                     </tr>
                             {% endfor %}        
+                            </div>
                                 </tbody>
                             </table>
                             </div>
                         </div>
                     </div>
-                     <!-- <ul class="pagination">
-                        {% for i in range(page) %}
+                     <ul class="pagination">
+                        <!-- {% for i in range(page) %}
                             {% if loop.index == active  %}
                                 <li class="page-item active"><a class="page-link"  href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li> 
                             {% else %}   
                                 <li class="page-item "><a class="page-link"  href="{{url_for( 'compGet', id=idFile._id,page=loop.index  ) }}">{{ loop.index }}</a></li> 
                             {% endif %} 
                                               
-                        {% endfor %}
-                         </ul>  -->
-                    <ul class="pagination">
-                         <li class="page-item pag_prev">
-                            <a class="page-link" href="{{url_for( 'compGet', id=idFile._id,page=currentPage  ) }}" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item pag_next">
-                            <a class="page-link" href="{{url_for( 'compGet', id=idFile._id,page=currentPage  ) }}" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
+                        {% endfor %} -->
+                         </ul> 
+                    </div>
                 </div>
                 <!-- <form class="downloadCSV" method=post enctype=multipart/form-data> -->
                     
@@ -464,19 +463,28 @@
         function fungsiku(id){
             console.log('masuk')
             var dataid = id;
+            dt = id;
             console.log('data:',dataid)
             req = $.ajax({
-                url : "{{url_for( 'close_comp' ) }}",
+                url : '/editComp',
                 type : 'POST',
                 data : { idItem : dataid}
-        
             });
-            req.done(function(data) {
-                location.reload(false);
+            req.done(function(dt) {
+                // ajaxCall2(dt, dataid);
+                $('#idBaris'+dataid).load(document.URL +  '#idBaris'+dataid);
             });
         }
-        
-        </script>
+
+        // function ajaxCall2(id,dataid){
+        //     $('#idBaris'+dataid).fadeIn(1000);
+        //     setTimeout(function(){
+        //         $('#idBaris'+dataid).fadeOut(1000, function(){
+        //         location.reload(false);
+        //         });
+        //     });
+        // }
+    </script>
 
     <!-- Modal Data -->
     {% for dataComp in idFile.item %}
@@ -489,7 +497,7 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p><b>System:</b><br>{{dataComp.system}}</p><br>
+                    <p><b>{{dataComp.status}}</b><br>{{dataComp.system}}</p><br>
                     <p><b>Title:</b><br>{{dataComp.title}}</p><br>
                     <p><b>Status:</b><br>{{dataComp.stats}}</p><br>
                     <p style="white-space: pre-wrap;"><b>Result:</b><br>{{dataComp.result}}</p><br>
@@ -551,42 +559,25 @@
     
 }
 
-//PAGINATION
-$( document ).ready(function() { 
-    
-    
-    var currentPage = 1;
-    
-    /////////// PREPARE NAV ///////////////
-    var nav = '';
-    var totalPages = '{{page}}';
-    console.log("total masuk", totalPages);
-    for (var s=0; s<totalPages; s++){
-        nav += '<li class="page-item numeros"><a class="page-link" href="#">'+(s+1)+'</a></li>';
-    }
-    $(".pag_prev").after(nav);
-    $(".numeros").first().addClass("active");
-    //////////////////////////////////////
+    $(function () {
+        window.pagObj = $('.pagination').twbsPagination({
+            startPage: 1,
+            pageVariable: 'page',
+            totalPages: '{{page}}',
+            visiblePages: 11,
+            href: true,
+            // defaultHref: '&page=',
 
-
-    $(".pagination li.numeros").click(function() {
-        $(".pagination li").removeClass("active");
-        $(this).addClass("active");
-        currentPage = parseInt($(this).text());
+            onPageClick: function (event, page) {
+                console.info(page + ' (from options)');
+                // location.href=window.location.href+'&?page='+page
+            }
+        }).on('page', function (event, page) {
+            console.info(window.location.search + ' (from event listening)');
+            // Flask.url_for('vulnGet', {"id": idFile._id, "page": page})
+            // location.href=window.location.hostname+'/vulnerabilities?id='+idFile+'&?page='+page
+        });
     });
-
-    $(".pagination li.pag_prev").click(function() {
-        if($(this).next().is('.active')) return;
-        $('.numeros.active').removeClass('active').prev().addClass('active');
-        currentPage = currentPage > 1 ? (currentPage-1) : 1;
-    });
-
-    $(".pagination li.pag_next").click(function() {
-        if($(this).prev().is('.active')) return;
-        $('.numeros.active').removeClass('active').next().addClass('active');
-        currentPage = currentPage < totalPages ? (currentPage+1) : totalPages;
-    });
-});
 
     </script>
     <!-- {{ url_for('static',filename='vendor/bootstrap-progressbar/bootstrap-progressbar.min.js') }} -->
