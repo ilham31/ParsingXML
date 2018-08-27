@@ -174,14 +174,14 @@
                           <p>Apakah anda yakin menghapus {{Vuln.name}} ini ?</p>
                         </div>
                         <div class="modal-footer">
-                               <button data-dismiss="modal" type="button" value="Submit" class="btn btn-danger" onclick="fungsiku(this.id,this.idFile)"  id="{{ Vuln._id }}"  >yes</button> 
+                                <a href="{{url_for( 'deleteVuln', id=Vuln._id ) }}" class="deleteComp"><button  type="button" class="btn btn-danger" data-dismiss="modal">Ya</button></a>
                         </div>
                       </div>
                   
                     </div>
                   </div> 
                   {% endfor %}
-                  <script type="text/javascript">
+                  <!-- <script type="text/javascript">
                     function fungsiku(id){
                         console.log('masuk')
                         var dataid = id;
@@ -197,7 +197,7 @@
                         });
                     }
                     
-                    </script>
+                    </script> -->
                   <script>
                     $(function() {
                         $('#toggle-one').bootstrapToggle();

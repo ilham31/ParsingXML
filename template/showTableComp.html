@@ -316,7 +316,7 @@
 </style>
 </head>
 
-<body class="animsition">
+<body >
         <header class="headerAwal">
             <div class="gambar float-left">
                     <a href="{{url_for( 'upload_file' ) }}"><img   src="{{ url_for('static',filename='imageslogin/xl.png') }}" alt="XL"></a>    
@@ -468,11 +468,16 @@
             req = $.ajax({
                 url : '/editComp',
                 type : 'POST',
-                data : { idItem : dataid}
-            });
-            req.done(function(dt) {
-                // ajaxCall2(dt, dataid);
-                $('#idBaris'+dataid).load(document.URL +  '#idBaris'+dataid);
+                data : { idItem : dataid},
+                success: function(result){
+                    console.log('apakek',dataid)
+                        $('#idBaris'+dataid).load(document.URL +  ' #idBaris'+dataid, function(result) {
+                            var elements = $(result);
+                            var found = $('#idBaris'+dataid, elements);
+                            // alert(found)
+                            $('#idBaris'+dataid).replaceWith(found);
+                        });
+                }
             });
         }
 
@@ -560,7 +565,12 @@
 }
 
     $(function () {
-        window.pagObj = $('.pagination').twbsPagination({
+        if ($('.pagination').data("twbs-pagination"))
+        {
+            $('.pagination').twbsPagination('destroy');
+        } 
+
+        $('.pagination').twbsPagination({
             startPage: 1,
             pageVariable: 'page',
             totalPages: '{{page}}',
