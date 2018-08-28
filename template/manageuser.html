@@ -94,7 +94,7 @@
 </style>
 </head>
 
-<body class="animsition" style="animation-duration: 1ms; opacity: 1;">
+<body style="animation-duration: 1ms; opacity: 1;">
         <header class="headerAwal">
             <div class="gambar float-left">
                 <a href="{{url_for( 'upload_file' ) }}"><img   src="{{ url_for('static',filename='imageslogin/xl.png') }}" alt="XL"></a>    
@@ -201,7 +201,7 @@
                             <p>Are you sure ?</p>
                         </div>
                         <div class="modal-footer">
-                                <a href="{{url_for( 'deny_user', id=User._id ) }}" class="deleteVuln"><button  type="button" class="btn btn-danger" data-dismiss="modal">Ya</button></a> 
+                            <button onclick="fungsiku(this.id)" id="{{User._id}}" type="button" class="btn btn-danger" data-dismiss="modal">Ya</button>
                         </div>
                       </div>
                   
@@ -212,6 +212,21 @@
                   {% endfor %}
 
                   <script>
+                    function fungsiku(id){
+                    console.log('masuk')
+                    var dataid = id;
+                    dt = id;
+                    console.log('data:',dataid)
+                    req = $.ajax({
+                        url : '/deny_user',
+                        type : 'POST',
+                        data : { id : dataid},
+                        success: function(){
+                            location.reload()
+                        }
+                    });
+                }
+                    
                     $(function() {
                         $('#toggle-one').bootstrapToggle();
                     })
