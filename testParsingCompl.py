@@ -146,25 +146,26 @@ def downloadCompXLSX(idFile,token):
     row=1
     col=0
 
-    head = ['System', 'Title', 'Status', 'Result', 'i Status', 'Detail', 'Open Date', 'Closed Date', 'Status']
+    head = ['#','System', 'Title', 'Status', 'Result', 'i Status', 'Detail', 'Open Date', 'Closed Date', 'Status']
     for i in range (0,len(head)):
         worksheet.write(0, i, head[i])
         
     for x in range(0,len(dataDownload['item'])):
-        worksheet.write(row, 0, dataDownload['item'][x]["system"])
-        worksheet.write(row, 1, dataDownload['item'][x]["title"])
+        worksheet.write(row, 0, dataDownload['item'][x]["index"])
+        worksheet.write(row, 1, dataDownload['item'][x]["system"])
+        worksheet.write(row, 2, dataDownload['item'][x]["title"])
         if dataDownload['item'][x]['stats']== 'PASSED':
-            worksheet.write(row, 2, dataDownload['item'][x]["stats"],green_format)
+            worksheet.write(row, 3, dataDownload['item'][x]["stats"],green_format)
         elif dataDownload['item'][x]['stats']== 'WARNING' :
-            worksheet.write(row, 2, dataDownload['item'][x]["stats"],yellow_format)
+            worksheet.write(row, 3, dataDownload['item'][x]["stats"],yellow_format)
         else:
-            worksheet.write(row, 2, dataDownload['item'][x]["stats"],red_format)
-        worksheet.write(row, 3, dataDownload['item'][x]["result"])
-        worksheet.write(row, 4, dataDownload['item'][x]["i_status"])
-        worksheet.write(row, 5, dataDownload['item'][x]["detail"])
-        worksheet.write(row, 6, dataDownload['item'][x]["open_date"])
-        worksheet.write(row, 7, dataDownload['item'][x]["closed_date"])
-        worksheet.write(row, 8, dataDownload['item'][x]["status"])
+            worksheet.write(row, 3, dataDownload['item'][x]["stats"],red_format)
+        worksheet.write(row, 4, dataDownload['item'][x]["result"])
+        worksheet.write(row, 5, dataDownload['item'][x]["i_status"])
+        worksheet.write(row, 6, dataDownload['item'][x]["detail"])
+        worksheet.write(row, 7, dataDownload['item'][x]["open_date"])
+        worksheet.write(row, 8, dataDownload['item'][x]["closed_date"])
+        worksheet.write(row, 9, dataDownload['item'][x]["status"])
         row += 1
 
     workbook.close()

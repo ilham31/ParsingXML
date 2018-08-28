@@ -165,29 +165,30 @@ def downloadVulnXLSX(idFile,token):
     row=1
     col=0
 
-    head = ['System', 'Name', 'Port/Protocol', 'Risk Level', 'Synopsis', 'Detail','Solution','Severity','Open Date', 'Closed Date', 'Status']
+    head = ['#','System', 'Name', 'Port/Protocol', 'Risk Level', 'Synopsis', 'Detail','Solution','Severity','Open Date', 'Closed Date', 'Status']
     for i in range (0,len(head)):
         worksheet.write(0, i, head[i])
         
     for x in range(0,len(dataDownload['item'])):
-        worksheet.write(row, 0, dataDownload['item'][x]["system"])
-        worksheet.write(row, 1, dataDownload['item'][x]["name"])
-        worksheet.write(row, 2, dataDownload['item'][x]["port_protocol"])
+        worksheet.write(row, 0, dataDownload['item'][x]["index"])
+        worksheet.write(row, 1, dataDownload['item'][x]["system"])
+        worksheet.write(row, 2, dataDownload['item'][x]["name"])
+        worksheet.write(row, 3, dataDownload['item'][x]["port_protocol"])
         if dataDownload['item'][x]["risk_level"] == 'High':
-            worksheet.write(row, 3, dataDownload['item'][x]["risk_level"],red_format)
+            worksheet.write(row, 4, dataDownload['item'][x]["risk_level"],red_format)
         elif dataDownload['item'][x]["risk_level"] == 'Medium':
-            worksheet.write(row, 3, dataDownload['item'][x]["risk_level"],yellow_format)
+            worksheet.write(row, 4, dataDownload['item'][x]["risk_level"],yellow_format)
         elif dataDownload['item'][x]["risk_level"] == 'Low':
-            worksheet.write(row, 3, dataDownload['item'][x]["risk_level"],green_format)
+            worksheet.write(row, 4, dataDownload['item'][x]["risk_level"],green_format)
         else :
-            worksheet.write(row, 3, dataDownload['item'][x]["risk_level"])
-        worksheet.write(row, 4, dataDownload['item'][x]["synopsis"])
-        worksheet.write(row, 5, dataDownload['item'][x]["detail"])
-        worksheet.write(row, 6, dataDownload['item'][x]["solution"])
-        worksheet.write(row, 7, dataDownload['item'][x]["severity"])
-        worksheet.write(row, 8, dataDownload['item'][x]["open_date"])
-        worksheet.write(row, 9, dataDownload['item'][x]["closed_date"])
-        worksheet.write(row, 10, dataDownload['item'][x]["status"])
+            worksheet.write(row, 4, dataDownload['item'][x]["risk_level"])
+        worksheet.write(row, 5, dataDownload['item'][x]["synopsis"])
+        worksheet.write(row, 6, dataDownload['item'][x]["detail"])
+        worksheet.write(row, 7, dataDownload['item'][x]["solution"])
+        worksheet.write(row, 8, dataDownload['item'][x]["severity"])
+        worksheet.write(row, 9, dataDownload['item'][x]["open_date"])
+        worksheet.write(row, 10, dataDownload['item'][x]["closed_date"])
+        worksheet.write(row, 11, dataDownload['item'][x]["status"])
         row += 1
 
     workbook.close()

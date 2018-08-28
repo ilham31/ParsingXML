@@ -371,6 +371,7 @@
                         <table class="table  table-striped sortable" id="myTable">
                                 <thead>
                                     <tr id='tableHeader'>
+                                        <th>#</th>
                                         <th>System</th>
                                         <th>Title</th>
                                         <th>Status</th>
@@ -387,6 +388,7 @@
                             <div>
                             {% for dataComp in idFile.item %}
                                 <tr id="idBaris{{dataComp._id}}" data-toggle="modal" data-target="#myModal">
+                                        <td data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.index}}</td>
                                         <td data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.system}}</td>
                                         <td class="text" data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.title}}</td>
                                         <td data-toggle="modal" data-target="#modalData{{dataComp._id}}">{{dataComp.stats}}</td>
