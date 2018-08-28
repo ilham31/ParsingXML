@@ -8,7 +8,7 @@ from flask_compress import Compress
 import math
 
 
-UPLOAD_FOLDER = 'D:/Project/XL/ParsingXML/data'
+UPLOAD_FOLDER = 'D:/ilham/ParsingXML/data'
 ALLOWED_EXTENSIONS = set([ 'nessus'])
 
 
@@ -220,7 +220,7 @@ def upload_file():
                     if request.form['submit'] == 'vulnerability':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         dataUpload=vuln(filename,token)
                         idUploadFile=dataUpload['fileId']
                         uploadData=getDataVuln(idUploadFile,token,hal=1)
@@ -230,7 +230,7 @@ def upload_file():
                     elif request.form['submit'] == 'compliance':
                         token = session['token']
                         filename = file.filename
-                        file.save(os.path.join('D:/Project/XL/ParsingXML/data', filename))
+                        file.save(os.path.join('D:/ilham/ParsingXML/data', filename))
                         # file.save(os.path.join('D:/project/pkl/ParsingXML/data', ))
                         # flash('masuk ke compl')
                         dataUploadComp=compl(filename,token)
@@ -249,7 +249,10 @@ def upload_file():
             header = {'Authorization': '"Bearer ' +token}
             r = req.get('http://localhost:3000/users',headers=header)
             dataUser=r.json()
-            return render_template('index.html',dataFileV=dataVuln,dataFileC=dataComp,data=dataUser)
+            if r.status_code == 401:
+                return render_template('login.html')
+            else:
+                return render_template('index.html',dataFileV=dataVuln,dataFileC=dataComp,data=dataUser)
             
         else :
             return redirect (url_for('proses_user'))
