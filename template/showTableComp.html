@@ -405,7 +405,9 @@
                                                         <span class="switchClosed"></span> 
                                                     </label></td>
                                             {% else %}
-                                                <td data-toggle="modal" data-target="#myModal{{dataComp._id}}"><label class="switch switch-left-right">
+                                                <td data-toggle="modal" data-target="#myModal{{dataComp._id}}">
+                                                    <img id="loader{{dataComp._id}}" src="{{ url_for('static',filename='loading.gif') }}" style="display: none;">
+                                                    <label class="switch switch-left-right" id="toggle{{dataComp._id}}">
                                                         <span class="switch-label" data-on="closed" data-off="{{dataComp.status}}"></span> 
                                                         <span class="switch-handle"></span> 
                                                     </label></td>
@@ -468,6 +470,8 @@
             var dataid = id;
             dt = id;
             console.log('data:',dataid)
+            $('#toggle'+dataid).hide();
+            $('#loader'+dataid).show()
             req = $.ajax({
                 url : '/editComp',
                 type : 'POST',
@@ -478,6 +482,8 @@
                             var elements = $(result);
                             var found = $('#idBaris'+dataid, elements);
                             // alert(found)
+                            $('#loader'+dataid).hide();
+                            $('#toggle'+dataid).show();
                             $('#idBaris'+dataid).replaceWith(found);
                         });
                 }

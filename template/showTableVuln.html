@@ -409,7 +409,9 @@
                                                         <span class="switchClosed"></span> 
                                                     </label></td>
                                             {% else %}
-                                                <td data-toggle="modal" data-target="#myModal{{dataVuln._id}}"><label class="switch switch-left-right">
+                                                <td data-toggle="modal" data-target="#myModal{{dataVuln._id}}">
+                                                    <img id="loader{{dataVuln._id}}" src="{{ url_for('static',filename='loading.gif') }}" style="display: none;">
+                                                    <label class="switch switch-left-right" id="toggle{{dataVuln._id}}">
                                                         <span class="switch-label" data-on="closed" data-off="{{dataVuln.status}}"></span> 
                                                         <span class="switch-handle"></span> 
                                                     </label></td>
@@ -472,7 +474,9 @@
 function fungsiku(id){
     console.log('masuk')
     var dataid = id;
-    console.log('data:',dataid)
+    console.log('data:',dataid);
+    $('#toggle'+dataid).hide();
+    $('#loader'+dataid).show();
     req = $.ajax({
         url : "{{url_for( 'close_vuln' ) }}",
         type : 'POST',
@@ -483,6 +487,8 @@ function fungsiku(id){
                             var elements = $(result);
                             var found = $('#idBaris'+dataid, elements);
                             // alert(found)
+                            $('#loader'+dataid).hide();
+                            $('#toggle'+dataid).show();
                             $('#idBaris'+dataid).replaceWith(found);
                         });
                 }
