@@ -371,6 +371,7 @@
                         <table class="table  table-striped " id="myTable">
                                 <thead>
                                     <tr  id='tableHeader'>
+                                        <th>#</th>
                                         <th>System</th>
                                         <th>Name</th>
                                         <th>Port/Protocol</th>
@@ -389,6 +390,7 @@
                             {% for dataVuln in idFile.item %}
                             <div>
                                 <tr id="idBaris{{dataVuln._id}}">
+                                        <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.index}}</td>
                                         <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.system}}</td>
                                         <td class="text" data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.name}}</td>
                                         <td data-toggle="modal" data-target="#modalData{{dataVuln._id}}">{{dataVuln.port_protocol}}</td>

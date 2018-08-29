@@ -267,15 +267,7 @@ def close_vuln():
     r = req.patch(patch_Vuln,headers=headers)
     return jsonify({'message':'success'})
 
-# @app.route('/showVuln', methods=['GET', 'POST'])
-# def close_vuln():
-#     selectedID = request.form['idItem']
-#     # idFile=request.args.get('idFile')
-#     token=session['token']
-#     headers = {'Content-Type': 'application/json', 'Accept':'application/json','Authorization':'Bearer ' + token}
-#     patch_Vuln='http://localhost:3000/vulnerabilities/'+ selectedID
-#     r = req.get(patch_Vuln,headers=headers)
-#     return jsonify({'message':'success'})
+
 
 @app.route('/editComp', methods=['GET', 'POST'])
 def close_comp():
@@ -293,9 +285,9 @@ def logout():
    session.pop('token', None)
    return redirect(url_for('proses_user'))
 
-# @app.errorhandler(Exception)
-# def all_exception_handler(error):
-#    return render_template('505.html'), 500
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+   return render_template('505.html'), 500
 
 @app.route('/register', methods=['GET', 'POST'])
 def regist_user():

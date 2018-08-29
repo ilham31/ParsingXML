@@ -57,6 +57,7 @@ exports.create_vulnerabilities = function (req, res) {
     for (var i = 0; i < data.length; i++) {
         data[i].open_date = new Date().addHours(7);
         data[i].status = "open";
+        data[i].index = i;
     }
         var vuln = new Vuln ({
             name: req.body.name,

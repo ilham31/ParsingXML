@@ -137,7 +137,7 @@
                             </thead>
                             <tbody>
                         {% for User in data  %}
-                            <tr >
+                            <tr id="data{{User._id}}">
                                     <td>{{User.username}}</td>
                                     <td data-toggle="modal" data-target="#approve{{User._id}}"><button  type="button" class="btn btn-success">Approve</button></td>
                                     <td data-toggle="modal" data-target="#deny{{User._id}}"><button  type="button" class="btn btn-danger">Deny</button></td>
@@ -221,9 +221,10 @@
                         url : '/deny_user',
                         type : 'POST',
                         data : { id : dataid},
-                        success: function(){
-                            location.reload()
-                        }
+                        success: function(result){
+                                console.log('apakek',dataid)
+                                $('#data'+dataid).fadeOut('fast');
+                            }
                     });
                 }
                     
